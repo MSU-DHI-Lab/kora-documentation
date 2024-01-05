@@ -1,5 +1,5 @@
 site_name: Kora User Documentation
-repo_url: 'https://github.com/chi-initiative/kora-documentation'
+repo_url: 'https://github.com/MSU-DHI-Lab/kora-documentation'
 
 extra_css:
     - css/extra.css
