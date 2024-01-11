@@ -3,7 +3,7 @@ title: Searching for a Form
 ---
 # Searching for a Form
 
-As your digital repository grows and expands, you may find yourself forgetting where you put a [form](../forms/creating_a_form.md). Or maybe you are unfamiliar with a colleagues repository and need to find some of the records they've created for a particular project. [Kora](../getting-started/core-concepts.md) will allow you to search for these forms to find these records in no time. The documentation on [Navigating to a Form](../forms/navigating_to_a_form.md) is useful for when you know what project the form should be in, but sometimes you may want to search across Kora to find the exact form that you need. There are several ways to do this. The main difference is whether you want to search for a form across an entire installation, or if you are looking for a form within a particular project.
+As your digital repository grows and expands, you may find yourself forgetting where you put a [form](../forms/creating_a_form.md). Or maybe you are unfamiliar with a colleagues repository and need to find some of the records they've created for a particular project. [Kora](../getting-started/core_concepts.md) will allow you to search for these forms to find these records in no time. The documentation on [Navigating to a Form](../forms/navigating_to_a_form.md) is useful for when you know what project the form should be in, but sometimes you may want to search across Kora to find the exact form that you need. There are several ways to do this. The main difference is whether you want to search for a form across an entire installation, or if you are looking for a form within a particular project.
 
 ## Searching Across a Kora Installation
 

@@ -5,7 +5,7 @@ You may want to edit a form you have previously created, either to change the na
 
 Follow the steps below to edit a form:
 
-1. [Open your current project](../accessing_and_managing_projects_from_the_dashboard.md) (You can find the list of your projects by clicking on the *Projects* button on the top menu).
+1. [Open your current project](../projects/accessing_and_managing_projects_from_the_dashboard.md) (You can find the list of your projects by clicking on the *Projects* button on the top menu).
 
     <img style="display:block;margin:auto;max-width:100%" src="../forms-img/editing_a_form_1_annotated.png" width="100%" title="Open your Current Project">
 

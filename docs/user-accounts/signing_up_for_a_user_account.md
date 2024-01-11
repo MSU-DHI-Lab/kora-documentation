@@ -15,4 +15,4 @@ After [being invited to a Kora installation by an administrator](../user-account
 
 5. Once you've activated your account you'll be directed to a page welcoming you to Kora. If this is your first time using Kora, then we highly recommend going through our introduction. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_5_annotated.png" width="100%" style="align:center" title="Step 5"> </p>
 
-The introduction will walk you through [the basics of Kora](../getting-started/core-concepts.md), and end by asking you which [projects you would like permissions for](../projects/adding_users_to_projects.md).
+The introduction will walk you through [the basics of Kora](../getting-started/core_concepts.md), and end by asking you which [projects you would like permissions for](../projects/adding_users_to_projects.md).

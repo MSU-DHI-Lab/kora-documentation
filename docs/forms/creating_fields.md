@@ -1,6 +1,6 @@
 #Creating Fields
 
-Fields are the metadata items that can be documented in a [record](../records/creating_a_record.md). These can include catalog numbers, site names, item descriptions, images, archival documents, etc. Once you have [created your form](../form/creating_a_form.md), you have the ability to add and organize your fields.
+Fields are the metadata items that can be documented in a [record](../records/creating_a_record.md). These can include catalog numbers, site names, item descriptions, images, archival documents, etc. Once you have [created your form](../forms/creating_a_form.md), you have the ability to add and organize your fields.
 
 Follow these steps to create a new field:
 
