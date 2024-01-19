@@ -66,7 +66,7 @@ nav:
         - 'Viewing Your Project Permissions': 'user-accounts/view_your_project_permissions.md'
         - 'Editing User Preferences': 'user-accounts/edit_user_preferences.md'
         - 'Editing Your User Account': 'user-accounts/edit_user_account.md'
-        - 'Customizing Your Project View': 'user-accounts/customizing_your_project_view.md'
+        # - 'Customizing Your Project View': 'user-accounts/customizing_your_project_view.md'
         - 'Managing Users in a Kora Installation': 'user-accounts/managing_users_in_a_kora_installation.md'
         - 'Resetting your Kora Password': 'user-accounts/resetting_your_password.md'
         - 'Signing up for a User Account': 'user-accounts/signing_up_for_a_user_account.md'
