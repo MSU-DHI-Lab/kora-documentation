@@ -8,7 +8,7 @@ This is a basic guide for installing Kora in a [Reclaim Hosting](https://reclaim
 
 Second, a note about terminology. To keep things consistent, this guide will be using the word "directory" and its derivatives throughout this guide, rather than "folder" in order to better illuminate the link between URL and file structure throughout this process.
 
-Finally, make sure to visit the [Kora GitHub repo releases](https://github.com/matrix-msu/kora/releases) to download the zip file containing the most recent Kora release.
+Finally, make sure to visit the [Kora GitHub repo](https://github.com/matrix-msu/kora) to download a zip file containing the most recent Kora iteration of the repo. To do this, visit that page and click on the "Code" button. In the menu that appears, the default tab ("Local") will have a "Download ZIP" option to click on. Save the downloaded ZIP
 
 ## Log In to cPanel
 
@@ -99,7 +99,10 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_15_annotated.png" title="Enable Viewing Hidden Files">
 
-4. Next, you'll upload the Kora installation .zip file you downloaded earlier from [Kora's GitHub repo releases](https://github.com/matrix-msu/kora/releases) page. Kora is intended to be installed *outside* of the main URL directory you noted in Step 2 of this section, to keep it secure and reduce any chances of interference with any other website content you have in your server environment; the easiest is to install it into the same directory alongside your main URL directory. If you have never changed the default directory that loads when opening File Manager, you should be viewing the correct location, which in this example case is named after the user ("geyerbri").
+4. Next, you'll upload the Kora installation .zip file you downloaded earlier from [Kora's GitHub repo](https://github.com/matrix-msu/kora) page. Kora is intended to be installed *outside* of the main URL directory you noted in Step 2 of this section, to keep it secure and reduce any chances of interference with any other website content you have in your server environment; the easiest is to install it into the same directory alongside your main URL directory. If you have never changed the default directory that loads when opening File Manager, you should be viewing the correct location, which in this example case is named after the user ("geyerbri").
+
+    !!! note
+        In the screenshots below, you may notice that the .zip file, and the initial kora directory, has a different name. Though these screenshots are from an old guide with different file names, the process is exactly the same.
 
     While at this location, click on "Upload" in the menu at the top.
 
@@ -123,7 +126,7 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
     In the follow-up modal called "Extraction Results," click "Close."
 
-6. Extracting the .zip file will create a new directory, which is likely called "kora-XXX," with the version number in the placeholder. Locate this directory, right-click on it, and select "Rename."
+6. Extracting the .zip file will create a new directory, which is likely called "kora-master". Locate this directory, right-click on it, and select "Rename."
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_20.1_annotated.png" title="Selecting Rename in the Context Menu">
 
@@ -162,7 +165,15 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
 9. Finally, there is one more example file to copy as a configuration file. Enter the directory "public" and also copy the file ".htaccess.example". Add "/.htaccess" after the defaulted location, the same way you did for ".env" in the previous step. The default settings in this file will work for basic installations of Kora, but should you want to adjust settings such as more complex URLs than what this guide presents (see "[Create Kora Installation URLs](#create-kora-installation-urls)" below), or to change the advanced settings such as acceptable file sizes, memory limits, timeout lengths, etc., they are controlled in this file.
 
-    Once copied, you're finished with the initial file setup. Navigate back to cPanel Main.
+    Once copied, follow the same steps to edit this file.
+
+    Add a new first line in this file, with the following:
+
+        Require all granted
+
+    Just as before, click "Save Changes" to complete the editing process.
+
+    You're finished with the initial file setup. Navigate back to cPanel Main.
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_16.2_annotated.png" title="Return to cPanel Main from File Manager">
 
@@ -180,13 +191,18 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
         cd kora
 
-    Next, run the installation process:
+    For installation, Kora relies on a dependency management tool called [Composer](https://getcomposer.org) to locate and add a number of additional files required for Kora to work correctly. Reclaim Hosting environments include Composer already, but it is important that the installation use the most recent version, for stability.
+
+    To ensure your server is up to date, run the following:
+
+        composer update
+
+    !!! note
+        For current (January 2024) Reclaim Hosting servers, the default server-wide PHP version is 8.0, which is not sufficient to properly install and run Kora. Please follow [this guide for a temporary workaround](XXXXXXXX) for this limitation. The guide begins with an explanation of how to check your current default server-wide PHP version.
+
+    Next, run the Kora installation process:
 
         php artisan kora:install
-
-    Before running this last command, the window will look like this:
-
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_29_annotated.png" title="First Set of Terminal Commands">
 
     After running, if it is successful, the window will look like this, with the successful installation message (in green):
 
@@ -216,7 +232,7 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
 5. Next, it is important to confirm that the directories and files in this installation are all set to the `755` permissions level. In the operating system your server is running, this number represents the permissions levels for three different attributes related to a file or directory's ownership in the system. The first number represents the level set for "Owner," the second for "Group," and the third for "Other/World." Setting `7` is full access — aka read, write, and execute — whereas setting `5` is read and execute access only. For the purposes of this basic installation, the level for "Owner" should always be set to `7` so that you will always be able to make changes to things if needed. However the amount of access given to "Group" and "Other/World" attributes will affect the security of your server environment, so it is important to set these to `5` or some other non-write setting whenever possible.
 
-    So, to confirm that the installation's permissions are set at the appropriate levels for the appropriate attributes, run this command to set all of this directory and its contents to "READ" (and execute, which is missing from the successful installation message). Again, in many cases it isn't strictly needed, but in the few where it is this will ensure the settings are set correctly:
+    So, to confirm that the installation's permissions are set at the appropriate levels for the appropriate attributes, run this command to set all of this directory and its contents to "READ" (and execute, which is missing from the successful installation message). Again, in many cases it isn't strictly needed, but in the few where it is this will ensure the settings are set correctly (do not forget the period):
 
         chmod -R 755 .
 
@@ -246,11 +262,11 @@ You will need to wait until your Kora installation is completed and properly con
 
 To set the "Write" and "Execute" permissions for the relevant directories:
 
-1. Begin by ensuring your current Terminal location is the root directory, represented by a "~" in the Terminal prompt to the left of the cursor. If your prompt does not have a "~" — it may instead still display "kora" — change your location upward to relocate to the root. As before, use `cd`, but this time use `..`, which just means 'move up one directory':
+1. Begin by ensuring your current Terminal location is the root directory, represented by a "~" in the Terminal prompt to the left of the cursor. If your prompt does not have a "~" — it may instead still display "kora" — change your location relocate to the root. As before, use `cd`, but this time use `~`, which will go straight to the root location:
 
-        cd ..
+        cd ~
 
-    If needed, continue to use this command until your Terminal prompt looks like this:
+    When located correctly, your terminal prompt will look similar to the outlined line in this screenshot:
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_32_annotated.png" title="Moving Up One Directory">
 
@@ -282,7 +298,7 @@ Find the directions for each below.
         cd public_html
 
     !!! note
-        If you receive an error that "public_html" does not exist, more than likely this is because you skipped over a few previous steps that did not pertain to you and so you are currently still inside of the "kora" directory. If this is the case, use `cd ..` to move upward, and then again try `cd public_html`.
+        If you receive an error that "public_html" (or "www") does not exist, more than likely this is because you skipped over a few previous steps that did not pertain to you and so you are currently still inside of the "kora" directory. If this is the case, use `cd ..` to move your terminal prompt upward one directory, and then again try `cd public_html`.
 
     (There is no screenshot for this specifically, but you will know you have successfully changed your directory to `public_html` — or the one relevant to your case — when you see it written to the left of the dollar sign character, inside the brackets.)
 
@@ -316,6 +332,9 @@ If going this route for your URL, you can now close Terminal and return to cPane
 
 Once you have implemented one of the two methods above, your Kora installation is now reachable via a web browser! But there is one last task you should complete before doing so.
 
+!!! note
+    If you previously had to implement the PHP version workaround to deal with an insufficient default server-wide PHP version, please return to [step XXXX of that guide](XXXXXXXX) to finish the HTTPS configuration process.
+
 1. Kora is designed to use HTTPS protocol for its URLs. So it is important to set up a Force HTTPS Redirect for your domain, and for the subdomain as well if you have gone that route for your URL. To do this, go to "Domains" under the "Domains" section in cPanel.
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_35.2_annotated.png" title="cPanel's Domains">
@@ -324,7 +343,7 @@ Once you have implemented one of the two methods above, your Kora installation i
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_37_annotated.png" title="Force HTTPS Toggled On for Domain and Subdomain (if applicable)">
 
-    Toggling this setting may not immediately work, with an error displaying that might say, "You cannot activate HTTPS Redirect because AutoSSL is not currently active for this domain or the SSL certificate is not valid." If this happens, wait a moment or two and refresh the page, then try toggling the setting on again.
+    Toggling this setting may not immediately work, with an error displaying that might say, "You cannot activate HTTPS Redirect because AutoSSL is not currently active for this domain or the SSL certificate is not valid." If this happens, wait one or two minutes, refresh the page, then try toggling the setting on again.
 
 Once completed, return to cPanel Main.
 
@@ -379,45 +398,51 @@ If desired, your Kora installation can use GitLab's authentication system to man
 
 ### Set Up Server Email and Link It to Kora
 
-To set up mail for your Kora install, this guide will explain how to use the email client available through cPanel for your Domain of One's Own account. It is possible to set this up with other email clients, however this basic option is easiest for keeping the installation and email all under the one environment.
+!!! warning "Email No Longer Supported"
+    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
 
-1. Return to your tab with cPanel Main. Find "Email Accounts" under the "Email" section.
+    This guide describes entering server information into a Kora Configuration File page and clicking "Update Configuration File", which would then save the information as values for variables found in the installation's .env file. "Mail Host" populated `MAIL_HOST`, "Mail From Address" populated `MAIL_FROM_ADDRESS`, "Mail From Name" populated `MAIL_FROM_NAME`, "Mail User" populated `MAIL_USER`, and "Mail Password" populated `MAIL_PASSWORD`. If something provided on the Kora Configuration File page contained spaces (e.g. if "Mail From Name" was set on this page to "Kora Admin"), the value in the .env file would be saved as a string surrounded by quotations.
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_43_annotated.png" title="cPane's Email Account">
+!!! tip "Deprecated Guide"
+    To set up mail for your Kora install, this guide will explain how to use the email client available through cPanel for your Domain of One's Own account. It is possible to set this up with other email clients, however this basic option is easiest for keeping the installation and email all under the one environment.
 
-    To set up a Kora-specific email address, click on "Create".
+    1. Return to your tab with cPanel Main. Find "Email Accounts" under the "Email" section.
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_44_annotated.png" title="Create a New Email">
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_43_annotated.png" title="cPane's Email Account">
 
-    (You could also use the default email address that has already been generated if you like; if using the default email, skip to Step 4 below.)
+        To set up a Kora-specific email address, click on "Create".
 
-2. In the "Create an Email Account" box, look at the options available in the "Domain" dropdown menu. This will be the portion of the email address *after* the @ symbol. If using a subdomain URL, you can specify this subdomain here, otherwise your option will be limited to your main URL. After choosing the domain, enter a "Username", such as "admin" if you use the subdomain option, or "kora" if you use the main URL option. Finally, click on Generate in the "Password" section to receive a randomly generated password (as you did when setting up your MySQL database).
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_44_annotated.png" title="Create a New Email">
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_45_annotated.png" title="Add Information for Setting Up New Email Account">
+        (You could also use the default email address that has already been generated if you like; if using the default email, skip to Step 4 below.)
 
-    <br>
+    2. In the "Create an Email Account" box, look at the options available in the "Domain" dropdown menu. This will be the portion of the email address *after* the @ symbol. If using a subdomain URL, you can specify this subdomain here, otherwise your option will be limited to your main URL. After choosing the domain, enter a "Username", such as "admin" if you use the subdomain option, or "kora" if you use the main URL option. Finally, click on Generate in the "Password" section to receive a randomly generated password (as you did when setting up your MySQL database).
 
-    !!! tip "IMPORTANT"
-        Just as before, ensure you copy this password and save it someplace safe, because it will be needed for email configuration in Kora.
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_45_annotated.png" title="Add Information for Setting Up New Email Account">
 
-3. The remaining settings should be set according to your preferences. I will not outline how to link this email account to a mail client because the option to generate an email with just such a guide is provided by cPanel. Once everything is set as you like, click "Create", which, as long as you leave the "Stay on this page..." option unchecked, will create the address and redirect you back to the list of email addresses.
+        <br>
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_46_annotated.png" title="Complete the New Email Account Setup with Default Settings">
+        !!! note "IMPORTANT"
+            Just as before, ensure you copy this password and save it someplace safe, because it will be needed for email configuration in Kora.
 
-4. To confirm that your address is working properly, click on "Check Mail" next to your new address in the list.
+    3. The remaining settings should be set according to your preferences. I will not outline how to link this email account to a mail client because the option to generate an email with just such a guide is provided by cPanel. Once everything is set as you like, click "Create", which, as long as you leave the "Stay on this page..." option unchecked, will create the address and redirect you back to the list of email addresses.
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_47_annotated.png" title="Check Mail for the New Address">
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_46_annotated.png" title="Complete the New Email Account Setup with Default Settings">
 
-    Then click "Open" on the resulting page. As long as these pages load correctly, your server's email client is working correctly. If they do not — for instance, MSU's Domain of One's Own accounts currently are not working — you must contact the administrators of your server to rectify this.
+    4. To confirm that your address is working properly, click on "Check Mail" next to your new address in the list.
 
-5. Return to your Kora Configuration File page tab. Scrolling down, you will find the text boxes for your email information. Leave "Mail Host" with "localhost". For "Mail From Address", it is best to enter the email address you just created so that the emails user receive appear to come from that account; in this example, "admin@kora.geyerbri.msu.domains". Set the "Mail From Name" to your own preference, such as "Kora Admin". The "Mail User" setting is how Kora connects with your server's mail client, to actually send the email. So this one must be set to an appropriately-configured email, such as the one just created; in this example, "admin@kora.geyerbri.msu.domains" again. Finally, paste in the save email password into the last box, "Mail Password".
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_47_annotated.png" title="Check Mail for the New Address">
 
-    Save all of these configurations by clicking "Update Configuration File". See all of these settings in this screenshot:
+        Then click "Open" on the resulting page. As long as these pages load correctly, your server's email client is working correctly. If they do not — for instance, MSU's Domains of One's Own accounts currently are not working — you must contact the administrators of your server to rectify this.
 
-    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_48_annotated.png" title="Add Email Information to Kora Configuration">
+    5. Return to your Kora Configuration File page tab. Scrolling down, you will find the text boxes for your email information. Leave "Mail Host" with "localhost". For "Mail From Address", it is best to enter the email address you just created so that the emails that users receive appear to come from that account; in this example, "admin@kora.geyerbri.msu.domains". Set the "Mail From Name" to your own preference, such as "Kora Admin". The "Mail User" setting is how Kora connects with your server's mail client, to actually send the email. So this one must be set to an appropriately-configured email, such as the one just created; in this example, "admin@kora.geyerbri.msu.domains" again. Finally, paste in the save email password into the last box, "Mail Password".
 
-!!! note
-    If your server email is disabled by account administrators — as is the case for MSU Domain of One's Own accounts — and you cannot get another server email to successfully work with Kora, it is still possible to do anything that may appear to require the email server working, such as confirming new users, inviting users, or setting passwords. Find instructions for these tasks in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets).
+        Save all of these configurations by clicking "Update Configuration File". See all of these settings in this screenshot:
+
+        <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_48_annotated.png" title="Add Email Information to Kora Configuration">
+
+    !!! note
+        If your server email is disabled by account administrators — as is the case for MSU Domains of One's Own accounts — and you cannot get another server email to successfully work with Kora, it is still possible to do the tasks that may appear to require the email server working, such as confirming new users, inviting users, or setting passwords. Find instructions for these tasks in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and- password-resets).
 
 ### Admin User Profile Settings
 

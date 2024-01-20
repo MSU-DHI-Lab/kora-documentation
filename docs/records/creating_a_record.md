@@ -48,7 +48,7 @@ You may also select the **Duplicate Record** option from the *New Record* page. 
 
 <img style="display:block;margin:auto;max-width:100%" src="../records-img/creating_a_record_8_annotated.png" title="Duplicate Records">
 
-You may also duplicate a record after it has been created. Simply [search or browse for the record](../searching_and_browsing_records.md) you would like to duplicate and select the **Duplicate Records** option at the bottom of the block for that record. This will bring you to the *Duplicate Record* page where you can select the duplication amount and click the **Duplicate Record** button at the bottom of the page.
+You may also duplicate a record after it has been created. Simply [search or browse for the record](../records/searching_and_browsing_records.md) you would like to duplicate and select the **Duplicate Records** option at the bottom of the block for that record. This will bring you to the *Duplicate Record* page where you can select the duplication amount and click the **Duplicate Record** button at the bottom of the page.
 
 <img style="display:block;margin:auto;max-width:100%" src="../records-img/creating_a_record_9_annotated.png" title="Duplication Amount">
 

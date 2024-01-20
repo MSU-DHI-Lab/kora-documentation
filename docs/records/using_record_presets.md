@@ -1,6 +1,6 @@
 # Using Record Presets
 
-Digitization is a time-consuming process, especially when you are trying to enter as [thorough and useful metadata](../getting-started/core-concepts.md) as possible. Record presets become an especially useful feature in this regard, when many objects from a collection have the same pattern of metadata. Record presets allow you to create a collection of preselected entries for any number of [fields](../forms/creating_fields.md) in a [form](../forms/creating_a_form.md). You can then give these presets a name, and easily assign them to new records that they contain.
+Digitization is a time-consuming process, especially when you are trying to enter as [thorough and useful metadata](../getting-started/core_concepts.md) as possible. Record presets become an especially useful feature in this regard, when many objects from a collection have the same pattern of metadata. Record presets allow you to create a collection of preselected entries for any number of [fields](../forms/creating_fields.md) in a [form](../forms/creating_a_form.md). You can then give these presets a name, and easily assign them to new records that they contain.
 
 ## Creating a Record Preset
 
