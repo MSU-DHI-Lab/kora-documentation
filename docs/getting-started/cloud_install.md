@@ -591,15 +591,21 @@ If desired, your Kora installation can use GitLab's authentication system to man
 
 ### Configure Kora Email
 
-1. For the Mail configuration settings on the "Kora Configuration File" page, provide the value from the "SMTP = " in the "Mail Host" text box. You should have saved this information back in Step 4 of "[Configure PHP Modules](#configure-php-modules)." More than likely though, the value saved will match the default value already on this page.
+!!! warning "Email No Longer Supported"
+    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
 
-2. Next, type in an address that you would like the email to appear from in the "Mail From Address" text box. This can technically be anything you wish, but it is good practice for the portion after the @ symbol to match your Kora installation's main url. For example, if your installation is accessible at the url **https://env-0000000.us.reclaim.cloud/kora**, you could set this email address to "kora-admin@env-0000000.us.reclaim.cloud".
+    This guide describes entering server information into a Kora Configuration File page and clicking "Update Configuration File", which would then save the information as values for variables found in the installation's .env file. "Mail Host" populated `MAIL_HOST`, "Mail From Address" populated `MAIL_FROM_ADDRESS`, "Mail From Name" populated `MAIL_FROM_NAME`, "Mail User" populated `MAIL_USER`, and "Mail Password" populated `MAIL_PASSWORD`. If something provided on the Kora Configuration File page contained spaces (e.g. if "Mail From Name" was set on this page to "Kora Admin"), the value in the .env file would be saved as a string surrounded by quotations.
 
-3. Set the "Mail From Name" to whatever you prefer, such as your own name, some name that references your specific version of Kora, or even a generic "Kora Administrator".
+!!! tip "Deprecated Guide"
+    1. For the Mail configuration settings on the "Kora Configuration File" page, provide the value from the "SMTP = " in the "Mail Host" text box. You should have saved this information back in Step 4 of "[Configure PHP Modules](#configure-php-modules)." More than likely though, the value saved will match the default value already on this page.
 
-4. Leave "Mail User" and "Mail Password" with their default settings in Kora.
+    1. Next, type in an address that you would like the email to appear from in the "Mail From Address" text box. This can technically be anything you wish, but it is good practice for the portion after the @ symbol to match your Kora installation's main url. For example, if your installation is accessible at the url **https://env-0000000.us.reclaim.cloud/kora**, you could set this email address to "kora-admin@env-0000000.us.reclaim.cloud".
 
-5. Click "Update Configuration File" at the bottom of the page.
+    1. Set the "Mail From Name" to whatever you prefer, such as your own name, some name that references your specific version of Kora, or even a generic "Kora Administrator".
+
+    1. Leave "Mail User" and "Mail Password" with their default settings in Kora.
+
+    1. Click "Update Configuration File" at the bottom of the page.
 
 ### Admin User Profile Settings
 
