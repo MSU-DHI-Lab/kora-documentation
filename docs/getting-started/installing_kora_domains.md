@@ -81,7 +81,7 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_13_annotated.png" title="cPanel's File Manager">
 
-2. Take a note of which directory is your main URL directory (the one that provides all the files available via your main URL). In this screenshot you can see the globe icon being used for the URL directory "public_html," which is the common icon in this version of cPanel and used in MSU's Domain of One's Own. You may use this directory later, to confirm something in Step 3 of "Subdirectory URL Setup Via cPanel Terminal," if following that path for creating your Kora installation URL (this will make sense later).
+2. Take a note of which directory is your main URL directory (the one that provides all the files available via your main URL). In this screenshot you can see the globe icon being used for the URL directory "public_html", which is the common icon in this version of cPanel and used in MSU's Domain of One's Own. You may use this directory later, to confirm something in Step 3 of "Subdirectory URL Setup Via cPanel Terminal", if following that path for creating your Kora installation URL (this will make sense later).
 
     <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_14.1_annotated.png" title="URL Directory">
 
