@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>System Requirements - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "System Requirements";
+        var mkdocs_page_input_path = "getting-started/system_requirements.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">System Requirements</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#php-packages">PHP Packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enabling-mod_rewrite">Enabling mod_rewrite</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#upstream-configuration-of-allowoverride-setting">'Upstream' configuration of AllowOverride setting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#https-and-ssl-certificate">HTTPS and SSL Certificate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#google-recaptcha">Google reCAPTCHA</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kora-email-no-longer-supportedrequired">Kora Email [NO LONGER SUPPORTED/REQUIRED]</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">System Requirements</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/getting-started/system_requirements.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="system-requirements">System Requirements</h1>
+<p>Kora requires a server environment with at least 1 GB of free storage and 1 GB of RAM, deployed with what is referred to as a LAMP Stack. LAMP stands for:</p>
+<ul>
+<li>Linux Operating System</li>
+<li>Apache (Version 2.0)</li>
+<li>MySQL (Version 5.7.20)</li>
+<li>PHP (Version 8.1.0)</li>
+</ul>
+<p>These versions are Kora's minimum version requirements.</p>
+<p>Oftentimes, the server environment will rely on minor variations of these. For instance, the httpd (or Hypertext Transfer Protocol Daemon) version of Apache 2 is often used.</p>
+<p>Use whichever installer is available for your Linux-based environment to install — or confirm installation of — the most recent versions of these basic applications in your Linux server environment. Common installers include <code>apt</code> (Advanced Package Tool) and <code>yum</code> (Yellowdog Updater, Modifier).</p>
+<p>(Additionally, Kora requires Composer. This is already included in some environments, such as Reclaim Hosting ones, but may need to be installed; the LAMP Stack installation guide for Kora includes installing Composer in an early step in the process.)</p>
+<h2 id="php-packages">PHP Packages</h2>
+<p>After confirming the environment is a LAMP Stack with the appropriate version levels for MySQL and PHP, it will be important to install several additional PHP packages. These are:</p>
+<table style="width:100%;text-align:center">
+    <tr>
+        <td> php-common</td>
+        <td> php-mysql</td>
+        <td> php-xml</td>
+    </tr>
+    <tr>
+        <td> php-xmlrpc </td>
+        <td> php-curl </td>
+        <td> php-gd </td>
+    </tr>
+    <tr>
+        <td> php-imagick </td>
+        <td> php-cli </td>
+        <td> php-dev </td>
+    </tr>
+    <tr>
+        <td> php-imap </td>
+        <td> php-mbstring </td>
+        <td> php-opcache </td>
+    </tr>
+    <tr>
+        <td> php-soap </td>
+        <td> php-zip </td>
+        <td> php-intl</td>
+    </tr>
+</table>
+<p><span></span></p>
+<p>Install the versions of these packages that correspond to the version of PHP you have installed as a part of your LAMP Stack.</p>
+<p>If other issues arise, it may be that some other PHP modules not included in the core PHP installation or packages listed above are also required. Kora is build on the Laravel PHP Framework, so it is possible one of <a href="https://laravel.com/docs/7.x#server-requirements">its required PHP modules</a> is missing from your server environment and so the culprit.</p>
+<h2 id="enabling-mod_rewrite">Enabling <em>mod_rewrite</em></h2>
+<p>Kora is designed to have only its "public" folder accessible online. To accomplish this, it uses an Apache module called <code>mod_rewrite</code> to manage internet browser navigation within the installation, via the ".htaccess" file inside the "public" directory. Different servers handle enabling and disabling <code>mod_rewrite</code> in different ways, so it will be important for you to find out how this is managed with your specific circumstance and then confirm that <code>mod_rewrite</code> is enabled for the domain where Kora is accessed. In the case of Reclaim Hosting, enabling or disabling <code>mod_rewrite</code></p>
+<p>This sometimes requires finding the ".conf" file for your version of Apache, which contains the overarching permissions for, among many modules, <code>mod_rewrite</code>. Determining where this ".conf" file is saved is sometimes possible by temporarily creating a webpage on your domain that provides a full readout of your PHP configuration.</p>
+<ol>
+<li>
+<p>Create a file named "server-readout.php" in the root directory for your domain; this is often named "html", "public", or "www". Further, it is often also the inner-most of these directories; this means, if the directory "www" exists, but inside this is a subdirectory named "html", the root directory is most likely "html".</p>
+<p>Inside the created file, put the single line:</p>
+<pre><code>&lt;?php phpinfo(); ?&gt;
+</code></pre>
+<p>To do this via an SSH Terminal connection instead, navigate to the domain root (again, often named "html", or "public", or "www") and then use the following command to create this file with the same contents:</p>
+<pre><code>echo "&lt;?php phpinfo(); ?&gt;" &gt; server-readout.php
+</code></pre>
+</li>
+<li>
+<p>Once created, you can navigate to this file in your brower: http(s)://your.domain.name/server-readout.php.</p>
+<p>This page has a ton of sensitive information, so you should not leave it up for long. It has a banner similar to this at the top:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/system_requirements_1_annotated.png" title="PHP Info page banner"></p>
+<p>Scrolling down to the section called "apache2handler" or similar, you will find the apache root directory — which will contain the relevant ".conf" file — as well as confirmation that <code>mod_rewrite</code> is loaded generally as a module, as noted in this screenshot:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/system_requirements_2_annotated.png" title="PHP Info page banner"></p>
+</li>
+<li>
+<p>If the <code>mod_rewrite</code> module is not loaded, use the version of apache your environment is running to search for case specific instructions on how to load it. For instance, for an environment using a default version of apache2, you might run the following commands one at a time:</p>
+<pre><code>sudo a2enmod rewrite
+</code></pre>
+<p><span></span></p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+<p>Each of these commands uses <code>sudo</code>, which tells the linux system to run the command as a super user (it's an acronym for "super user do"). It is necessary to also restart apache, in order for the change to take effect. In the case of some servers, such as Reclaim Hosting environments like Domain of One's Own, this will be all that is necessary to get <code>mod_rewrite</code> correctly configured. However, for others, such as a DigitalOcean droplet, it may be necessary to make further adjustments.</p>
+</li>
+</ol>
+<h3 id="upstream-configuration-of-allowoverride-setting">'Upstream' configuration of AllowOverride setting</h3>
+<p>The DigitalOcean-oriented Kora installation guide (which is most relevant to installing Kora in any kind of barebones server environment) directs you to further configure mod_rewrite-related settings via your Virtual Host .conf file (see <a href=""></a>). However, there are potential benefits to making this configuration further 'upstream', so to speak, in your server environment. It you would instead like to take advantage of these benefits, you can instead complete the following steps, and then omit the steps related to AllowOverride later on.</p>
+<ol>
+<li>
+<p>For an 'upstream' configuration, you will next need to navigate to the aforementioned apache2 directory; in a DigitalOcean droplet with Ubuntu 22.04 and Apache2, this is at <code>/etc/apache2</code>. Inside of this directory will be the relevant "apache2.conf" file. (In the case of an environment using "httpd", this file will be named "httpd.conf" and may be nested further into an <code>httpd</code> directory.)</p>
+</li>
+<li>
+<p>Edit this <code>apache2.conf</code> (or <code>httpd.conf</code>) file. If using SSH or Terminal, open the file for editing by using the <code>nano</code> text editor that comes built in:</p>
+<pre><code>sudo nano apache2.conf
+</code></pre>
+<p>and scroll through, looking for a section that looks something similar to:</p>
+<pre><code>&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>In this case, the root directory for this domain is inside "html", which is inside "www", which is itself inside "var", so in this example the relevant code in the .conf file is for <code>/var/www/</code>. In other cases the relevant code will correspond to some other directory. In this example, note how <code>AllowOverride</code> is set to <code>None</code>; to allow <code>mod_rewrite</code> to work properly, change <code>AllowOverride None</code> to <code>AllowOverride All</code>:</p>
+<pre><code>&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>This defaulted setup is acceptable for all cases of Kora installs described in this documentation. However, if you have multiple domains running in the same server and do not want to enable mod_rewrite for all of them, you could instead insert the following new code block below the unaltered <code>&lt;Directory /var/www/&gt;</code> one.</p>
+<pre><code>&lt;Directory var/www/kora/public&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>This new block will only apply to the Kora public directory. If your Kora files are in some other directory (such as <code>/var/www/public_html/kora/public</code>), change the code accordingly.</p>
+</li>
+<li>
+<p>Save this change; if using SSH or Terminal, do this by exiting with the key combination "ctrl + x", and then hitting "y" to agree to saving the file. It will ask for the file name to be saved, but default to the file's current name, which is what you'll want. Hit "Enter" to save and exit nano.</p>
+</li>
+<li>
+<p>After adjusting this file, reload your apache2. Once again, if yours is the generic version, use:</p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+</li>
+</ol>
+<p>Once finished, <code>mod_overwrite</code> will be enabled for your root directory.</p>
+<p><strong>Important: Remember to delete the .php page you created, containing your server information.</strong> This can be done via SSH or Terminal, when located in its directory, with the command:</p>
+<pre><code>rm server-readout.php
+</code></pre>
+<h2 id="https-and-ssl-certificate">HTTPS and SSL Certificate</h2>
+<p>Kora requires the HTTPS protocol to be enabled for the domain in which it is accessible, which requires an SSL certificate. For some server environments, the included interface — such as cPanel — will have a section for enabling HTTPS and acquiring/associating an SSL certificate as a part of that process. Sometimes — such as with Reclaim Hosting environments, including MSU's Domain of One's Own accounts, and their corresponding cPanel — the SSL certificate and its renewal are handled behind-the-scenes, so to speak, and the certificate is acquired/associated when the HTTPS protocol option is enabled.</p>
+<p>In other instances, it will be necessary to apply for an SSL certificate. This can be done in a number of ways, but the one most commonly used as a cost-free method is through a server application called <a href="https://certbot.eff.org/about">Certbot</a>, which manages the application, acquisition, and association of an SSL certificate from a free certificate supplier called <a href="https://letsencrypt.org/about/">Let's Encrypt</a>. Certbot is a great option for those who need to go this route because it can also be configured to handle automatic certification renewals, since SSL certificates expire. The <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-22-04">DigitalOcean guide for using Certbot</a> is well-written and likely a good starting place even for someone acquiring an SSL certificate for a non-DigitalOcean environment.</p>
+<p>The specifics of using Certbot will depend upon your domain, email address, etc. so it wouldn't be possible to provide a guide here. In addition to the DigitalOcean guide (linked in the previous paragraph), Certbot provides some more-granular instructions for use on <a href="https://certbot.eff.org/instructions">their "Instructions" page</a>, which should be enough to get the SSL certificate needed.</p>
+<h2 id="google-recaptcha">Google reCAPTCHA</h2>
+<p>Kora requires integration with Google's reCAPTCHA verification service. Instructions for how to implement this can be found in the <a href="../installing_kora_domains/#configure-recaptcha">Reclaim Hosting/Domain of One's Own installation guide</a>.</p>
+<h2 id="kora-email-no-longer-supportedrequired">Kora Email [NO LONGER SUPPORTED/REQUIRED]</h2>
+<div class="admonition warning">
+<p class="admonition-title">Email No Longer Supported</p>
+<p>Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for <a href="../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets">managing Kora user accounts</a>. Though email integration is no longer supported, the <a href="../installing_kora_domains/#set-up-server-email-and-link-it-to-kora">setup guide for configuring email</a> is preserved for completeness of past documentation.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Original Email Explanation</p>
+<p>Kora requires a Simple Mail transfer Protocol (SMTP) email server for sending emails related to new user sign-ups, invitations, or lost passwords. In some cases, the email server will be handled by some part of the included interface — including in many cPanel-based interfaces — but in others the email server may be managed via the SSH connection to the environment. When configuring Kora's email settings, it is possible to use an SMTP server on another domain, by providing the appropriate domain name for the server for "Mail Host," appropriate user email address from that server for "Mail User," and the email address's password in "Mail Password." Please see Step 5 of "<a href="../installing_kora_domains/#set-up-server-email-and-link-it-to-kora">Set Up Server Email and Link It to Kora</a>." Additionally, if the "Mail User" and "Mail From Address" do not match, the recipient's mail client is more likely to flag the generated email as spam.</p>
+<p>In the case of MSU's Domains of one's Own, emails have been entirely disabled to comply with a university-wide policy. If you are unable to set up an SMTP server to use with your Kora installation — such as on another, privately-managed domain — you will need to manage user creation and password resets manually. To do this, please consult the guide for <a href="../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets">manually managing Kora user accounts</a>.--&gt;</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../understanding_kora_user_types_and_permissions/" class="btn btn-neutral float-left" title="Understanding Kora User Types and Permissions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installing_kora_domains/" class="btn btn-neutral float-right" title="Installing Kora on Domain of One's Own & Reclaim Hosting">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../understanding_kora_user_types_and_permissions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installing_kora_domains/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* Custom styling for Kora Documentation. Done by Brian Samuel Geyer in Summer 2020 */
+
+/* content text color */
+.wy-nav-content {
+    color: #283C46;
+}
+
+/* content link colors */
+.wy-nav-content a,
+.wy-nav-content a:visited {
+    color: #04B6AF;
+}
+
+.wy-nav-content a:hover,
+.wy-nav-content a:active {
+    color: #05E1DA !important;
+}
+
+/* spacing for content ordered lists */
+.wy-nav-content ol li {
+    margin-top:18px;
+}
+
+/* sidebar header color and logo */
+.wy-side-nav-search {
+    background-color: #007C83;
+}
+
+.icon.icon-home {
+    content: url(../img/logo-white.png);
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+/* MOBILE top navbar */
+.wy-nav-top {
+    background: #007C83;
+}
+
+/* MOBILE top navbar logo icon before site name */
+.wy-nav-top a::before {
+    background-image: url(../img/white-kora.svg);
+    background-size: 1.2em 1.2em;
+    background-repeat: no-repeat;
+    height: 1.3em;
+    width: 1.3em;
+    content: "";
+    display: inline-block;
+    vertical-align: -6%;
+}
+
+
+/* text color inside sidebar search */
+.wy-side-nav-search input[type=text] {
+    border-color: #404E61;
+}
+
+/* spacing at end of sidebar */
+.wy-menu-vertical ul {
+    margin-bottom: 5px;
+}
+
+/* sidebar menu top-level */
+.wy-menu-vertical a {
+    color: #ffffff;
+    margin: 5px 0px 5px;
+}
+
+.wy-menu-vertical li.current a {
+    margin: 0px;
+}
+
+.wy-nav-side {
+    color: #ffffff;
+    background: #283C46;
+}
+
+.wy-menu-vertical a:hover,
+.wy-menu-vertical a:active {
+    color: #ffffff;
+    background-color: #007C83;
+}
+
+/* sidebar first submenu level */
+.wy-menu-vertical li ul {
+    background: #F5F6F7;
+}
+
+.wy-menu-vertical li.toctree-l1.current a:hover,
+.wy-menu-vertical li.toctree-l2.current>a {
+    background: #DAE0E3;
+}
+
+/* sidebar second submenu level */
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background: #C5CED3;
+}
+
+.wy-menu-vertical li.toctree-l2.current a:hover,
+.wy-menu-vertical li.toctree-l3.current>a {
+    background: #A8B6BD !important;
+}
+
+/* Hide third subsection level subsections and below in sidebar */
+.wy-menu-vertical li.toctree-l3 span.toctree-expand,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l4.current a {
+    display: none !important;
+}
+
+/* preserving sidebar indent from 1.0.4 in 1.1+ */
+/* category names */
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    font-size: 90%;
+}
+
+.wy-menu-vertical li span.toctree-expand {
+    color: inherit;
+}
+
+/* Top-level pages (same level as category names) */
+.wy-menu-vertical li.toctree-l1:only-child a {
+    padding: .4045em 1.618em !important;
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* First subsection level of top-level pages*/
+.wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 a {
+    padding: 0.4045em 1.618em 0.405em 3.6em !important;
+    font-weight: normal;
+}
+
+.wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 span.toctree-expand::before, .wy-menu-vertical li.toctree-l1:only-child li.toctree-l2.current a {
+    font-weight: bold;
+}
+
+/* Second subsection level of top-level pages*/
+.wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 li.toctree-l3 a {
+    padding: 0.4045em 1.618em 0.405em 5em !important;
+    font-weight: normal;
+    font-size: inherit;
+}
+
+ .wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 li.toctree-l3.current a {
+    font-weight: bold;
+}
+
+/* Third subsection level of top-level pages*/
+.wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 li.toctree-l3 li.toctree-l4 a {
+    padding: 0.4045em 1.618em 0.405em 6.6em !important;
+    font-weight: normal;
+}
+
+.wy-menu-vertical li.toctree-l1:only-child li.toctree-l2 li.toctree-l3 li.toctree-l4.current a {
+    font-weight: bold;
+}
+
+/* Second-level pages, underneath category names */
+.wy-menu-vertical li.toctree-l1 a, .wy-menu-vertical li.loctree-l1.current span.toctree-expand, .wy-menu-vertical li.loctree-l1.current a {
+    padding: 0.4045em 1.618em 0.405em 2.427em !important;
+    font-size: 90%;
+}
+
+/* First subsection level of second-level pages */
+.wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.loctree-l2.current a, .wy-menu-vertical li.loctree-l2.current span.toctree-expand {
+    padding: 0.4045em 1.618em 0.405em 4.045em !important;
+    text-transform: none !important;
+}
+
+.wy-menu-vertical li span.toctree-expand:before {
+    font-weight: bold;
+}
+
+/* Second subsection leve of second-level pages) */
+.wy-menu-vertical li.toctree-l3 a, .wy-menu-vertical li.loctree-l3.current a, .wy-menu-vertical li.loctree-l3.current span.toctree-expand {
+    padding: 0.4045em 1.618em 0.405em 5.663em !important;
+    font-size: inherit;
+}
+
+/* Third subsection level of second-level pages */
+.wy-menu-vertical li.toctree-l4 a, .wy-menu-vertical li.loctree-l4.current a, .wy-menu-vertical li.loctree-l4.current span.toctree-expand {
+    padding: 0.4045em 1.618em 0.405em 8.5em !important;
+    font-size: 90%;
+}
+
+
+/* admonition styling */
+/* generic */
+.rst-content .admonition {
+    background: #CAE6F1;
+}
+
+.rst-content .admonition-title {
+    background: #0493C9;
+}
+
+/* warning */
+.rst-content .warning {
+    background: #FBE2E6;
+}
+
+.rst-content .warning .admonition-title {
+    background: #FF6F81;
+}
+
+/* caution */
+.rst-content .caution {
+    background: #FCE1D0;
+}
+
+.rst-content .caution .admonition-title {
+    background: #F79F68;
+}
+
+/* tip */
+.rst-content .tip {
+    background: #CAEDEC;
+}
+
+.rst-content .tip .admonition-title {
+    background: #04B6AF;
+}
+
+/* note */
+.rst-content .note {
+    background: #CAE6F1;
+}
+
+.rst-content .note .admonition-title {
+    background: #0493C9;
+}

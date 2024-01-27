@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Exporting a Record - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exporting a Record";
+        var mkdocs_page_input_path = "records/exporting_a_record.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Exporting a Record</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#exporting-all-records-for-a-form">Exporting All Records for a Form</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exporting-select-records-from-a-forms">Exporting Select Records from a Forms</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-types-available-for-export">File Types Available for Export</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Records</li>
+      <li class="breadcrumb-item active">Exporting a Record</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/records/exporting_a_record.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="exporting-a-record">Exporting a Record</h1>
+<p>Any data that you enter into Kora can be exported to your local computer. Any records will be downloaded as a file. You are able to download the files in three different formats: a zip file, a JSON file, and an XML file.</p>
+<h2 id="exporting-all-records-for-a-form">Exporting All Records for a Form</h2>
+<p>If you want to export all the available records from a form onto your computer, follow these directions:</p>
+<ol>
+<li>
+<p>First you will have to <a href="../../forms/navigating_to_a_form/">navigate to the form</a> you are attempting to export records from. From the <em>Form Home</em> page or any page within the <em>Form Home</em>, you have a couple of options to open up the menu. Click on either the <strong>form-name</strong> button or the <strong>menu</strong> button. <p align="center"> <img src="../records-img/exporting_a_record_1_annotated.png" width="100%" style="align:center" title="Step 1"> </p></p>
+</li>
+<li>
+<p>Once you have opened up the menu options, select <strong>Export All Records</strong>. <p align="center"> <img src="../records-img/exporting_a_record_2_annotated.png" width="100%" style="align:center" title="Step 2"> </p></p>
+</li>
+<li>
+<p>A window will pop up prompting you to choose how you would like to download your records. Select the file type you wish to download by clicking on it. See the last section for a description of the zip, JSON and XML file types available for download. <p align="center"> <img src="../records-img/exporting_a_record_3_annotated.png" width="100%" style="align:center" title="Step 3"> </p></p>
+</li>
+<li>
+<p>Once you have clicked on the file type you want to use to export your data, Kora will automatically download your records to your computer in that file type. Follow the unique instructions of your browser and computer to save the records onto your computer. <p align="center"> <img src="../records-img/exporting_a_record_4_annotated.png" width="100%" style="align:center" title="Step 4"> </p></p>
+</li>
+</ol>
+<h2 id="exporting-select-records-from-a-forms">Exporting Select Records from a Forms</h2>
+<p>If you only want to select the particular records to be exported to your computer, then follow these directions:</p>
+<ol>
+<li>
+<p>First you will have to <a href="../../forms/navigating_to_a_form/">navigate to the form</a> you are attempting to export records from. Then you will have to either click the <strong>Form Records &amp; Search()</strong> or select this option from one of the menu options. <p align="center"> <img src="../records-img/exporting_a_record_5_annotated.png" width="100%" style="align:center" title="Step 5"> </p></p>
+</li>
+<li>
+<p>Once you have navigated to the <em>Form Records &amp; Search</em> page, <a href="../searching_and_browsing_records/">search or browse for the particular records</a> that you want to export.  <p align="center"> <img src="../records-img/exporting_a_record_6_annotated.png" width="100%" style="align:center" title="Step 6"> </p></p>
+</li>
+<li>
+<p>Select the records you want to export by checking the <strong>circle</strong> next to the record KID. <p align="center"> <img src="../records-img/exporting_a_record_7_annotated.png" width="100%" style="align:center" title="Step 7"> </p></p>
+</li>
+<li>
+<p>When you are finished selecting your records, press the <strong>export()</strong> button on the bar that appeared at the bottom of the page. <p align="center"> <img src="../records-img/exporting_a_record_8_annotated.png" width="100%" style="align:center" title="Step 8"> </p></p>
+</li>
+<li>
+<p>A window will pop up prompting you to choose how you would like to download your records. Select the file type you wish to download by clicking on it. See the next section for a description of the zip, JSON and XML file types available for download. <p align="center"> <img src="../records-img/exporting_a_record_9_annotated.png" width="100%" style="align:center" title="Step 9"> </p></p>
+</li>
+<li>
+<p>Once you have clicked on the file type you want to use to export your data, Kora will automatically download your records to your computer in that file type. Follow the unique instructions of your browser and computer to save the records onto your computer. <p align="center"> <img src="../records-img/exporting_a_record_10_annotated.png" width="100%" style="align:center" title="Step 10"> </p></p>
+</li>
+</ol>
+<h2 id="file-types-available-for-export">File Types Available for Export</h2>
+<p>There are three types of file types that you are able to export your Kora records as: a zip file, a JSON file, and an XML file. What follows are descriptions of these file types and links to further reading.</p>
+<p align="center"> <img src="../records-img/exporting_a_record_11_annotated.png" width="100%" style="align:center" title="Step 11"> </p>
+
+<ul>
+<li>
+<p>The <strong>Export Record Files</strong> option downloads Kora records onto your computer as a zip file. It's important to note that this will only download files entered for a record such as images, documents, audio files, etc. Any records without digital files attached to it will not appear in the folder.</p>
+</li>
+<li>
+<p>The <strong>Export JSON</strong> file type downloads Kora records onto your computer as a JSON file. A JSON refers to the JavaScript Object Notation (JSON) format, which is a standard data interchange format. JSON files are text-based, machine-readable, and human-readable files that can be edited using a text editor. For more information on JSON file format, check out the <a href="https://en.wikipedia.org/wiki/JSON">JSON Wikipedia article</a>.</p>
+</li>
+<li>
+<p>The <strong>Export XML</strong> file type downloads Kora records onto your computer as an XML file. XML stands for  Extensible Markup Language (XML). This is a markup language which generates human-readable and machine readable text files. XML files emphasize simplicity and the description of data. For more information on XML files check out the <a href="https://en.wikipedia.org/wiki/XML">XML Wikipedia article</a>.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../editing_a_record/" class="btn btn-neutral float-left" title="Editing a Record"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../user-accounts/viewing_your_user_account/" class="btn btn-neutral float-right" title="Viewing your User Account">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../editing_a_record/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../user-accounts/viewing_your_user_account/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

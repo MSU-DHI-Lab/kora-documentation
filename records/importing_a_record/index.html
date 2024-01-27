@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Importing a Record - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Importing a Record";
+        var mkdocs_page_input_path = "records/importing_a_record.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Importing a Record</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#failed-record-import">Failed Record Import</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#failed-records-report">Failed Records Report</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-type-definitions">File Type Definitions:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Records</li>
+      <li class="breadcrumb-item active">Importing a Record</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/records/importing_a_record.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="importing-a-record">Importing a Record</h1>
+<p>A <a href="../creating_a_record/">record</a> is the metadata element that your data is entered into. You can import a record(s) into a single form via a CSV, JSON, or XML file. If you wish to import records into multiple <a href="../../forms/creating_a_form/">forms</a>, take a look at the documentation on <a href="../importing_multi_form_records/">importing records into multiple forms</a>.</p>
+<p>Follow the steps below to import a record(s) into a single form:</p>
+<ol>
+<li>
+<p>First, open your current project (You can find the list of your projects by clicking on the <em>Projects</em> button on the top menu). Choose the form you would like to import a record(s) into by clicking on the <em>form name</em>. This will open the form page.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_1_annotated.png" title="Select the Project Form"&gt;
+</code></pre>
+</li>
+<li>
+<p>Click on the form name in the menu bar at the top of the page, this will open a dropdown menu. Choose the <strong>Import Records</strong> option in the dropdown menu. This will open the <em>Import Records</em> page.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_2_annotated.png" title="Select Import Records"&gt;
+</code></pre>
+</li>
+<li>
+<p>On the <em>Import Records</em> page, under the <em>Upload Record Files</em> tab, you can either drag and drop or browse your computer for the XML/JSON/CSV file you would like to import in first (top) box. If you have files in a zipped format that correlate to the XML/JSON/CSV file  first (top) box, you can either drag and drop or select the zipped files in the second (bottom) box.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_3_annotated.png" title="Select Import Records"&gt;
+</code></pre>
+</li>
+<li>
+<p>After you finish selecting your record file, click the <strong>Upload Record Import File</strong> button at the bottom of the page.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_4_annotated.png" title="Upload Record Import"&gt;
+</code></pre>
+</li>
+<li>
+<p>This will bring you to the <em>Field Matching</em> tab on the <em>Import Records</em> page. This page allows you to associate the field names between the records you are uploading to the form you are importing the records to. Select fields if applicable on the right column of the page. You will want to associate or match fields based on type. If you need information about field types, visit the <a href="/forms/understanding_field_types.md">Understanding Field Types</a> guide.</p>
+<pre><code>* **Note**: If a field is *required* in the form you are importing records into, you must associate an incoming field to one that is being imported.
+
+&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_5_annotated.png" title="Field Matching"&gt;
+</code></pre>
+</li>
+<li>
+<p>Click the <strong>Upload Records</strong> button at the bottom of the screen.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_6_annotated.png" title="Upload Records"&gt;
+</code></pre>
+</li>
+<li>
+<p>A loading page will open informing you that your import has begun. Depending on the number of records you are importing, it may take several minutes to complete. Do not close the page or browser until completion. When the import is complete, you will be automatically brought to the <em>Import Records Complete</em> page.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_7_annotated.png" title="Loading Page"&gt;
+</code></pre>
+</li>
+<li>
+<p>On this page you can view how many records were successfully imported and have the option to view the imported records by clicking on the <em>View Imported Records</em> button.</p>
+<pre><code>&lt;img style="display:block;margin:auto;max-width:80%" src="../records-img/importing_a_record_8_annotated.png" title="Field Matching"&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="failed-record-import">Failed Record Import</h2>
+<p>There are several reasons a record import will fail. If a required field was not assoicated with an uploaded field (matched), you will be informed how many records out of the total were successfuly imported on the <em>Import Records Complete</em> page (example: 0 of 1 Records Successfully Imported).</p>
+<p>Your record(s) will not import if you associate different field types.</p>
+<h3 id="failed-records-report">Failed Records Report</h3>
+<p><img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_9_annotated.png" title="Failed Records Report"></p>
+<p>You can download the failed records and their report to identify the problem with the import. The <strong>Failed Records Report</strong> will state which fields are required. If you did not match your field types correctly, the <em>Failed Records Report</em> may give you an error: {"18":"Unable to determine error. This is usually caused by a structure issue in your CSV\/XML\/JSON, or an unexpected bug in kora."}. If this occurs, we recommend trying to import your record(s) again after checking how the fields should be matched.</p>
+<p>You can then try importing the record(s) again or view the successfully imported records using the buttons on the page.</p>
+<h2 id="file-type-definitions">File Type Definitions:</h2>
+<p><strong>CSV</strong> is a simple file format that is used to store tabular data, such as a database or spreadsheet. CSV stands for "comma-separated values." Files in CSV format can be imported and exported from programs that store data in tables such as Microsoft Excel, Apple Numbers, or Google Sheets.</p>
+<p><strong>JSON</strong> is a file type that stores data in JavaScript Object Notation format, a standard data interchange format. It is commonly used to transmit data between a web application and a server. It serves as an alternative to XML, as it easy for humans to read and write, as well as machine-readable.</p>
+<p><strong>XML</strong> is a file extension for an Extensible Markup Language (XML) file format. It stores data in a structure that is readable by machines and humans, as it stores data in plain text format. XML is similar to HTML.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../viewing_and_managing_record_revisions/" class="btn btn-neutral float-left" title="Viewing and Managing Record Revisions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../importing_multi_form_records/" class="btn btn-neutral float-right" title="Importing Multiform Records">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../viewing_and_managing_record_revisions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../importing_multi_form_records/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

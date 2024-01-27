@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Editing a Project - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Editing a Project";
+        var mkdocs_page_input_path = "projects/editing_a_project.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Editing a Project</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#navigating-the-edit-project-page">Navigating the Edit Project page</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#editing-a-project_1">Editing a Project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#editing-project-permissions">Editing Project Permissions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-new-permissions-group-for-a-project">Creating a New Permissions Group for a Project</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Projects</li>
+      <li class="breadcrumb-item active">Editing a Project</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/projects/editing_a_project.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="editing-a-project">Editing a Project</h1>
+<p>If you have the correct permissions to edit a project, then there are multiple ways to get to the page for editing its info. Once you navigate to the <em>Edit Project</em> page, you are able to change the name, description and permissions for the project. If you want to edit other parts of the project, you will have to go to the individual <a href="../../forms/editing_a_form">form</a> or <a href="../../records/editing_a_record">record</a> that you wish to edit.</p>
+<h2 id="navigating-the-edit-project-page">Navigating the <em>Edit Project</em> page</h2>
+<p>There are three options you can follow to navigate to the <em>Edit Project</em> page:</p>
+<ol>
+<li>
+<p>If you <a href="../accessing_and_managing_projects_from_the_dashboard">made your project available on the dashboard</a> as a project block, then you are able to access the <em>Edit Project</em> page directly from here. Simply click on the <strong>Edit Project Info</strong> button at the bottom-left of the project block.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_1_annotated.png" title="Step 1"></p>
+</li>
+<li>
+<p>Another option is to navigate to your <a href="../customizing_project_list_view">project list page</a>. From this page you'll be able to select the <strong>Edit Project Info</strong> button at the bottom-left of each block containing your project.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_2_annotated.png" title="Step 2"></p>
+</li>
+<li>
+<p>Another option is to click on the <strong>Edit Project Info</strong> in the upper-right of the initial page view after opening a project.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/archiving_a_project_1_annotated.png" title="Step 3"></p>
+</li>
+<li>
+<p>The last option is available when you navigate to the project that you want to edit. Opening up either of the following menu pages will give you the option to click <strong>Edit Project Info</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_3_annotated.png" title="Step 4"></p>
+</li>
+</ol>
+<h2 id="editing-a-project_1">Editing a Project</h2>
+<p>After Navigating to the <em>Edit Project</em> page, you have the option to edit certain aspects of your project including your project's name, description and its permissions. You also have the option to <a href="../archiving_a_project">archive</a> or <a href="../deleting_a_project">delete</a> your project, though the specifics of those actions will not be discussed in this section. Follow these steps to edit the name, description and permissions of your project:</p>
+<ol>
+<li>
+<p>Navigate to the <em>Edit Project</em> page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_4_annotated.png" title="Step 4"></p>
+</li>
+<li>
+<p>Make any desired edits to the project name and description by editing the entered text.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_5_annotated.png" title="Step 5"></p>
+</li>
+<li>
+<p>You may also edit the project permissions of users within your project by clicking on the <strong>Go To Project Permissions Page</strong> button. For more information on editing project permissions, go to the next section.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_6_annotated.png" title="Step 6"></p>
+</li>
+<li>
+<p>Once all of your edits are finished, click the green <strong>Update Project</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_7_annotated.png" title="Step 7"></p>
+</li>
+</ol>
+<h2 id="editing-project-permissions">Editing Project Permissions</h2>
+<p>Navigating to the <em>Project Permissions</em> page (Step 3 in the previous section, "<a href="#editing-a-project_1">Editing a Project</a>"), you are able to manage the permissions that allow users to create, edit and/or delete forms in your project. You are able to select particular form permissions for users by checking the boxes next to the permissions located in permissions groups.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_8_annotated.png" title="Step 8"></p>
+<p>In order to add new users to a permission group follow these steps:</p>
+<ol>
+<li>
+<p>The <strong>Admin Group</strong> will be the first block in the <em>Project Permissions</em> page. These will likely be users who have full permissions to create, edit and delete forms. Below the admin block is the <strong>Default Group</strong> block where new users with new permissions can be added. Click on <strong>Default Group</strong> to open it up.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_9_annotated.png" title="Step 9"></p>
+</li>
+<li>
+<p>Once the block is open, click <strong>Add New User(s) to Group</strong> to add new users to this group.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_10_annotated.png" title="Step 10"></p>
+</li>
+<li>
+<p>A modal will appear prompting you to <em>Select User(s) to Add to Permissions Group</em>. Click on the <strong>Search and Select Users to be Added to the Permission Group</strong> drop-down list. Select the users you want added to this group from the list that appears below the box. You may also remove accidently-selected users by clicking on the <strong>x</strong> next to their name.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_11_annotated.png" title="Step 11"></p>
+</li>
+<li>
+<p>You may also invite users for your project using their email address. Separate multiple emails with a space or comma.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_12_annotated.png" title="Step 12"></p>
+</li>
+<li>
+<p>You may include a personal message that will be included in the email notifying the users that they have been given particular project permissions. Click <strong>Add User(s) to Permissions Group</strong> when done.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_13_annotated.png" title="Step 13"></p>
+</li>
+</ol>
+<h2 id="creating-a-new-permissions-group-for-a-project">Creating a New Permissions Group for a Project</h2>
+<p>You may also create new permissions group for your project, if needed. Follow these steps:</p>
+<ol>
+<li>
+<p>From the <em>Project Permissions</em> page (navigate there using Step 3 in a previous section, "<a href="#editing-a-project_1">Editing a Project</a>"), you may select <strong>Create a New Permissions Group</strong> located just above the admin group.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_14_annotated.png" title="Step 14"></p>
+</li>
+<li>
+<p>Kora will prompt you for information on the new permissions group. Fill out a new name for the group.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_15_annotated.png" title="Step 15"></p>
+</li>
+<li>
+<p>Select the particular form permissions that you want the new group to have by checking the boxes next to the particular permissions you want to give.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_16_annotated.png" title="Step 16"></p>
+</li>
+<li>
+<p>Then select the particular users that you want included in this permission group (Steps 3-5 in the previous section, "<a href="#editing-project-permissions">Editing Project Permissions</a>"), and finish the group by selecting <strong>Create New Permission Group</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_17_annotated.png" title="Step 17"></p>
+</li>
+<li>
+<p>Your new permission group will appear as the bottom block on the <em>Project Permissions</em> page.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../accessing_and_managing_projects_from_the_dashboard/" class="btn btn-neutral float-left" title="Accessing and Managing Projects from the Dashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../forms/creating_a_form/" class="btn btn-neutral float-right" title="Creating a Form">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../accessing_and_managing_projects_from_the_dashboard/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../forms/creating_a_form/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

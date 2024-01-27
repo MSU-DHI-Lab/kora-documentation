@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Advanced Configuration of Kora - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Advanced Configuration of Kora";
+        var mkdocs_page_input_path = "getting-started/advanced_configuration.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Advanced Configuration of Kora</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-mod_rewrite-in-kora">Using mod_rewrite in Kora</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#increasing-memory-usage-and-file-size-limits">Increasing Memory Usage and File Size Limits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gitlab-integration">GitLab Integration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#individual-gitlab-user-integration">Individual GitLab User Integration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gitlab-instance-admin-integration">GitLab Instance Admin Integration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removing-gitlab-integration">Removing GitLab Integration</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Advanced Configuration of Kora</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/getting-started/advanced_configuration.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="advanced-configuration-of-kora">Advanced Configuration of Kora</h1>
+<p>This document explains some advanced features of Kora, which may only need to be configured in certain circumstances.</p>
+<h2 id="using-mod_rewrite-in-kora">Using <em>mod_rewrite</em> in Kora</h2>
+<p>If your installation will exist at a URL with a subdirectory, it is important to adjust the ".htaccess" file inside of "public" to reflect this. <strong>Note</strong>: This is <em>only</em> applicable to a Kora installation accessible by subdirectory and <em>not</em> for one existing at a domain-level or subdomain-level URL. For an explanation of these circumstances, please see the <a href="../installing_kora_domains/#create-kora-installation-urls">"Create Kora Installation URLs" part of the Reclaim/DoOO Installation guide</a>.</p>
+<ol>
+<li>
+<p>If you have not yet done so, confirm that <code>mod_rewrite</code>. See "<a href="../system_requirements/#enabling-mod_rewrite">Enabling <em>mod_rewrite</em></a>" section of the "System Requirements" documentation.</p>
+</li>
+<li>
+<p>Edit the ".htaccess" file inside the "public" directory.</p>
+<ul>
+<li>
+<p>If using a cPanel interface, follow the instructions for editing files in "<a href="../installing_kora_domains/#upload-and-prepare-kora-application-files-via-cpanel-file-manager">Upload and Prepare Kora Application Files via cPanel File Manager</a>," a section in the Installation guide.</p>
+</li>
+<li>
+<p>If using SSH or Terminal, navigate to "kora/public" and use <code>sudo nano</code>, this time to edit ".htaccess". An explanation for using <code>nano</code> with super user privileges is also contained in the "<a href="../system_requirements/#enabling-mod_rewrite">Enabling <em>mod_rewrite</em></a>" section of the "System Requirements" documentation.</p>
+</li>
+</ul>
+<p><span></span></p>
+<p>The file's code will begin with:</p>
+<pre><code>&lt;IfModule mod_rewrite.c&gt;
+    &lt;IfModule mod_negotiation.c&gt;
+        Options -MultiViews -Indexes
+    &lt;/IfModule&gt;
+
+    RewriteEngine On
+    #RewriteBase #add base url ex: www.website.com[/this part is your base url, the url subdirectory where you want your installation to be accessible from]
+    #RewriteBase /your_base_url
+</code></pre>
+</li>
+<li>
+<p>Remove the <code>#</code> from the final line above and provide the subdirectory part of your URL for accessing your installation. For instance, if you installed Kora and created a symbolic link to a directory within your root called "kora", the last few lines might look like:</p>
+<pre><code>RewriteEngine On
+#RewriteBase #add base url ex: www.website.com[/this part is your base url, the url subdirectory where you want your installation to be accessible from]
+RewriteBase /kora
+</code></pre>
+</li>
+<li>
+<p>Be sure to save your changes when exiting.</p>
+</li>
+</ol>
+<h2 id="increasing-memory-usage-and-file-size-limits">Increasing Memory Usage and File Size Limits</h2>
+<p>A Kora installation relies on default values for memory and storage usage by PHP. However, these will be set too low to handle Kora installations where large files will be uploaded to the installation, such as high-resolution images, image-dense pdfs, or 3D objects with detailed surface texture files. To deal with this, the ".htaccess" file saved in the "public" directory contains a list of PHP attributes and associated increased values. In that file, they appear like this:</p>
+<pre><code>#Recommended but only use these if your system allows overwrites
+#php_value upload_max_filesize 4998M
+#php_value post_max_size 4999M
+#php_value memory_limit 5000M
+#php_value max_execution_time 3000
+#php_value max_input_time 3000
+</code></pre>
+<p>If your server environment allows overwrites via the .htaccess file, simply edit this file and remove the <code>#</code> before each attribute to enable the overwrite. For editing instructions, see links to multiple explanations in the section above, "<a href="#using-mod_rewrite-in-kora">Using <em>mod_rewrite</em> in Kora</a>".</p>
+<p>In some cases however, such as in Domain of One's Own or other <a href="https://reclaimhosting.com">Reclaim Hosting</a>-provided environments, these values cannot overwritten via this method. Instead, these values may be managed by the provided server graphical interface; in the case of Reclaim Hosting, this is the cPanel. In this example, these values are managed by a cPanel application called "MultiPHP INI Editor."</p>
+<ol>
+<li>
+<p>To adjust these values, begin by clicking on this application.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/advanced_configuration_1_annotated.png" title="MultiPHP INI Editor"></p>
+</li>
+<li>
+<p>Select the domain or subdomain where your installation is.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/advanced_configuration_2_annotated.png" title="Select relevant domain or subdomain from the dropdown"></p>
+</li>
+<li>
+<p>All of the overwritable PHP attributes for the selected domain or subdomain will appear; find each of those listed in the code block above and adjust their values as necessary. Be sure to save the new settings.</p>
+</li>
+</ol>
+<h2 id="gitlab-integration">GitLab Integration</h2>
+<p>Kora includes the option to allow users to sign up and log in using GitLab's authentication system, via their OAuth API. This can be implemented with any type of GitLab account or installation – including a gitlab.com free account, a GitLab Community Edition (CE) instance personally hosted, a GitLab Enterprise Edition (EE) instance managed through gitlab.com, etc. – and will allow any user who has a legitimate account for that GitLab location (whether privately hosted or through gitlab.com) to authenticate their Kora account.</p>
+<h3 id="individual-gitlab-user-integration">Individual GitLab User Integration</h3>
+<p>This option will be tied to one specific user's GitLab account.</p>
+<ol>
+<li>
+<p>Begin by navigating to the GitLab instance you wish to use for this process and log in, then go to the account's settings page.</p>
+</li>
+<li>
+<p>In the left-hand sidebar, click on "Applications". This will default to showing the options for "Add new application"</p>
+</li>
+<li>
+<p>Fill in the required information for adding a new application. The name will be whatever identifying name you wish to give this newly-created link; it is recommended you reference this Kora installation's URL for specificity, but any name you choose will work.</p>
+</li>
+<li>
+<p>In the "Redirect URI" text box, use the following example to put in the URI for your specific Kora instance. In this example URI, the Kora instance's URL is at https://example.org/kora/, so this creates the URI of:</p>
+<pre><code>https://example.org/kora/login/gitlab/callback
+</code></pre>
+<p>Notice that what has been added to the URL is "/login/gitlab/callback" in order to create the URI.</p>
+</li>
+<li>
+<p>Leave the box for the setting "Confidential" checked; this is the default setting.</p>
+</li>
+<li>
+<p>Check the box for the "read_user" scope and then click "Save application" after the list of scopes.</p>
+</li>
+<li>
+<p>You will be redirected to the page with your "Application ID" and "Secret." You will be copying each of these into your Kora Configuration File page of your installation.</p>
+</li>
+<li>
+<p>When viewing your installation's Kora Configuration File page (accessible via the right sidebar, under the "Management" section), type in the GitLab instance's website into the "GitLab Client" box.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/advanced_configuration_3_annotated.png" title="GitLab Integration Settings"></p>
+<p>For instance, for a free account on gitlab.com, use "https://gitlab.com"</p>
+</li>
+<li>
+<p>Copy the GitLab "Application ID" from Step 7 above into the Kora Configuration Page box for "GitLab Client ID"; copy "Secret" to "GitLab Client Secret."</p>
+</li>
+<li>
+<p>Click "Update Configuration File" to save these settings.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The GitLab text boxes cannot contain any spaces in between characters (spaces at the beginning or end will be automatically removed); otherwise your Kora installation will 'break.'' To fix this, you will need to manually edit the .env file in Kora's main directory, to change the offending text to something without spaces in the middle. Doing so will restore your installation to working order.</p>
+</div>
+<h3 id="gitlab-instance-admin-integration">GitLab Instance Admin Integration</h3>
+<p>GitLab integration may also be achieved at the Admin level in any GitLab instance with these settings available, such as a personally-hosted instance. This has the benefit of being manageable by any user with administrator privileges for the GitLab instance.</p>
+<ol>
+<li>
+<p>Begin by navigating to the GitLab instance you wish to use for this process and log in, then go to the "Admin Area."</p>
+</li>
+<li>
+<p>In the left-hand sidebar, click on "Applications". This will default to showing the options for "Add new application"</p>
+</li>
+<li>
+<p>Fill in the required information for adding a new application. The name will be whatever identifying name you wish to give this newly-created link; it is recommended you reference this Kora installation's URL for specificity, but any name you choose will work.</p>
+</li>
+<li>
+<p>In the "Redirect URI" text box, use the following example to put in the URI for your specific Kora instance. In this example URI, the Kora instance's URL is at https://example.org/kora/, so this creates the URI of:</p>
+<pre><code>https://example.org/kora/login/gitlab/callback
+</code></pre>
+<p>Notice that what has been added to the URL is "/login/gitlab/callback" in order to create the URI.</p>
+</li>
+<li>
+<p>Leave the box for the setting "Confidential" checked; this is the default setting.</p>
+</li>
+<li>
+<p>Check the box for the "read_user" scope and then click "Save application" after the list of scopes.</p>
+</li>
+<li>
+<p>You will be redirected to the page with your "Application ID" and "Secret." You will be copying each of these into your Kora Configuration File page of your installation.</p>
+</li>
+<li>
+<p>When viewing your installation's Kora Configuration File page (accessible via the right sidebar, under the "Management" section), type in the GitLab instance's website into the "GitLab Client" box. For instance, for a personally hosted GitLab instance at another subdomain alongside your Kora instance, it could be "https://gitlab.example.org."</p>
+<p>(For an image of this box and those for the next step, please see Step 8 in the section above, "<a href="#individual-gitlab-user-integration">Individual GitLab User Integration</a>")</p>
+</li>
+<li>
+<p>" Copy the GitLab "Application ID" from Step 7 into the Kora Configuration Page box for "GitLab Client ID"; copy "Secret" to "GitLab Client Secret."</p>
+</li>
+<li>
+<p>Click "Update Configuration File" to save these settings.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The GitLab text boxes cannot contain any spaces in between characters (spaces at the beginning or end will be automatically removed); otherwise your Kora installation will 'break.'' To fix this, you will need to manually edit the .env file in Kora's main directory, to change the offending text to something without spaces in the middle. Doing so will restore your installation to working order.</p>
+</div>
+<h3 id="removing-gitlab-integration">Removing GitLab Integration</h3>
+<p>To remove GitLab integration, simply replace the URL in the "GitLab Client" box with a single word or random character string (without spaces). This will remove the "Login with GitLab" button on the login page. If you wish to also remove the ID and Secret, you can also replace these with a single word or random character string (again, without spaces).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The GitLab text boxes cannot contain any spaces in between characters (spaces at the beginning or end will be automatically removed); otherwise your Kora installation will 'break.'' To fix this, you will need to manually edit the .env file in Kora's main directory, to change the offending text to something without spaces in the middle. Doing so will restore your installation to working order.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installing_kora_lamp/" class="btn btn-neutral float-left" title="Installing Kora on a LAMP Stack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../working_with_the_dashboard/" class="btn btn-neutral float-right" title="Working with the Dashboard">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../installing_kora_lamp/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../working_with_the_dashboard/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

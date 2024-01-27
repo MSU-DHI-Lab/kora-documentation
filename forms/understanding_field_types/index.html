@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Understanding Field Types - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Understanding Field Types";
+        var mkdocs_page_input_path = "forms/understanding_field_types.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Understanding Field Types</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#text-fields">Text Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#text">Text</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rich-text">Rich Text</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#number-fields">Number Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#integer">Integer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#float">Float</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#list-fields">List Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#list">List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multi-select-list">Multi-Select List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generated-list">Generated List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#combo-list">Combo List</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#date-fields">Date Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#date">Date</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#date-time">Date Time</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#historical-date">Historical date</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-fields">File Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#documents">Documents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gallery">Gallery</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#playlist">Playlist</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#video">Video</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d-model">3D model</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#specialty-fields">Specialty Fields</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#boolean">Boolean</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#geolocator">Geolocator</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#associator">Associator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#associator-permissions">Associator Permissions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#association-search-configuration">Association Search Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-use-an-associator-field">How to Use an Associator Field</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Forms</li>
+      <li class="breadcrumb-item active">Understanding Field Types</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/forms/understanding_field_types.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="understanding-field-types">Understanding Field Types</h1>
+<p>Each <a href="../creating_a_form/">form</a> has to ability to add any number of different fields across <a href="../creating_a_multipage_form/">multiple pages</a>. This includes text, number, list, data, file and specialty fields. Understanding what these field types bring to the table will allow you to create spaces for data entry that are relevant to your digital repository. <a href="../creating_fields/">Creating a field</a> is the first step towards understanding field types. <p align="center"> <img src="../forms-img/understanding_field_types_1_annotated.png" width="100%" style="align:center" title="Step 1"> </p></p>
+<p>After choosing to create a field and selecting the <em>Field Type</em> drop-down menu, you'll find the field type options available. These options will determine what types of data are entered into a <a href="../../records/creating_a_record/">record</a>. The headings below will discuss the field types by their category: text, number, list, date, file, and specialty. <p align="center"> <img src="../forms-img/understanding_field_types_2_annotated.png" width="100%" style="align:center" title="Step 2"> </p></p>
+<p>After selecting your field type, you can click on <strong>Show Advanced Field Options</strong>. This is where you will be able to view many of the options for customizing your fields discussed below. <p align="center"> <img src="../forms-img/understanding_field_types_3_annotated.png" width="100%" style="align:center" title="Step 3"> </p></p>
+<h2 id="text-fields">Text Fields</h2>
+<p>Text field are fields in which you enter text. There are two types of text field: <em>text field</em> and <em>rich text field</em>. <p align="center"> <img src="../forms-img/understanding_field_types_4_annotated.png" width="100%" style="align:center" title="Step 4"> </p></p>
+<h3 id="text">Text</h3>
+<p>A <em>text field</em> allows users to enter any plain text into a record. This can include characters, numbers, and symbols from your keyboard. The advanced field options available include: a <strong>Default</strong> value, a <strong>Regex</strong> pattern and whether or not to make the field <em>Multilined</em>.</p>
+<ul>
+<li>
+<p><strong>Default</strong>: inputting a default value for a text field will create a value that is always present in that field when creating a record. This value can be deleted and replaced, but it will be initially present for every record containing this <em>text field</em>.</p>
+</li>
+<li>
+<p><strong>Regex</strong>: A Regex pattern allows you to customize how a <em>text field</em> is searched for within Kora. For instance, if a word has multiple ways of being spelled, you can specify the different ways that a text field may be entered: the regular expression seriali[sz]e matches both "serialise" and "serialize". There are also much more complex regex expressions you can learn how to write.</p>
+</li>
+<li>
+<p><strong>Multilined?</strong>: The multilined option allows you to enter more than one line of plain text, by clicking the enter button. There is no set limit to the number of lines you can enter, and a scroll bar will appear if the lines appear out of the text field's view. <p align="center"> <img src="../forms-img/understanding_field_types_5_annotated.png" width="100%" style="align:center" title="Step 5"> </p></p>
+</li>
+</ul>
+<h3 id="rich-text">Rich Text</h3>
+<p>A <em>rich text</em> field allows you write text that can be stylized and edited with the CKE editor. There are numerous options available in this editor to manipulate text. Users will be able to italicize, bold, underline, and strikethrough their text. They can also insert tables and images  headings, bulleted lists and numbered lists into text. Users are then able to run spellcheck, insert links, and change other aspects of their text. The user guide for the CKE editor can be found <a href="https://ckeditor.com/docs/user">here</a> <strong>(They do not have a user guide up and running yet)</strong>. There are no advanced options available for this field besides the creation of a default value.</p>
+<ul>
+<li><strong>Default</strong>: Default text can be entered into this field. The entered text will always be present in that field when creating a record. This value can be deleted and replaced, but will always be initially present for every record containing this <em>rich text field</em>. <p align="center"> <img src="../forms-img/understanding_field_types_6_annotated.png" width="100%" style="align:center" title="Step 6"> </p></li>
+</ul>
+<h2 id="number-fields">Number Fields</h2>
+<p>Number fields allows you to enter numbers. Users may enter the numbers manually into this field using a keyboard. Alternatively, users are able to use arrow keys or scroll with their mouse wheel to move the number value up or down by 1.  There are two types of number fields: <em>integer field</em> and <em>float field</em>. <p align="center"> <img src="../forms-img/understanding_field_types_7_annotated.png" width="100%" style="align:center" title="Step 7"> </p></p>
+<h3 id="integer">Integer</h3>
+<p><em>Integer fields</em> use whole numbers as their values. These are numbers without decimal points, and they can include negative numbers. If you attempt to enter a value that is not a whole number, then the value will not appear in the record. The advanced field options available include: a <strong>Default</strong> value, a <strong>Minimum Value</strong>, a <strong>Max Value</strong> and <strong>Unit of Measurement</strong>.</p>
+<ul>
+<li>
+<p><strong>Default</strong>: A default number can be entered into this field. The entered number will always be present in that field when creating a record. This value can be deleted and replaced, but will always be initially present for every record containing this <em>integer field</em>.</p>
+</li>
+<li>
+<p><strong>Minimum Value</strong>: This specifies the lowest value that can be entered for this field. If a value is entered that is lower than this minimum value, Kora will not accept the minimum value. The record will either not be created, or it will shift to the minimum value. If a user is utilizing arrows or a mouse wheel, the value will stop changing at the specified minimum value.</p>
+</li>
+<li>
+<p><strong>Max Value</strong>: This specifies the highest value that can be entered for this field. If a value is entered that is higher than this Max value, Kora will not accept the maximum value. The record will either not be created, or shift to the maximum value. If a user is utilizing arrows or a mouse wheel, the value will stop changing at the specified max value.</p>
+</li>
+<li>
+<p><strong>Unit of Measurement</strong>: A unit of measurement can be specified for the integer value. Any plaintext value can be entered and will show up to the field name in parentheses when entering the record. <p align="center"> <img src="../forms-img/understanding_field_types_8_annotated.png" width="100%" style="align:center" title="Step 8"> </p></p>
+</li>
+</ul>
+<h3 id="float">Float</h3>
+<p><em>Float fields</em> can take in any real numbers as their value. These real numbers can include integers and negative numbers. The advanced field options are exactly the same as the previous section and include: a <strong>Default</strong> value, a <strong>Minimum Value</strong>, a <strong>Max Value</strong> and <strong>Unit of Measurement</strong>.</p>
+<ul>
+<li>
+<p><strong>Default</strong>: A default number can be entered into this field. The entered number will always be present in that field when creating a record. This value can be deleted and replaced, but will always be initially present for every record containing this <em>float field</em>.</p>
+</li>
+<li>
+<p><strong>Minimum Value</strong>: This specifies the lowest value that can be entered for this field. If a value is entered that is lower than this minimum value, Kora will not accept the minimum value. The record will either not be created, or it will shift to the minimum value. If a user is utilizing arrows or a mouse wheel, the value will stop changing at the specified minimum value.</p>
+</li>
+<li>
+<p><strong>Max Value</strong>: This specifies the highest value that can be entered for this field. If a value is entered that is higher than this Max value, Kora will not accept the maximum value. The record will either not be created, or shift to the maximum value. If a user is utilizing arrows or a mouse wheel, the value will stop changing at the specified max value.</p>
+</li>
+<li>
+<p><strong>Unit of Measurement</strong>: A unit of measurement can be specified for the float value. Any plaintext value can be entered and will show up to the field name in parentheses when entering the record. <p align="center"> <img src="../forms-img/understanding_field_types_9_annotated.png" width="100%" style="align:center" title="Step 9"> </p></p>
+</li>
+</ul>
+<h2 id="list-fields">List Fields</h2>
+<p>The Lists field allow users to create lists of data or select list options from a controlled vocabulary. Users are also able to generate a list, or create a list of objects associated with other objects. Perhaps the greatest strength of lists is the ability to force users to enter in controlled vocabulary for data fields. Controlled vocabulary refers to the use of a specific terms to refer to your data. If you only have three possible options for a particular value, then that makes it easier to characterize and analyze the data. You don't have to worry about the particular differences in how people describe objects or spelling errors. The trade-off is a loss of nuance. It is up to form creators to decide which goals are important to them. Their are four types of list fields available: <em>list field</em>, <em>multi-select list</em>, <em>generated list</em> and <em>combo list</em>. Note, if your list item contains any commas you must encapsulate the entire list item within quotation marks. <p align="center"> <img src="../forms-img/understanding_field_types_10_annotated.png" width="100%" style="align:center" title="Step 10"> </p></p>
+<h3 id="list">List</h3>
+<p>A <em>list field</em> is the most straightforward list option available. You may create a list of possible values (a.k.a a controlled vocabulary) from which users may select one value for the data field. A <em>list field</em> will appear as a dropdown menu from which you can select one of these values when creating a record. Many of the options mentioned here are available for all lists and so will refer back to this section. So, when creating any list you may follow these steps in the advanced options to create that list:</p>
+<ol>
+<li>
+<p>Under list options, enter your possible values in the green box labeled <strong>Type here and hit the enter key or "ADD" to add a new list option</strong>. From there hit enter or press the <strong>"ADD"</strong> button to add your value to the list. <p align="center"> <img src="../forms-img/understanding_field_types_11_annotated.png" width="100%" style="align:center" title="Step 11"> </p></p>
+</li>
+<li>
+<p>Your new value ("Option 1" in the image below) will be added to the list options above the green box you entered your data into. You can continue to add values in the bottom green box which will appear in the order created. You may also <strong>Copy All List Options</strong> or <strong>Delete All List Options</strong>. Copying list options will put all list options into your clipboard, separated by commas. Deleting all list options will delete all the values you have entered into a list. You will receive a notification asking you to confirm that you really do want to delete all your list options in a pop-up. <p align="center"> <img src="../forms-img/understanding_field_types_12_annotated.png" width="100%" style="align:center" title="Step 12"> </p></p>
+</li>
+<li>
+<p>You are able to move your list options around by clicking on the arrows next to the list options you have created. Clicking on an up arrow will switch that list option with the option below it, while clicking on a down arrow will switch that list option with the option below it. You may also click and drag a list option to a different part of the list. <p align="center"> <img src="../forms-img/understanding_field_types_13_annotated.png" width="100%" style="align:center" title="Step 13"> </p>  </p>
+</li>
+<li>
+<p>Once you have added all your list options, you are able to save your controlled vocabulary as preset for other lists by pressing the <strong>Create a New Value Preset</strong> button. You will have to give your list a name and decide if you want forms across your project to be able to use your preset list. You may also select <strong>Use a Value Preset for these List Options</strong> to select any preset lists that have been created and made available. You may also select from a selection of default preset lists made available across Kora which includes: Boolean, Country, Languages, and U.S States. <p align="center"> <img src="../forms-img/understanding_field_types_14_annotated.png" width="100%" style="align:center" title="Step 14"> </p>  </p>
+</li>
+<li>
+<p>At the bottom of list options, you will see that you can specify default values for your list. For the <em>list field</em> type, you may only specify one default value. In other multi-select, generated, and combo lists, you are able to specify more than one value. The default value for any list can be changed by the person making the record, but the default value will always be initially chosen when creating a record. <p align="center"> <img src="../forms-img/understanding_field_types_15_annotated.png" width="100%" style="align:center" title="Step 15"> </p></p>
+</li>
+</ol>
+<h3 id="multi-select-list">Multi-Select List</h3>
+<p>A <em>multi-select list field</em> creates a list of possible values (a.k.a. a controlled vocabulary) from which users may select multiple values for the data field. This field follows the same setup as a <em>list field</em> (see steps 1-5 for <em>list field</em> above), but the end result is the ability to select multiple list options from a single list.</p>
+<ul>
+<li>You may select list options from a <em>multi-select list by clicking them in the drop-down menu. You may also remove selected items by clicking the </em><em>x</em>* next to the field option. <p align="center"> <img src="../forms-img/understanding_field_types_16_annotated.png" width="100%" style="align:center" title="Step 16"> </p></li>
+</ul>
+<h3 id="generated-list">Generated List</h3>
+<p>A <em>generated list</em> enables users to create and edit a list while creating a record. Users enter their own list options as if they were creating their own list field. This means that there are steps to create a generated list in a record, and steps to create a generated list in a form.</p>
+<ul>
+<li>
+<p>The process of creating a generated list in a record is outlined  in steps 1-3 of the <em>list field</em> section above. Users will enter, delete and rearrange their list options in the same way that list options are created when making a list field.</p>
+</li>
+<li>
+<p>Creating a <em>generated list</em> field in a form provides you with similar advanced options as other lists (steps 1-5 in the <em>list field</em> above), but there are a couple of key differences.</p>
+</li>
+<li>First, there is the ability to add a regex expression, which can modify how Kora searches for your field.</li>
+<li>Secondly, it is important to note that any list options that you add in the advanced options will not show in the generated list that appears when creating a record. That means no default values can be specified or already existing list options added. Users will always have to generate the list from scratch when using a generated list. <p align="center"> <img src="../forms-img/understanding_field_types_17_annotated.png" width="100%" style="align:center" title="Step 17"> </p></li>
+</ul>
+<h3 id="combo-list">Combo List</h3>
+<p>A <em>combo list</em> field type allows users to select values from two different field types and associate those values with each other in one list. It is the only list field option that does not follow the steps outlined in the <em>list</em> field above. Instead, follow these steps to create a combo list:</p>
+<ol>
+<li>
+<p>In the advanced options of a combo list, you will find the boxes shown in the image below available. The two boxes on the left named <strong>Combo List Field Type</strong> allow you to select the field types you want for this list. You may select any field type except for File Fields. The boxes on the right named <strong>Combo List Field Name</strong> allow you to give names to those fields. <p align="center"> <img src="../forms-img/understanding_field_types_18_annotated.png" width="100%" style="align:center" title="Step 18"> </p></p>
+</li>
+<li>
+<p>Here is an example setup in the advanced options. This combo list will use text and date fields to combine the names and birthdays of individuals into a single list. Note that you are unable to edit the advanced options of these individual fields. <p align="center"> <img src="../forms-img/understanding_field_types_19_annotated.png" width="100%" style="align:center" title="Step 18"> </p></p>
+</li>
+<li>
+<p>You Combo List will appear empty when creating a record as shown below. To add paired values to this list, click on the <strong>Add New Value</strong> button. <p align="center"> <img src="../forms-img/understanding_field_types_19_annotated.png" width="100%" style="align:center" title="Step 20"> </p></p>
+</li>
+<li>
+<p>The individual options for the field types you have selected will be available when adding a new value. In name and birthday example from the previous step, a text field is available for 'Name', while a date field is available for 'Birthday'. Click <strong>Create Combo Value</strong> to add the desired values to the list. You may add any number of combined values. <p align="center"> <img src="../forms-img/understanding_field_types_21_annotated.png" width="100%" style="align:center" title="Step 21"> </p></p>
+</li>
+</ol>
+<h2 id="date-fields">Date Fields</h2>
+<p>Date fields allow users to enter temporal data when creating records. There are three field types available for these purposes: <em>Date</em>, <em>Date Time</em> and <em>Historical Date</em>. <p align="center"> <img src="../forms-img/understanding_field_types_22_annotated.png" width="100%" style="align:center" title="Step 22"> </p></p>
+<h3 id="date">Date</h3>
+<p>The <em>date field</em> allows users to enter a month, day and year. The advanced field options available include: <strong>Default</strong> month, day and year; <strong>Date Format</strong>, <strong>Start Year</strong>, <strong>End Year</strong> and the ability to specify the current year as the start or end year.</p>
+<ul>
+<li>
+<p><strong>Default</strong>: a default month, day and/or year can be chosen for the <em>date field type</em>. Default dates are changeable, but will appear initially every time a record using that date field is created.</p>
+</li>
+<li>
+<p><strong>Date Format</strong>: use this option to rearrange the order of how the month, date and year appear when making the record.  </p>
+</li>
+<li>
+<p><strong>Start Year</strong>: this option allows you to specify the earliest year available for users to enter. Users will not be able to enter dates before the start year into records.</p>
+</li>
+<li>
+<p><strong>End Year</strong>: this option allows you to specify the latest year that is available for users to enter. Users will not be able to enter dates after this end year into records.</p>
+</li>
+<li>
+<p><strong>Use Current Year as Start Year</strong>: if you only want users to be able to enter recent dates, you can select the current year as the start year for dates to be entered.</p>
+</li>
+<li>
+<p><strong>Use Current Year as End Year</strong>: if you want users to be able to enter dates up to the current year, select this option to make dates up to this year available. <p align="center"> <img src="../forms-img/understanding_field_types_23_annotated.png" width="100%" style="align:center" title="Step 23"> </p></p>
+</li>
+</ul>
+<h3 id="date-time">Date Time</h3>
+<p>The <em>date time</em> field type provides everything that the date field type provides, plus time. The Advanced options for a <em>date time</em> field also follow this same logic. <strong>Default</strong> hour, minutes and seconds are the only advanced option which differ for this field type and they are outlined in the image below. Check out the section on the <em>date</em> field type above to learn more about the other advanced options</p>
+<ul>
+<li><strong>Default</strong>: the <em>date time</em> field type gives the additional option to specify a default hour, minute and second. Default times are changeable, but will appear initially every time a record using that date time field is created. <p align="center"> <img src="../forms-img/understanding_field_types_24_annotated.png" width="100%" style="align:center" title="Step 24"> </p></li>
+</ul>
+<h3 id="historical-date">Historical date</h3>
+<p>A <em>historical date</em> field type provides everything that the date field type provides, plus the ability to add prefixes and calendar notation to the dates. The advanced options for this field type are similar to the <em>date time</em> field, except a few advanced options: <strong>Select Prefix(Optional)</strong>, <strong>Select Calendar/Date Notation</strong>, <strong>Show Prefixes?</strong> and <strong>Show Calendar/Date Notation?</strong>. The advanced options unique to the <em>historical date</em> field type are outlined below. Check out the section on the <em>date</em> field type above to learn more about the other advanced options.</p>
+<ul>
+<li>
+<p><strong>Select Prefix(Optional)</strong>: prefixes are selected by clicking the circle to the left of their name. The prefixes available include circa, pre and post. Circa refers to approximate or estimated dates. Pre refers to times before the specified date. Post refers to times after the date. You may only select one prefix.</p>
+</li>
+<li>
+<p><strong>Select Calendar/Date Notation</strong>: calendar and date notation are selected by clicking the circle to the left of their name. CE refers to common era; BCE refers to before common era, BP refers to before present (oftentimes this means the year 1950 CE); and KYA years often refers to thousands of years before present. You must select one calendar/date notation.</p>
+</li>
+<li>
+<p><strong>Show Prefixes?</strong>: If you want your selected prefix to appear when creating and viewing records, then select 'yes' from the drop-down menu.</p>
+</li>
+<li>
+<p><strong>Show Calendar/Date Notation?</strong> if you want your selected notation to appear when creating and viewing  records then select 'yes' from the drop-down menu. <p align="center"> <img src="../forms-img/understanding_field_types_25_annotated.png" width="100%" style="align:center" title="Step 25"> </p></p>
+</li>
+</ul>
+<h2 id="file-fields">File Fields</h2>
+<p>File Fields allow you to create fields were users can upload files to a record. This includes documents, images, audio, video and 3D models. The image below shows what a typical file field looks like. There will be a title, a space to upload your file, and a description below. The File Field Types are: <em>Documents</em>, <em>Gallery</em>, <em>Playlist</em>, <em>Video</em> and <em>3D-Model</em>. <p align="center"> <img src="../forms-img/understanding_field_types_26_annotated.png" width="100%" style="align:center" title="Step 26"> </p></p>
+<p><em>Note: When you are uploading any files, there are some restrictions on filenames. They are limited to <code>a-z</code>,</em> <code>A-Z</code>, <code>0-9</code>, <code>.</code>, <code>-</code> <em>and</em> <code>_</code>. <em>No spaces are permitted in filenames.</em></p>
+<h3 id="documents">Documents</h3>
+<p>The <em>documents</em> file field creates a space for document files to be uploaded. Since there are multiple types of files that documents can come in, you must select the document file types that you want to upload. You can customize the types of files you want uploaded and how you want them uploaded with the advanced options available: <strong>Max File Size (kb)</strong>; <strong>Max File Amount</strong>; and <strong>Allowed File Types (MIME):</strong>.</p>
+<ul>
+<li>
+<p><strong>Max File Size (kb)</strong>: allows you to determine the maximum size of a file that can be uploaded.</p>
+</li>
+<li>
+<p><strong>Max File Amount</strong>: allows you to determine the maximum number of files that you want uploaded with each record.</p>
+</li>
+<li>
+<p><strong>Allowed File Types (MIME):</strong>: this is were you will select the types of files that you want to accept for a document upload. You may want only .pdf or .png files to be uploaded. Due to the wide variety of formats that documents typically come in, no default values are selected for document uploads and there are a wide variety of file types available for selection. This differs from other file fields in because you must choose a document type for it to be possible to upload files. <p align="center"> <img src="../forms-img/understanding_field_types_27_annotated.png" width="100%" style="align:center" title="Step 27"> </p></p>
+</li>
+</ul>
+<h3 id="gallery">Gallery</h3>
+<p>The <em>gallery</em> file field creates a data field which allows users to upload images. Standard file formats are already selected for this field and include: .jpg, .gif, .png, and .bmp image files. The advanced options available are similar to other file fields: <strong>Max File Size (kb)</strong>; <strong>Max File Amount</strong>; and <strong>Allowed File Types</strong>.</p>
+<ul>
+<li>
+<p><strong>Max File Size (kb)</strong>: allows you to determine the maximum size of a file that can be uploaded.</p>
+</li>
+<li>
+<p><strong>Max File Amount</strong>: allows you to determine the maximum number of files that you want uploaded with each record.</p>
+</li>
+<li>
+<p><strong>Allowed File Types:</strong>: the file types provided are already optimized for typical image file formats including: jpg, gif and png and bmp image files. These are the only file types you may choose from. <p align="center"> <img src="../forms-img/understanding_field_types_28_annotated.png" width="100%" style="align:center" title="Step 28"> </p></p>
+</li>
+</ul>
+<h3 id="playlist">Playlist</h3>
+<p>The <em>playlist</em> file field creates a space for users to upload audio files when making a record. Standard file formats are already selected for this field and include: MP3 and WAV audio files. The advanced options available are similar to other file fields: <strong>Max File Size (kb)</strong>; <strong>Max File Amount</strong>; and <strong>Allowed File Types</strong>.</p>
+<ul>
+<li>
+<p><strong>Max File Size (kb)</strong>: allows you to determine the maximum size of a file that can be uploaded.</p>
+</li>
+<li>
+<p><strong>Max File Amount</strong>: allows you to determine the maximum number of files that you want uploaded with each record.</p>
+</li>
+<li>
+<p><strong>Allowed File Types</strong>: the file types provided are already optimized for typical audio file formats including: MP3 and WAV audio files. These are the only file types you may choose from. <p align="center"> <img src="../forms-img/understanding_field_types_29_annotated.png" width="100%" style="align:center" title="Step 29"> </p></p>
+</li>
+</ul>
+<h3 id="video">Video</h3>
+<p>The <em>video</em> file field creates a space for users to upload video files when making a record. There is only one standard file formats selected for this field which is MP4. The advanced options available are similar to other file fields: <strong>Max File Size (kb)</strong>; <strong>Max File Amount</strong>; and <strong>Allowed File Types</strong>.</p>
+<ul>
+<li>
+<p><strong>Max File Size (kb)</strong>: allows you to determine the maximum size of a file that can be uploaded.</p>
+</li>
+<li>
+<p><strong>Max File Amount</strong>: allows you to determine the maximum number of files that you want uploaded with each record.</p>
+</li>
+<li>
+<p><strong>Allowed File Types:</strong>: the MP4 file type provided is the only file format available for videos. This is the only file types you may choose from. <p align="center"> <img src="../forms-img/understanding_field_types_30_annotated.png" width="100%" style="align:center" title="Step 30"> </p></p>
+</li>
+</ul>
+<h3 id="3d-model">3D model</h3>
+<p>The <em>3D model</em> file field creates a space for users to upload 3D models into a record. There are standard file formats already selected for 3D models which include: OBJ, STL, JPEG Texture, PNG Texture, and other. The advanced options available are similar to other file fields, but include some notable differences: <strong>Max File Size (kb)</strong>, <strong>Allowed File Types</strong>, <strong>Model Color</strong>, <strong>Background Color One</strong>, and <strong>Background Color Two</strong>.</p>
+<ul>
+<li>
+<p><strong>Max File Size (kb)</strong>: allows you to determine the maximum size of a file that can be uploaded.</p>
+</li>
+<li>
+<p><strong>Allowed File Types:</strong>: the file types provided are already optimized for typical 3D model file formats including: OBJ, STL, JPEG Texture, PNG Texture and other.</p>
+</li>
+<li>
+<p><strong>Model Color</strong>: allows you to choose the color of the 3D Model</p>
+</li>
+<li>
+<p><strong>Background Color One</strong>: allows you to choose the first background color of the model environment</p>
+</li>
+<li>
+<p><strong>Background Color Two</strong>: allows you to choose the second background color of the model environment. <p align="center"> <img src="../forms-img/understanding_field_types_31_annotated.png" width="100%" style="align:center" title="Step 31"> </p></p>
+</li>
+</ul>
+<h2 id="specialty-fields">Specialty Fields</h2>
+<p>There are a number of different <strong>Specialty Fields</strong> which serve specific functions for form creators. These functions allow users to create true or false options, describe geographic location and associate records with other records. These field types are referred to respectively as: <em>Boolean</em>, <em>Geolocator</em>, and <em>Associator</em> fields. <p align="center"> <img src="../forms-img/understanding_field_types_32_annotated.png" width="100%" style="align:center" title="Step 32"> </p></p>
+<h3 id="boolean">Boolean</h3>
+<p>The boolean field refers to a true or false field option. You are able to make a title and description for a boolean field, which the person entering data may check or uncheck by clicking on the circle. You may automatically have the boolean field selected by checking the default option in the advanced options of the boolean field you are creating or editing. <img style="display:block;margin:auto;max-width:100%" src="../forms-img/understanding_field_types_33_annotated.png" title="Step 33"></p>
+<h3 id="geolocator">Geolocator</h3>
+<p>The <em>geolocator</em> field allows users to enter geographic data through the use of latitude/longitude (lat/long), and address data. When entering new geolocator data, users enter the name of the new location, what type of geographic data they are entering (lat/long or address) and then the actual data. This field provides three advanced options when customizing this field: <strong>Default Locations</strong>, <strong>Map Display</strong> and <strong>Displayed Data</strong>.</p>
+<ul>
+<li>
+<p><strong>Default Locations</strong>: this advanced field option allows you to enter default locations for a geolocator field. You will enter the location name, location type and data in the same way as a new record. The image below shows the pop-up that appears for entering new locations into a geolocator field. <p align="center"> <img src="../forms-img/understanding_field_types_34_annotated.png" width="100%" style="align:center" title="Step 34"> </p></p>
+</li>
+<li>
+<p><strong>Map Display</strong>: This advanced option allows you to display a map with points using entered location data. The points will appear on an interactive map which will automatically zoom to fit all of your points. Viewing records with map display active will show this map when examining records. If map display is inactive then no interactive map will be available for locations entered using Geolocator data. Instead, the raw text for the name of the location, and it's location data will be displayed.</p>
+</li>
+<li>
+<p><strong>Displayed Data</strong>: If you choose not to display a map using the <strong>Map Display</strong> option, then Kora will display your data as text. There are two types of location data that you are able to display when viewing records: <strong>Lat Long</strong> and <strong>Address</strong>. Displaying <strong>Lat Long</strong> will display the coordinates of your location using latitude and longitude coordinates. Likewise, selecting <strong>Address</strong> will display the address of your locations. If a record provides latitude and longitude, Kora will still be able to look up an associated address to display if that is the option that is chosen. The opposite is also true. <p align="center"> <img src="../forms-img/understanding_field_types_35_annotated.png" width="100%" style="align:center" title="Step 35"> </p></p>
+</li>
+</ul>
+<h2 id="associator">Associator</h2>
+<p>An <em>associator</em> field creates connections between records. Let's say, for example, that you want to <a href="../creating_a_form/">create a form</a> that keeps track of people associated with a museum project. This could include supervisors, volunteers, archaeologists, etc. Individual records could be created with their names and roles. Now let's say you want to create another form for objects associated with this project. You could create records which include data on these objects <em>and</em> the people involved with the curation of those objects. This could potentially be a lot of data reentry, however. One solution Kora offers for this hypothetical problem is the ability to associate the object records from the one form with the people records from the other form.  </p>
+<p>When an association is created within a record, the <em>associator</em> field displays your selected, associated record as a clickable link within that original record. This link will bring you to the record page for that associated record. The possible association are extremely flexible, in that you are able to associate records with other records from the same form or even records from another project's form. In order to do this, however, you will need to give forms the ability to search each other through <em>Form association permissions</em>. What follows are directions for: creating association permissions between forms; setting up the search configurations for an associator field, and how to use an associator field.</p>
+<h3 id="associator-permissions">Associator Permissions</h3>
+<p>Follow these steps to set up associator permissions:</p>
+<ol>
+<li>
+<p>First, you will want to <a href="../creating_a_form/">navigate to the desired form</a> that you want to associate other records with. From there you will have to select <strong>Association Permissions</strong> from either dropdown menu shown below. <p align="center"> <img src="../forms-img/understanding_field_types_36_annotated.png" width="100%" style="align:center" title="Step 36"> </p></p>
+</li>
+<li>
+<p>This will bring you to the <em>Form Associations Page</em> which allows you to grant association access with other forms. If you have administrative access to the forms that you want to associate, select <strong>Create a New Form Association</strong>. <p align="center"> <img src="../forms-img/understanding_field_types_37_annotated.png" width="100%" style="align:center" title="Step 37"> </p></p>
+</li>
+<li>
+<p>A new box will appear asking you <em>Create a New Form Association</em>. The dropdown menu will initially ask you to select a form. Forms will be displayed here from any project you have access to through a "project name - form name" format. Select the form you want to create an association with and click <strong>Create a New Form Association</strong>. Forms that are allowed to be associated with will be listed at the bottom of the <em>Form Associations Page</em>. <p align="center"> <img src="../forms-img/understanding_field_types_38_annotated.png" width="100%" style="align:center" title="Step 38"> </p></p>
+</li>
+<li>
+<p>If you do not have administrative permissions to a form, you may select the <em>Request Form Access</em> tab. Clicking <strong>Request Form Access</strong> on that page will allow you to select a form, after which Kora will send an email to all administrators requesting access to form associations. <p align="center"> <img src="../forms-img/understanding_field_types_39_annotated.png" width="100%" style="align:center" title="Step 39"> </p>  </p>
+</li>
+</ol>
+<h3 id="association-search-configuration">Association Search Configuration</h3>
+<p>Now that you have the correct association permissions set up for your form, you can create an association field that will be able to search records from other forms. In the directions below, we will be creating an <em>associator</em> field that is able to search for records through another form called "Form 2". These setup steps will work for any <em>associator</em> field:</p>
+<ol>
+<li>
+<p>First go to the advanced options for the associator when <a href="../creating_fields/">creating the field</a>. There you will find the <em>Association Search Configuration</em>, which will have the forms that you are able to search through available to be checked off. <p align="center"> <img src="../forms-img/understanding_field_types_40_annotated.png" width="100%" style="align:center" title="Step 40"> </p></p>
+</li>
+<li>
+<p>Once you have selected the form that you want this field to associate with, you will have the option to select preview values. Preview values will show any values from the selected fields you choose when searching for records. If you do not select a preview value, then the internal Kora Identification (KID) will be the only value that is shown when searching for records with this associator. It is recommended that you choose a field such as "name", "id", etc. that will allow you to more easily identify what record you are looking at. <p align="center"> <img src="../forms-img/understanding_field_types_41_annotated.png" width="100%" style="align:center" title="Step 41"> </p></p>
+</li>
+<li>
+<p>After your search configuration is set up, you can create a default value for the associator field. Go to the next section for directions on how to use an associator field.</p>
+</li>
+</ol>
+<h3 id="how-to-use-an-associator-field">How to Use an Associator Field</h3>
+<p>After setting up the permissions and search configurations for an <em>associator</em> field as outlined in the previous sections, you will now be able to associate records from your form with records from other desired forms. Follow these steps to associate records using an associator field:</p>
+<ol>
+<li>
+<p>When using an associator field, the first thing you must do is search for a record to associate with. You must search for records by entering key terms or a known KID (Kora Identification number) under <em>Search Associations</em>. In the image below, we search for "Jane Doe" <p align="center"> <img src="../forms-img/understanding_field_types_42_annotated.png" width="100%" style="align:center" title="Step 42"> </p></p>
+</li>
+<li>
+<p>Results of your search will show up in the next section labeled <em>Association Results</em>. Results will show up as the KID separated from any preview values you have chosen (step 2 in search configuration). Because we selected a preview value to display a name, we are extra sure that this is the correct record for "Jane Doe". Click on the record(s) that you want to appear as associations. <p align="center"> <img src="../forms-img/understanding_field_types_43_annotated.png" width="100%" style="align:center" title="Step 43"> </p></p>
+</li>
+<li>
+<p>Selected association will then appear in the <em>Selected Associations</em> section. You may continue to search for new records to associate by repeating steps 1 &amp; 2. You may also remove selected associations by clicking on the <strong>x</strong> next to their text. <p align="center"> <img src="../forms-img/understanding_field_types_44_annotated.png" width="100%" style="align:center" title="Step 44"> </p></p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../creating_a_form/" class="btn btn-neutral float-left" title="Creating a Form"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../batch_assigning_field_values/" class="btn btn-neutral float-right" title="Batch Assigning Field Values">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../creating_a_form/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../batch_assigning_field_values/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

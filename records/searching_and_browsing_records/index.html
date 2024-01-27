@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Searching and Browsing Records - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Searching and Browsing Records";
+        var mkdocs_page_input_path = "records/searching_and_browsing_records.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Searching and Browsing Records</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#searching-across-a-kora-installation">Searching Across a Kora Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#searching-for-a-record-within-a-project">Searching for a Record within a Project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#searching-and-browsing-records-in-a-form">Searching and Browsing Records in a Form</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#form-records-advanced-search">Form Records Advanced Search</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Records</li>
+      <li class="breadcrumb-item active">Searching and Browsing Records</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/records/searching_and_browsing_records.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="searching-and-browsing-records">Searching and Browsing Records</h1>
+<p>The records in your digital repository are easily discoverable using Kora through several techniques. How you search for a record will depend on how narrow you want your search parameters to be. You can cast a wide net and search for a record across an entire Kora installation, or you can look in a specific project. There were also be many cases where you want to look at all of the records from a single form. This documentation will walk you through the steps of conducting each type of these searches.</p>
+<h2 id="searching-across-a-kora-installation">Searching Across a Kora Installation</h2>
+<p>At the navigation bar at the top of the page, is a <strong>magnifying glass</strong> icon. No matter what page you are on, this navigation bar and icon should be available. clicking on it will allow you to search for any records within the Kora Installation that you have access to. Follow these steps to search for a form using this method:</p>
+<ol>
+<li>
+<p>Click on the magnifying glass icon in the top right corner within the navigation bar. <p align="center"> <img src="../records-img/searching_and_browsing_records_1_annotated.png" width="100%" style="align:center" title="Step 1"> </p></p>
+</li>
+<li>
+<p>A search bar will appear which will allow you to enter search terms associated with the record you are searching for. <p align="center"> <img src="../records-img/searching_and_browsing_records_2_annotated.png" width="100%" style="align:center" title="Step 2"> </p></p>
+</li>
+<li>
+<p>If you are able to enter the KID of your record, the option to <em>Go to Record:</em> will be made available under the search bar. Simply click on the record number to go to that record. The record number must be entered exactly to bring up this option. <p align="center"> <img src="../records-img/searching_and_browsing_records_3_annotated.png" width="100%" style="align:center" title="Step 3"> </p></p>
+</li>
+<li>
+<p>However, you may not know the exact KID of your record, in that case, you will have to enter keywords and data into the search bar that might be associated with that record and click the right-facing <strong>arrow</strong> in the search bar to perform a proper search. <p align="center"> <img src="../records-img/searching_and_browsing_records_4_annotated.png" width="100%" style="align:center" title="Step 4"> </p></p>
+</li>
+<li>
+<p>This search will examine records, forms, fields and projects for any results which may match your search. Kora will then display these results on the <em>Search Kora</em> page. Any records matching your search will be found in the <strong>Records()</strong> tab for you to browse. <p align="center"> <img src="../records-img/searching_and_browsing_records_5_annotated.png" width="100%" style="align:center" title="Step 5"> </p></p>
+</li>
+<li>
+<p>You can conduct another search using the <em>Search Via Keyword(s) or KID</em> box near the upper part of the page. <p align="center"> <img src="../records-img/searching_and_browsing_records_6_annotated.png" width="100%" style="align:center" title="Step 6"> </p></p>
+</li>
+<li>
+<p>Your new search can be filtered by selecting “Or,” “And,” or “KID”. <p align="center"> <img src="../records-img/searching_and_browsing_records_7_annotated.png" width="100%" style="align:center" title="Step 7"> </p> </p></p>
+</li>
+<li>
+<p>The record search will automatically start off by searching through all projects, but it's possible to search through particular project by selecting them from the <em>Search and Select Projects(s) to Filter Results</em> box. <p align="center"> <img src="../records-img/searching_and_browsing_records_8_annotated.png" width="100%" style="align:center" title="Step 8"> </p> </p></p>
+</li>
+</ol>
+<h2 id="searching-for-a-record-within-a-project">Searching for a Record within a Project</h2>
+<p>You can greatly narrow down the number of records you search through if you know what project a record may be in. You can select a project or projects to search through in the <em>Search Kora</em> page as mentioned in step 9 above. There is a way to search for specific records in a project from the project home page, however. Follow these steps:</p>
+<ol>
+<li>
+<p>Navigate to the project home that you want to search through and open either of the menus shown below in the navigation bar. <p align="center"> <img src="../records-img/searching_and_browsing_records_9_annotated.png" width="100%" style="align:center" title="Step 9"> </p> </p></p>
+</li>
+<li>
+<p>Select <strong>Project Records Search</strong> from the menu. <p align="center"> <img src="../records-img/searching_and_browsing_records_10_annotated.png" width="100%" style="align:center" title="Step 10"> </p> </p></p>
+</li>
+<li>
+<p>This will bring you to the <em>Project Records Search</em> page. You may search for a particular record using the <em>Search Via Keyword(s) or KID</em> search bar. <p align="center"> <img src="../records-img/searching_and_browsing_records_11_annotated.png" width="100%" style="align:center" title="Step 11"> </p> </p></p>
+</li>
+<li>
+<p>You may also filter your keywords by selecting “Or,” “And,” or “KID”. <p align="center"> <img src="../records-img/searching_and_browsing_records_12_annotated.png" width="100%" style="align:center" title="Step 12"> </p> </p></p>
+</li>
+<li>
+<p>The record search will automatically start off by searching through all forms, but it's possible to search through particular forms by selecting them from the <em>Search and Select Form(s) to Filter Results</em> box. <p align="center"> <img src="../records-img/searching_and_browsing_records_13_annotated.png" width="100%" style="align:center" title="Step 13"> </p> </p></p>
+</li>
+</ol>
+<h2 id="searching-and-browsing-records-in-a-form">Searching and Browsing Records in a Form</h2>
+<p>A form is where records are made. As such, all records for a particular form can be browsed from that form. It is also possible to navigate to a form and search for a particular record in that form.</p>
+<ol>
+<li>
+<p><a href="../forms/navigating_to_a_form/">Navigate to the form home page</a>. From here you may start searching for records by either pressing the <strong>Form Record &amp; Search()</strong> button or one of the menu options. <p align="center"> <img src="../records-img/searching_and_browsing_records_14_annotated.png" width="100%" style="align:center" title="Step 14"> </p></p>
+</li>
+<li>
+<p>This will bring you to the <em>Form Records and Search</em> page where you may browse records within the form or perform a search using the <em>Search Via Keyword(s) or KID</em> box at the top. Select <strong>Jump to Form +</strong> and scroll through the possible forms. After locating your form, click on the name of your form to jump to that form. <p align="center"> <img src="../records-img/searching_and_browsing_records_15_annotated.png" width="100%" style="align:center" title="Step 15"> </p></p>
+</li>
+<li>
+<p>Keywords can be filtered by selecting “Or,” “And,” or “KID”. <p align="center"> <img src="../records-img/searching_and_browsing_records_16_annotated.png" width="100%" style="align:center" title="Step 16"> </p></p>
+</li>
+<li>
+<p>Another option for searching through form records is to perform an advanced search. <p align="center"> <img src="../records-img/searching_and_browsing_records_17_annotated.png" width="100%" style="align:center" title="Step 17"> </p></p>
+</li>
+</ol>
+<h2 id="form-records-advanced-search">Form Records Advanced Search</h2>
+<p>Advanced searches can be conducted on form records to utilize specialized search tools that Kora offers. The advanced search option can be accessed from the <em>Form Records and Search</em> page as outlined in step 6 in the previous section, but it can also be accessed from the navigation bar. <p align="center"> <img src="../records-img/searching_and_browsing_records_18_annotated.png" width="100%" style="align:center" title="Step 18"> </p></p>
+<p>The options available for an advanced search will depend upon the fields that you have made advanced searchable while creating a field. You can <a href="../../forms/editing_fields/">edit whether or not a field is advanced searchable</a> There are some standard options, however:</p>
+<ul>
+<li>
+<p>An field that was made advanced searchable will display a space to enter a values on the advanced search page. Any records which match the values entered here in the corresponding field will match your search.</p>
+</li>
+<li>
+<p><strong>Alternative Field Name</strong> - searches the alternative names of fields for your keywords.</p>
+</li>
+<li>
+<p><strong>Negative</strong> - Can be checked in order to make records that do not fit your search be the results that show up instead.</p>
+</li>
+<li>
+<p><strong>empty</strong> - returns results in which the fields for your keyword are empty. <p align="center"> <img src="../records-img/searching_and_browsing_records_1_annotated.png" width="100%" style="align:center" title="Step 19"> </p></p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../using_record_presets/" class="btn btn-neutral float-left" title="Using Record Presets"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../editing_a_record/" class="btn btn-neutral float-right" title="Editing a Record">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../using_record_presets/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../editing_a_record/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to Contribute - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to Contribute";
+        var mkdocs_page_input_path = "contributing.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">How to Contribute</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#copy-editing-and-other-minor-changes">Copy-Editing and Other Minor Changes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#first-time-page-edit">First-Time Page Edit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-minor-edits-to-the-same-page">Additional Minor Edits to the Same Page</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#major-edit-or-new-file-proposals">Major Edit or New File Proposals</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">How to Contribute</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/contributing.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="contribute-to-this-guide">Contribute to this Guide</h1>
+<p>This documentation website is designed to allow for input from readers and contributing to it is a fairly straightforward process.</p>
+<p>GitHub, the website on which this documentation is built, is built using Git, a version control system that tracks file changes over time and allows multiple users to make alterations to files and present those alterations to the owners for review and acceptance or rejection. In the case of this guide, any suggested alterations will be sent to the Kora documentation team for consideration prior to being officially added to this documentation website.</p>
+<p>To contribute, you will need to <a href="https://github.com/join">sign up for a GitHub account</a>. (If using an educational email address, you may also considering <a href="https://education.github.com/">signing up for a GitHub Education account</a>, which will give you access to a number of useful tools.) Once you have completed the process for creating an account – including verifying your email address via the link that will be emailed to you – you will be able to make changes to this documentation and submit them for review.</p>
+<p>The kinds of contributions that readers can make fall into two broad categories. The first would be any changes related to grammar, syntax, very minor page layout changes (such as splitting one paragraph into two), or other small-scale copy-edits. The second would be suggestions to include any new reference images or data files, entirely new guide entries, or significant rewrites of existing guide entries.</p>
+<h2 id="copy-editing-and-other-minor-changes">Copy-Editing and Other Minor Changes</h2>
+<p>When making minor changes to pages in this documentation website, please keep the changes for each page within its own pull request. To add additional edits to the same page, when the pull request has already been created, pleas see the sub-section, "<a href="#additional-minor-edits-to-the-same-page">Additional Minor Edits to the Same Page</a>" below.</p>
+<p>Pull requests remain open until a documentation team member is able to review it for inclusion, rejection, or make requests for alterations. Please watch the email address associated with your GitHub account for notifications of messages from the documentation team, which may ask you to adjust your proposed changes before they will be accepted.</p>
+<h3 id="first-time-page-edit">First-Time Page Edit</h3>
+<ol>
+<li>
+<p>To make minor changes to any page in this guide, click "Edit on GitHub" in the top-right of the page to be edited. Do this for each separate page to be edited.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_1_annotated.png" title=""></p>
+<p>This will take you to GitHub's website. If not logged in, you will be asked to do so. Once (or if) logged in, you will be directed to a notification informing you that you will need to "fork" the kora-documentation repository before you can make edit suggestions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Git nomenclature, "fork" is both a noun and a verb: a fork is a copy of another account's repository; and to make that copy is to fork it. You have control over your fork. The version control system tracks the differences between your repository, the repository from which you forked, and any other forks that are traced back to the original repository. Your fork is identical to the repository from which you forked it only until either you change your fork, or the originating repository is changed.</p>
+</div>
+</li>
+<li>
+<p>The page notifying you of the need to fork looks like the screenshot below. Click on "Fork this repository":</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_2_annotated.png" title=""></p>
+</li>
+<li>
+<p>The page that loads will be the Markdown code for the page you are intending to edit. GitHub will again provide a notification at the top of this page, that you are editing a fork of the kora-documentation repository, rather than the original one managed by the chi-initiative GitHub account. This notification also notifies you that, when you save any changes you make in this code, the system will create a new "branch," from which you can send a "pull request" to the main kora-documentation repository for review by the documentation team. These words are highlighted below.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_3_annotated.png" title=""></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Within a repository, there is at least one "branch," or version, of the repository code. Many repositories have multiple branches, which the owners use to keep track of different versions of their projects. This term is used for both Git and GitHub.</p>
+<p>In the case of your newly-forked repository, the system will be creating a new branch each time you click on "Edit on GitHub," make some changes, and save those changes in your repository.</p>
+</div>
+</li>
+<li>
+<p>In the GitHub page that has opened, find the parts of the page you wish to edit and make your changes. The Kora Documentation pages are written in a plain-text syntax system called "Markdown," which is meant for use on the internet. Many find it intuitive to use. To learn how to use Markdown syntax to style your edits appropriately, please consult <a href="https://www.markdownguide.org/basic-syntax/">this Markdown style guide</a>.</p>
+<p>One acceptable addition to a page that you might find useful would be an admonition, also called a call-out, to highlight a key explanation of some concept or idea. These look like this:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note admonition.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a tip admonition.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This is a caution admonition.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a warning admonition.</p>
+</div>
+<!-- see bottom of this file for example of admonition with icon/title line suppressed entirely and including a code box -->
+<p>To insert an admonition, follow this code example:</p>
+<pre><code>!!! [admonition type]
+    This is the descriptive paragraph for the admonition
+
+    This is a second paragraph inside the same admonition
+</code></pre>
+<p>In this example code, replace the bracketed portion – including the brackets temselves – with one of the four types noted above. To change the admonition's default title, add the new title in quotations next to the admonition type:</p>
+<pre><code>!!! [admonition type] "[Example Title]"
+    Descriptive paragraph.
+</code></pre>
+</li>
+<li>
+<p>Once you have made your edits using Markdown syntax, scroll to the bottom of the page, to the "Propose changes" section.</p>
+</li>
+<li>
+<p>In the first text box, give a short summary description of your proposed changes (this is basically a "title" for your proposed changes). In the second, larger box, describe your changes in more detail. These boxes are important to your proposed changes because an either too-long or too-vague summary (the first box) may lead to a documentation team member rejecting your suggestions, since they may not understand your summary correctly. The detailed explanation, though less important, can still serve as a great way to expound upon your summary, so that any vagueness can be better summarized, but without adding to the "title."</p>
+<p>Once you have filled in at least the first box (and hopefully the second), click on "Propose changes" to complete the editing for this page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_4_annotated.png" title=""></p>
+</li>
+<li>
+<p>GitHub will then take you to a page to create a "pull request" containing your pages, from the newly-created branch in your forked repository and leading to the main kora-documentation repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In GitHub nomenclature, a "pull request" (known as a "request-pull" in Git) is a request to bring content TO a particular branch FROM another particular branch. As long as the branches are within the same system of connected repositories, then anyone who has one of those repositories can make a pull request for content from one branch to another (even two forked repositories). Though anyone can create the pull request, only the owner of the repository where the content is going TO can accept the request.</p>
+</div>
+<p>Highlighted below is, from left-to-right, the repository where the changes are going TO (owned by chi-initiative), the branch of that repository it is going TO (master), the arrow indicating the direction of the change, then the repository it is coming FROM (your own repository, or in the case of the example, one owned by the bsgeyer account), and then the branch of the repository it is coming FROM (the newly-created "patch-1" branch).</p>
+<p>Click on the green "Create pull request" button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_5_annotated.png" title=""></p>
+</li>
+<li>
+<p>Clicking on this button will again change the view on the page, putting the short summary you wrote before into the pull request title box, and the longer description from before into the pull request description. If you wish to change either of these (such as to fix typos, like the one in the example screenshots presented here), feel free to do so.</p>
+<p>Click on the new, green "Create pull request" button that appears below these boxes to finalize the pull request.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_6_annotated.png" title=""></p>
+<p>This will officially create the pull request in the main kora-documentation repository, for the documentation team to review. If all has been done correctly, it will look similar to this:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_7.1_annotated.png" title=""></p>
+</li>
+</ol>
+<h3 id="additional-minor-edits-to-the-same-page">Additional Minor Edits to the Same Page</h3>
+<ol>
+<li>
+<p>If, after creating a pull request, you decide you wish to make further edits to the <em>same</em> page, you will need to find your <a href="https://github.com/chi-initiative/kora-documentation/pulls">pull request in the chi-initiative-owned kora-documentation repository</a>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_8_annotated.png" title=""></p>
+<p>When viewing the list of pull requests, you can filter them by author, and select your own account from the list. GitHub puts the user's account at the top of such dropdown lists, for ease of use.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_9_annotated.png" title=""></p>
+</li>
+<li>
+<p>Once you find your pull request and click on it, its page will open. Click on the "Files changed" tab.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_7.2_annotated.png" title=""></p>
+<p>The view will change to show a summary of the edits you previously made for this page's file. To reopen this file and add more edits, click on the three-dot menu icon, then select "Edit file" to be directed to the file's edit page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_10_annotated.png" title=""></p>
+</li>
+<li>
+<p>Make any desired additional changes. Once finished, scroll down to the bottom of the page, to write a summary and description for this "commit." Be sure to leave the default option, to "Commit directly to the <code>patch-1</code> branch," which will add your changes to your already-opened pull request.</p>
+<p>Click the green "Commit changes" button to finish adding it.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_11_annotated.png" title=""></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Git (and GitHub) nomenclature, a "commit" is the smallest version of change tracked in the system.</p>
+</div>
+</li>
+</ol>
+<p>Doing this will add one's changes to the already-existing pull request for this page.</p>
+<h2 id="major-edit-or-new-file-proposals">Major Edit or New File Proposals</h2>
+<p>In cases where you would like to suggest new documentation pages, images, or data files, you will need to submit these requests via GitHub's "Issues" feature; if submitted as a pull request, they will likely be rejected. To open a new Issue for the kora-documentation, visit the repository's Issue's page](https://github.com/chi-initiative/kora-documentation/issues).</p>
+<p>On this page, click the green "New issue" button on the right-hand side of the page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_12_annotated.png" title=""></p>
+<p>This will open a list of templates to use for proposing your changes.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../contributing-img/contributing_13_annotated.png" title=""></p>
+<p>Select the template that corresponds to the changes you would like to suggest by clicking the green "Get started" button next to it, and fill in the requested information. When complete, click the green "Submit new issue" button at the bottom.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When suggesting a new page, write your page's code using the following template:</p>
+<pre><code># [Page Title]
+
+introductory text
+
+## [First Page Section Title]
+
+section text
+
+## [Second Page Section Title]
+
+section text
+</code></pre>
+</div>
+<p>Someone from the Kora documentation team will review your suggestions and take appropriate action, including through comments. Please continue to watch your GitHub-associated email for any such comments.</p>
+<!--
+!!! note ""
+    This note admonition has its title and icon line suppressed and includes a code box.
+
+        extra_css: [extra.css]
+
+    To suppress only the title, add a space between the two quotations
+-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About this Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../getting-started/core_concepts/" class="btn btn-neutral float-right" title="Understanding Core Concepts">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../getting-started/core_concepts/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

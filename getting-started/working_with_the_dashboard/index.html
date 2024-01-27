@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Working with the Dashboard - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Working with the Dashboard";
+        var mkdocs_page_input_path = "getting-started/working_with_the_dashboard.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_lamp/">Installing Kora on a LAMP Stack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Working with the Dashboard</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#enabledisable-dashboard">Enable/Disable Dashboard</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dashboard-sections">Dashboard Sections</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-sections-to-your-dashboard">Adding Sections to your Dashboard</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removing-sections-from-your-dashboard">Removing Sections from your Dashboard</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dashboard-blocks">Dashboard Blocks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-blocks-to-your-dashboard">Adding Blocks to your Dashboard</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-project-to-dashboard-block">Adding a Project to Dashboard Block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-form-to-dashboard-block">Adding a Form to Dashboard Block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-record-to-dashboard-block">Adding a Record to Dashboard Block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-quote-to-dashboard-block">Adding a Quote to Dashboard Block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-kora-twitter-to-dashboard-block">Adding Kora Twitter to Dashboard Block</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adding-a-note-to-a-dashboard-block">Adding a Note to a Dashboard Block</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#edit-blocks-on-dashboard">Edit Blocks on Dashboard</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removing-blocks-from-dashboard">Removing Blocks from Dashboard</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#editing-quick-access-actions">Editing Quick Access Actions</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Working with the Dashboard</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/getting-started/working_with_the_dashboard.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="working-with-the-dashboard">Working with the Dashboard</h1>
+<p>Once Kora has been installed and properly configured, your dashboard provides an at-a-glance view of your projects, forms, and records. The dashboard is made up of a series of blocks that give quick access to those things in your Kora install that are most relevant to you.</p>
+<h2 id="enabledisable-dashboard">Enable/Disable Dashboard</h2>
+<p>You can enable or disable your dashboard from your <a href="../../user-accounts/edit_user_preferences/">user preferences</a>. Follow these steps to enable/disable your dashboard:</p>
+<ol>
+<li>
+<p>When you are logged into Kora, you can access your user preferences from anywhere. Click on the person icon in the top menu located in the top right corner of the page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_1_annotated.png" title="Person Icon"></p>
+</li>
+<li>
+<p>This will open a dropdown menu. Choose the  "My Preferences" option.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_2_annotated.png" title="My Preferences"></p>
+</li>
+<li>
+<p>On the  "My Preferences" page, you are able to modify your Kora preferences. There are four different preferences you can modify. This is where you can chose to enable or disable your dashboard.</p>
+</li>
+<li>
+<p>The dashboard option allows you to choose whether you would like to use the dashboard or to turn off the dashboard entirely. Click the circle next to the option you would like to select. This will change the color of the circle and text and add a white checkmark within the circle.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_3_annotated.png" title="Use Dashboard?"></p>
+</li>
+<li>
+<p>When you have finished making changes to your Kora user preferences, click the <strong>Update Preferences</strong> blue button at the bottom of the page to save the changes.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_4_annotated.png" title="Update Preferences"></p>
+</li>
+</ol>
+<h2 id="dashboard-sections">Dashboard Sections</h2>
+<p>You can organize your dashboard into sections. This can allow you to put blocks (projects, forms, records, quotes, notes, and a Kora Twitter feed) into different areas.</p>
+<h3 id="adding-sections-to-your-dashboard">Adding Sections to your Dashboard</h3>
+<ol>
+<li>
+<p>Select <strong>Edit your Dashboard</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_27_annotated.png" title="Edit your Dashboard"></p>
+</li>
+<li>
+<p>Scroll to the bottom of your dashboard until you find <strong>Type Here and Hit Enter to Add a New Section</strong>. Type in your section title and then hit enter on your keyboard to add the section to your dashboard. You can add as many sections as you would like during this step.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_35_annotated.png" title="Add New Section"></p>
+</li>
+<li>
+<p>Click <strong>Select to Finish Editing</strong> at the top, or the <strong>Finish Editing Dashboard</strong> button at the bottom, to exit.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_33_annotated.png" title="Finish Editing - Top">
+<img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_34_annotated.png" title="Finish Editing - Bottom"></p>
+</li>
+</ol>
+<h3 id="removing-sections-from-your-dashboard">Removing Sections from your Dashboard</h3>
+<ol>
+<li>
+<p>Select <strong>Edit your Dashboard</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_27_annotated.png" title="Edit your Dashboard"></p>
+</li>
+<li>
+<p>Scroll until you find the section you would like to remove and click the <strong>X</strong> on the right side of the screen.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_36_annotated.png" title="Delete New Section"></p>
+</li>
+<li>
+<p>Click <strong>Select to Finish Editing</strong> at the top, or the <strong>Finish Editing Dashboard</strong> button at the bottom, to exit.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_33_annotated.png" title="Finish Editing - Top">
+<img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_34_annotated.png" title="Finish Editing - Bottom"></p>
+</li>
+</ol>
+<h2 id="dashboard-blocks">Dashboard Blocks</h2>
+<p>Blocks are shortcuts you can add to your dashboard sections. These can be shortcuts to projects, forms, records, notes, Twitter feed from Kora, and auto-generated quotes.</p>
+<h3 id="adding-blocks-to-your-dashboard">Adding Blocks to your Dashboard</h3>
+<ol>
+<li>
+<p>Navigate to your dashboard and select <strong>Add New Block</strong></p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_5_annotated.png" title="Add a New Block"></p>
+</li>
+<li>
+<p>This will open a modal.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_6_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+<li>
+<p>Here you can decide what type you would like to add to your block, including Project, Form, Record, Quote, Kora Twitter, and a Note. See the following sub-sections for detailed instruction for each Block Type option.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_7_annotated.png" title="Choose your Block Type"></p>
+</li>
+<li>
+<p>Following your selection of block type and section, click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h4 id="adding-a-project-to-dashboard-block">Adding a Project to Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Project</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_9_annotated.png" title="Dashboard Block Type"></p>
+</li>
+<li>
+<p>Select the project that you want to appear on your dashboard.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_10_annotated.png" title="Select Project"></p>
+</li>
+<li>
+<p>Once you've selected the project for your block, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_11_annotated.png" title="Choose Section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h4 id="adding-a-form-to-dashboard-block">Adding a Form to Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Form</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_12_annotated.png" title="Select Block Type"></p>
+</li>
+<li>
+<p>Select the form that you want to appear on your dashboard.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_13_annotated.png" title="Select Form"></p>
+</li>
+<li>
+<p>Once you've selected the form for your block, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_14_annotated.png" title="Select section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h4 id="adding-a-record-to-dashboard-block">Adding a Record to Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Record</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_15_annotated.png" title="Select Record for Block Type"></p>
+</li>
+<li>
+<p>Enter the record KID (the unique idenifier for each record within the Kora system) that you want to appear on your dashboard.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_16_annotated.png" title="Record KID"></p>
+</li>
+<li>
+<p>Once you've selected the record for your block, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_17_annotated.png" title="Choose Section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h4 id="adding-a-quote-to-dashboard-block">Adding a Quote to Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Quote</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_18_annotated.png" title="Choose Quote Block Type"></p>
+</li>
+<li>
+<p>Once you've selected the record for your block, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_19_annotated.png" title="Choose Section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h5 id="auto-generated-quote-blocks">Auto-Generated Quote Blocks</h5>
+<p>The quotes used for this option are generated from a fixed list in a function contained in the underlying Laravel PHP framework Kora is build upon. There are 13 total quotes that are randomly selected to appear in the quote block on the dashboard.</p>
+<ul>
+<li>"When there is no desire, all things are at peace." – Laozi</li>
+<li>"Simplicity is the ultimate sophistication." – Leonardo da Vinci</li>
+<li>"Simplicity is the essence of happiness." – Cedric Bledsoe</li>
+<li>"Smile, breathe, and go slowly." – Thich Nhat Hanh</li>
+<li>"Simplicity is an acquired taste." – Katharine Gerould</li>
+<li>"Well begun is half done." – Aristotle</li>
+<li>"He who is contented is rich." – Laozi</li>
+<li>"Very little is needed to make a happy life." – Marcus Antoninus</li>
+<li>"It is quality rather than quantity that matters." – Lucius Annaeus Seneca</li>
+<li>"Genius is one percent inspiration and ninety-nine percent perspiration." <!--but really 100% intellectual theft -->– Thomas Edison</li>
+<li>"Computer science is no more about computers than astronomy is about telescopes." – Edsger Dijkstra</li>
+<li>"It always seems impossible until it is done." – Nelson Mandela</li>
+<li>"Act only according to that maxim whereby you can, at the same time, will that it should become a universal law." – Immanuel Kant</li>
+</ul>
+<h4 id="adding-kora-twitter-to-dashboard-block">Adding Kora Twitter to Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Kora Twitter</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_20_annotated.png" title="Choose Kora Twitter Block Type"></p>
+</li>
+<li>
+<p>Once you've selected <strong>Kora Twitter</strong>, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_21_annotated.png" title="Choose Section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+<li>
+<p>Your Twitter block will appear in your chosen section.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_22_annotated.png" title="Twitter Block Example"></p>
+</li>
+</ol>
+<h4 id="adding-a-note-to-a-dashboard-block">Adding a Note to a Dashboard Block</h4>
+<ol>
+<li>
+<p>Select <em>Note</em> from the <strong>Dashboard Block type</strong> drop-down menu.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_23_annotated.png" title="Choose Note Block Type"></p>
+</li>
+<li>
+<p>Enter your <em>Note Title</em> (maximum of 30 characters) that want to appear on your dashboard. This is required.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_24_annotated.png" title="Note Title"></p>
+</li>
+<li>
+<p>Enter your <em>Note Content</em> (maximum of 300 characters) that you want to appear on your dashboard. This is required.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_25_annotated.png" title="Note Content"></p>
+</li>
+<li>
+<p>Once you've selected the form for your block, you have the option to choose what section of your dashboard that you want the block to appear in.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_26_annotated.png" title="Choose Section"></p>
+</li>
+<li>
+<p>Click the <strong>Add New Dashboard Block</strong> button.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_8_annotated.png" title="Add New Dashboard Block"></p>
+</li>
+</ol>
+<h3 id="edit-blocks-on-dashboard">Edit Blocks on Dashboard</h3>
+<p>You are also able to edit the blocks that you've created in the dashboard. Follow these steps:</p>
+<ol>
+<li>
+<p>Select <strong>Edit your Dashboard</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_27_annotated.png" title="Edit your Dashboard"></p>
+</li>
+<li>
+<p>Hover your mouse over the block which you wish to edit.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_28_annotated.png" title="Hover over the Block you want to Edit"></p>
+</li>
+<li>
+<p>Select <strong>Edit Block</strong> in the center</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_37_annotated.png" title="Select Edit Block"></p>
+</li>
+<li>
+<p>This will open a modal for editing your block. Here you have the option to change the <em>Block Type</em> and make any other changes you require.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_38_annotated.png" title="Edit Block Pop-up"></p>
+</li>
+<li>
+<p>When you have finished making your changes, click the <strong>Update Block</strong> button at the bottom of the modal.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_39_annotated.png" title="Update Block"></p>
+</li>
+</ol>
+<h3 id="removing-blocks-from-dashboard">Removing Blocks from Dashboard</h3>
+<ol>
+<li>
+<p>Select <strong>Edit your Dashboard</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_27_annotated.png" title="Edit your Dashboard"></p>
+</li>
+<li>
+<p>Hover your mouse over the block which you wish to edit.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_28_annotated.png" title="Hover over the Block you want to Edit"></p>
+</li>
+<li>
+<p>Select the trash can icon in the bottom left corner of the block you would like to remove.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_40_annotated.png" title="Trash Can Icon"></p>
+</li>
+<li>
+<p>A pop-up will appear asking you to confirm deleting the block. Select the red <strong>Delete Block</strong> button at the bottom of the modal to confirm.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_41_annotated.png" title="Delete Block"></p>
+</li>
+<li>
+<p>When you have finished making your changes, click the <strong>Update Block</strong> button at the bottom of the modal.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_39_annotated.png" title="Update Block"></p>
+</li>
+</ol>
+<h2 id="editing-quick-access-actions">Editing Quick Access Actions</h2>
+<p>The quick actions in Kora are the six icons on the bottom of each block in your dashboard. If you want to rearrange the order of <strong>Quick Action</strong> items, then follow these steps:</p>
+<ol>
+<li>
+<p>Select <strong>Edit your Dashboard</strong>.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_27_annotated.png" title="Edit your Dashboard"></p>
+</li>
+<li>
+<p>Hover your mouse over the block whose <strong>Quick Actions</strong> you wish to edit.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_28_annotated.png" title="Hover over the Block you want to Edit"></p>
+</li>
+<li>
+<p>Select <strong>Edit Quick Actions</strong>. This will prompt the <em>Edit Quick Actions</em> modal to appear.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_29_annotated.png" title="Edit Quick Actions"></p>
+</li>
+<li>
+<p>You may edit the order of quick actions by either pressing the <strong>up arrow</strong> or <strong>down arrow</strong>. Alternatively, you may also click on the <strong>Quick Action</strong> you want to reorder, and drag it to its desired location.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_30_annotated.png" title="Edit Quick Actions Order"></p>
+</li>
+<li>
+<p>Note that only the top 6 <strong>Quick Actions</strong> will be displayed in the block that you are editing. The remaining three will appear when you hover over the three-dot icon on the far right.</p>
+<p><img style="display:block;margin:auto;max-width:80%" src="../getting-started-img/working_with_the_dashboard_31_annotated.png" title="Top 6 QA Displayed"></p>
+</li>
+<li>
+<p>Click <strong>Update Quick actions</strong> to save your changes.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_32_annotated.png" title="Update Quick Actions"></p>
+</li>
+<li>
+<p>To exit, click either <strong>Select to Finish Editing</strong> at the top, or <strong>Finish Editing Dashboard</strong> at the bottom of the page.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_33_annotated.png" title="Finish Editing - Top">
+<img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/working_with_the_dashboard_34_annotated.png" title="Finish Editing - Bottom"></p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced_configuration/" class="btn btn-neutral float-left" title="Advanced Configuration of Kora"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../projects/creating_a_project/" class="btn btn-neutral float-right" title="Creating a Project">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../advanced_configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../projects/creating_a_project/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>

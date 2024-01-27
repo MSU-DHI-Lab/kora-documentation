@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installing Kora on a LAMP Stack - Kora User Documentation</title>
+    
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+    
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installing Kora on a LAMP Stack";
+        var mkdocs_page_input_path = "getting-started/installing_kora_lamp.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+ 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Kora User Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About this Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">How to Contribute</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../core_concepts/">Understanding Core Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../understanding_kora_user_types_and_permissions/">Understanding Kora User Types and Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_requirements/">System Requirements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installing_kora_domains/">Installing Kora on Domain of One's Own & Reclaim Hosting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cloud_install/">Installing Kora on Reclaim Cloud</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Installing Kora on a LAMP Stack</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#set-up-acceptable-lamp-stack">Set up Acceptable LAMP Stack</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-important-applications-and-packages-in-preparation-of-installing-kora">Install important applications and packages, in preparation of installing kora</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-up-the-mysql-database-and-users">Set up the MySQL Database and Users</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-kora-files">Import Kora Files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-kora-files-for-installation">Prepare Kora Files for Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-the-installation-command">Running the Installation Command</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-write-and-execute-permissions-on-certain-directories">Set WRITE and EXECUTE Permissions On Certain Directories</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#virtual-host-configuration-for-a-domain-or-subdomain-url-installation">Virtual Host Configuration (for a Domain or Subdomain URL Installation)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subdirectory-url-configuration">Subdirectory URL Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-create-symbolic-link">1. Create Symbolic Link</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-alter-virtual-host-file">2. Alter Virtual Host File</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-edit-htaccess">3. Edit .htaccess</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ssl-certificate-for-your-domain">SSL Certificate for Your Domain</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#confirm-kora-installation-via-url">Confirm Kora Installation via URL</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../advanced_configuration/">Advanced Configuration of Kora</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../working_with_the_dashboard/">Working with the Dashboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Projects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/creating_a_project/">Creating a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/adding_users_to_projects/">Adding & Removing Users on Projects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/exporting_a_project/">Exporting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/importing_a_project/">Importing a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/archiving_a_project/">Archiving a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_your_project_view/">Customizing your Project View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/customizing_project_list_view/">Customizing Project List View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/deleting_a_project/">Deleting a Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/accessing_and_managing_projects_from_the_dashboard/">Accessing and Managing Projects from the Dashboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../projects/editing_a_project/">Editing a Project</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Forms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_form/">Creating a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/understanding_field_types/">Understanding Field Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/batch_assigning_field_values/">Batch Assigning Field Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/adding_users_to_forms/">Adding Users to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/additional_form_administrators/">Adding Additional Form Administrators</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_a_multipage_form/">Creating a Multipage Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/creating_fields/">Creating Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_a_form/">Editing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/editing_fields/">Editing Fields</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/exporting_a_form/">Exporting a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/navigating_to_a_form/">Navigating to a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/importing_a_form/">Importing a Form</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/field_value_presets/">Using Field Value Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../forms/searching_for_a_form/">Searching for a Form</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Records</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/creating_a_record/">Creating a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/viewing_and_managing_record_revisions/">Viewing and Managing Record Revisions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_a_record/">Importing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/importing_multi_form_records/">Importing Multiform Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/using_record_presets/">Using Record Presets</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/searching_and_browsing_records/">Searching and Browsing Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/editing_a_record/">Editing a Record</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../records/exporting_a_record/">Exporting a Record</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User & Account Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/viewing_your_user_account/">Viewing your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/view_your_project_permissions/">Viewing Your Project Permissions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_preferences/">Editing User Preferences</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/edit_user_account/">Editing Your User Account</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/managing_users_in_a_kora_installation/">Managing Users in a Kora Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/resetting_your_password/">Resetting your Kora Password</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-accounts/signing_up_for_a_user_account/">Signing up for a User Account</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Managing a Kora Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/update_kora/">Updating a Kora 3 Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/managing_api_tokens/">Managing API Tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../management/editing_your_kora_installation_configuration/">Editing Your Kora Installation Configuration</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Kora User Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Installing Kora on a LAMP Stack</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation/edit/master/docs/getting-started/installing_kora_lamp.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installing-kora-on-a-lamp-stack">Installing Kora on a LAMP Stack</h1>
+<p>This guide is for installing Kora in a server environment set up with a LAMP stack. For this guide, the example environment is a <a href="https://docs.digitalocean.com/products/droplets/">DigitalOcean droplet</a>, set up with Linux (Ubuntu v22.04 (LTS)), Apache2 (v2.4.52), MySQL (MariaDB v10.6.16), and PHP (v8.1.8). For Kora's minimum server requirements, please check our <a href="../system_requirements">System Requirements</a> page.</p>
+<h2 id="set-up-acceptable-lamp-stack">Set up Acceptable LAMP Stack</h2>
+<p>This guide presumes you have already set up a basic LAMP stack with the minimum system requirements. One way to set up such an environment is to rely on DigitalOcean droplets, which are scalable virtual servers. Though the minimum requirements for Kora require only 1GB of storage available, the server environment should be a bit larger than this to accommodate all the requisite programs and libraries. As such, this guide was written while using a DigitalOcean droplet with Ubuntu OS (in this case, 22.04 (LTS)) installed, the "Regular" disk type option selected, and the tier that includes 1GB RAM, 1 CPU, 25GB of disk storage, and 1000GB Data Transfer. In January 2024, this tier costs $6 per month. It also uses an SSH key for authentication.</p>
+<p>DigitalOcean has a number of thorough, well-written guides, including "<a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04">Initial Server Setup</a>", which is kept updated as new OSes are supported for droplet initialization. It includes guides for other OSes than Ubuntu as well, including versions of CentOS and Debian. This guide will go through different settings for server security, including setting up a non-root admin account and enabling the firewall. After this guide, you might find the guide "<a href="https://digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04">How To Install Linux, Apache, MySQL, PHP (LAMP) Stack</a>" useful, which is also kept updated for multiple OSes. It will walk through setting up the rest of a server LAMP stack (the "L" having already been set up, since a droplet initializes with Linux installed).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide uses MariaDB in the screenshots related to setting up a MySQL database and user. MariaDB is essentially <a href="https://mariadb.com/database-topics/mariadb-vs-mysql/">an open source fork of MySQL</a> and either will work with Kora. For the purposes of this guide, they are interchangeable: any command that is written with <code>mysql</code> could have that substituted with <code>mariadb</code> (as is the case in the related screenshots). DigitalOcean's guides walk users through setting up MySQL, but if you want to use MariaDB instead, just sub in <code>mariadb</code> every time the guide directs you to write <code>mysql</code>.</p>
+</div>
+<h2 id="install-important-applications-and-packages-in-preparation-of-installing-kora">Install important applications and packages, in preparation of installing kora</h2>
+<ol>
+<li>
+<p>Connect to your server environment via a terminal, in whichever way is your preference, with an admin-enabled user. This guide's screenshots depict a connection using root, however this is not advised and in some cases may induce warnings from the terminal about certain actions. If you are using a DigitalOcean droplet and you followed the initial setup guide linked above, you can use the browser-based terminal that is accessible via the droplet's "Access" tab. Switch to the account you created when following that guide.</p>
+</li>
+<li>
+<p>Update your available packages, by running the following command:</p>
+<pre><code>sudo apt update
+</code></pre>
+</li>
+<li>
+<p>Run a command to install all the required packages for Kora to successfully install and run. In different server environments, many (or even all) of these may already be installed, but this does not matter because the install process will simply update any that are out of date and ignore all that do not require installing or updating. Run:</p>
+<pre><code>sudo apt install composer git php-bcmath php-tokenizer php-common php-mysql php-xml php-xmlrpc php-curl php-gd php-imagick php-cli php-dev php-imap php-mbstring php-opcache php-soap php-zip php-intl
+</code></pre>
+</li>
+<li>
+<p>Next, run the command to ensure the Apache2 mod_rewrite module is enabled. Use:</p>
+<pre><code>sudo a2enmod rewrite
+</code></pre>
+</li>
+<li>
+<p>Terminal may return a line indicating that the module is already enabled, or it may indicate that the module was successfully enabled. In either case (just to be sure) restart Apache:</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+</li>
+</ol>
+<h2 id="set-up-the-mysql-database-and-users">Set up the MySQL Database and Users</h2>
+<ol>
+<li>
+<p>Enter MySQL:</p>
+<pre><code>sudo mysql
+</code></pre>
+</li>
+<li>
+<p>Create the required database:</p>
+<pre><code>CREATE DATABASE kora;
+</code></pre>
+<p>The semi-colon in this command is really important, but if you forget it on this line, the terminal will extend the command to a new line, where you can then type the semi-colon and press enter to run the command.</p>
+</li>
+<li>
+<p>Create user, with strong password, and grant all privileges to it for the new database:</p>
+<pre><code>GRANT ALL PRIVILEGES ON kora.* TO 'kora'@localhost IDENTIFIED BY '{strong-password}';
+</code></pre>
+<p>Again, remember the semi-colon. Use a strong no-spaces password in place of <code>{strong-password}</code> (leaving the single quotes in place).</p>
+<div class="admonition note">
+<p class="admonition-title">IMPORTANT</p>
+<p>Write down the password you use, because you will need it for setting up Kora later on.</p>
+</div>
+</li>
+<li>
+<p>Check that the user has privileges for the database:</p>
+<pre><code>SHOW GRANTS FOR kora@localhost;
+</code></pre>
+<p>The password displayed will be a hashed password, rather than the plain text one you provided. This is to keep the password secured; if someone wants to crack the password, they will have to brute force it from the hash. Even though this is much more secure, it is still a really good idea to not share even this hashed password (hence why it is blocked out here).</p>
+</li>
+<li>
+<p>Exit MySQL:</p>
+<pre><code>exit;
+</code></pre>
+</li>
+<li>
+<p>After this session is completed, your terminal will return to the server prompt and your window might look like the below image. The outlined portions highlight each of the commands used above.</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_1_annotated.png" title=""></p>
+</li>
+</ol>
+<h2 id="import-kora-files">Import Kora Files</h2>
+<p>Kora's files are hosted as a repository (repo) on GitHub. This guide relies on tools for directing your server to reach out to the GitHub URL and download the repo straight to the server. If you prefer to use another way to grab the GitHub repo and upload it to your server, feel free to do so. Make sure the files end up located in the same place as where this guide describes.</p>
+<ol>
+<li>
+<p>In your Terminal, change your prompt directory to the one which contains your server's directory that is set up as the one accessible via your server's IP address or URL. In the case of a default DigitalOcean droplet, the publicly-accessible directory is <code>/var/www/html</code>, so in this case the prompt should be moved to the directory <code>/var/www</code>. Thus, from the default prompt location after connecting, use:</p>
+<pre><code>cd /var/www
+</code></pre>
+<p>You can tell the directory your prompt is in by looking at the part to the left of the number symbol (aka pound sign, or hashtag). As you can see in the screenshot below, the code to the left of this symbol specifies the user (in the screenshot here, "root@sandbox") and then the prompt location ("/var/www").</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_2_annotated.png" title=""></p>
+</li>
+<li>
+<p>Use <code>git</code> to clone the Kora repo to your server environment:</p>
+<pre><code>sudo git clone https://github.com/matrix-msu/kora
+</code></pre>
+</li>
+<li>
+<p>Check the newly-created directory name by using the <code>ls</code> command. <code>ls</code> is the list command; the <code>-l</code> flag used here is for listing contents in long-form:</p>
+<pre><code>ls -l
+</code></pre>
+<p>In a default droplet, this will show "html" and then the newly-created directory containing the kora files. It might already be named "kora"; however, it might also have imported with some other name (especially if you are instead importing a fork of Kora from a different GitHub account, which has been renamed). If the name is not "kora", move the directory (which is how Linux handles renaming) so that it <em>is</em> named "kora".</p>
+<pre><code>sudo mv {directory-name} kora
+</code></pre>
+<p>(Replace <code>{directory-name}</code> in the command with the actual current name for the directory)</p>
+<p>If you would like to confirm that the directory has been properly renamed, you can again run <code>ls -l</code>.</p>
+</li>
+</ol>
+<h2 id="prepare-kora-files-for-installation">Prepare Kora Files for Installation</h2>
+<p>Kora is packaged with two configuration files that must be set up prior to installation: the ".env" file in the main directory and the ".htaccess" file in the "public" subdirectory. Both of these come as example files that need to be copied and renamed. The ".env" file also requires editing in all Kora installations.</p>
+<ol>
+<li>
+<p>Move your prompt location to the "kora" directory. If your current location is <code>/var/www</code>, then you will use this command:</p>
+<pre><code>cd kora
+</code></pre>
+<p>If instead moving to "kora" from the droplet's default initial prompt location (the server root), use:</p>
+<pre><code>cd /var/www/kora
+</code></pre>
+</li>
+<li>
+<p>Once your prompt is in the "kora" directory, use this command to copy the ".env.example" file to the new name ".env":</p>
+<pre><code>sudo cp .env.example .env
+</code></pre>
+</li>
+<li>
+<p>Use a Terminal text editor to edit the new ".env" file. Popular editors include <code>nano</code> and <code>vim</code>; this guide uses <code>vim</code>:</p>
+<pre><code>sudo nano .env
+</code></pre>
+</li>
+<li>
+<p>This will load your terminal window with the .env file, which will look like the following screenshot:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_3_annotated.png" title=""></p>
+<p>As long as you used the default values for setting up your MySQL database and username (which were suggested in the section above), then the only value you will need to edit in this file is <code>DB_USERNAME</code>. You'll change it to <code>{strong-password}</code>, which you used in the MySQL database setup. You can use your arrow keys to move the cursor to the correct spot in the file. (The relevant line is also highlighted in the above screenshot.)</p>
+</li>
+<li>
+<p>Now exit and save the file. For <code>nano</code>, you will exit by holding "ctrl" and hitting "x".</p>
+</li>
+<li>
+<p>The bottom of the displayed file will change to ask if you would like to save:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_4_annotated.png" title=""></p>
+</li>
+<li>
+<p>Press "y" then "Enter" to agree to save. The bottom will again change, to ask after the file name:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_5_annotated.png" title=""></p>
+</li>
+<li>
+<p>Leave the defaulted name alone and simply hit "Enter".</p>
+</li>
+<li>
+<p>Your Terminal will then return to the server prompt. From there, create a copy of the other required file by again using cp:</p>
+<pre><code>sudo cp public/.htaccess.example public/.htaccess
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your Kora install is for a domain-level or subdomain-level URL (e.g. https://example.com or https://kora.example.com), then there is nothing you need to edit in the .htaccess file inside of "public". For installations that are accessible at a URL subdirectory (e.g. https://example.com/kora), follow the <a href="#3-edit-htaccess">section below for editing this .htaccess file</a> and then creating the necessary link to your URL's directory.</p>
+</div>
+</li>
+<li>
+<p>Kora uses a program called Composer for managing some of its required files for installation, which itself relies on a file within this "kora" directory for configuration. This file will need to be updated before Kora will install correctly, so run the following command to update this Composer file:</p>
+<pre><code>composer update
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you set up your server such that you've been doing everything under the root user, you will get a warning message about using composer with root. Using root for all of this setup is not recommended and you do so at your own risk. If you want to proceed without redoing your server setup to add a non-root admin user, then type "y" and press "Enter".</p>
+</div>
+</li>
+</ol>
+<p>Once Composer finishes its update procedure, your files should now be entirely prepared for the Kora installation.</p>
+<h2 id="running-the-installation-command">Running the Installation Command</h2>
+<ol>
+<li>
+<p>Once the files are prepared, again ensure your Terminal prompt is in <code>/var/www/kora</code> and then run the installation command:</p>
+<pre><code>php artisan kora:install
+</code></pre>
+<p>Once successful, your Terminal window will look similar to this, with the successful installation message (in green, with the password blocked out):</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_6_annotated.png" title=""></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the installation fails and provides a message that says (in part) "Failed to connect to database! Check your database credentials or review the logs for more error information," this may be due to some common problems and there are a few things to check before trying to run the installation command again. First, check mysql (or mariadb) to confirm the name of the database (<code>SHOW databases;</code>) and user (<code>SELECT User FROM mysql.user;</code>) you created. Then re-open the .env file where you earlier put the database password  to double-check that the database and user names match the ones you just confirmed and that the password in this file matches the one you wrote down when you created it. If everything matches, the issue may be something else. You can check for any similar issues and potential solutions in <a href="https://github.com/matrix-msu/kora/issues">Kora's GitHub Issues</a>, or open your own Issue with a detailed description of the problem.</p>
+</div>
+</li>
+<li>
+<p><strong>INCREDIBLY IMPORTANT</strong>: You <em>must</em> copy the last line generated here in the successful installation message (shown in the screenshot above), which has your password for the generated username of "admin". To copy things in a browser-based Terminal (such as the one provided by DigitalOcean), first use your mouse to select the line, then right-click and select "Copy." Paste this somewhere safe, where you will not lose it!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It cannot be stressed enough how important this step is, because losing this password means losing access to your installation and will require a full reinstallation.</p>
+</div>
+</li>
+<li>
+<p>Notice that, in the successful installation message, you are directed to "give READ access to the web user," as well as "WRITE access" for specific directories, to ensure that Kora continues functioning properly after users start contributing. To ensure the READ and WRITE permissions persist, you can use the following command to set it so that created files and directories in "kora" will retain the current GROUP setting:</p>
+<pre><code>chmod -R g+s .
+</code></pre>
+<p><code>chmod</code> stands for "change mode," which is how the server's operating system refers to changing permissions. The <code>-R</code> flag tells the command to run recursively, i.e. change them for this directory and everything it contains. <code>g+s</code> sets the permissions for files that EXECUTE in the directory as the group owner (rather than the user). And finally, the <code>.</code> is the short-hand for "current directory".</p>
+<p>When successful, Terminal will just re-display the command prompt without a message.</p>
+</li>
+<li>
+<p>Next, it is important to confirm that the directories and files in this installation are all set to the <code>755</code> permissions level. In Linux, this number represents the permissions levels for three different attributes related to a file or directory's ownership in the system. The first number represents the level set for "Owner," the second for "Group," and the third for "Other/World" (sometimes also called "User"). Setting <code>7</code> is full access — aka read, write, and execute — whereas setting <code>5</code> is read and execute access only. For the purposes of this basic installation, the level for "Owner" should always be set to <code>7</code> so that you will always be able to make changes to things if needed. However the amount of access given to "Group" and "Other/World" attributes will affect the security of your server environment, so it is important to set these to <code>5</code> or some other non-write setting whenever possible.</p>
+<p>So, to confirm that the installation's permissions are set at the appropriate levels for the appropriate attributes, run this command to set all of this directory and its contents to "READ" (and execute, which is missing from the successful installation message). Again, in many cases it isn't strictly needed, but in the few where it is, this will ensure the settings are set correctly (do not forget the period):</p>
+<pre><code>chmod -R 755 .
+</code></pre>
+<p>And just as before, when successful, it will just re-display the command prompt without a message.</p>
+</li>
+</ol>
+<h2 id="set-write-and-execute-permissions-on-certain-directories">Set WRITE and EXECUTE Permissions On Certain Directories</h2>
+<p>The green Success message for a Kora installation tells you to ensure that certain subdirectories have WRITE permissions for web users. The specified directories are from the perspective of the directory that <em>contains</em> Kora, rather than from inside the "kora" directory, so first move your Terminal prompt to this higher directory.</p>
+<ol>
+<li>
+<p>To move the prompt upward from <code>/var/www/kora</code> to <code>/var/www</code>, use:</p>
+<pre><code>cd ..
+</code></pre>
+</li>
+<li>
+<p>Run the following three commands, using the exact locations described in the successful installation message (the screenshot is reproduced below). These will set the "Write" (and "Execute") permissions for "Group" correctly. Hit "Enter" after each command (i.e. run each on its own).</p>
+<pre><code>chmod -R 757 kora/bootstrap/cache/
+</code></pre>
+<p><span></span></p>
+<pre><code>chmod -R 757 kora/storage/
+</code></pre>
+<p><span></span></p>
+<pre><code>chmod -R 757 kora/public/assets/javascripts/production/
+</code></pre>
+<p>When successful, each of these will just re-display the command prompt without a message (as was the case with the <code>chmod</code> commands before). After you've run all three, your Terminal will look something like this:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_7_annotated.png" title=""></p>
+</li>
+</ol>
+<p>Once these persmissions have been set, your Kora installation is complete! However, there are a few more server settings that need to be adjusted before your Kora installation will be accessible via your URL.</p>
+<h2 id="virtual-host-configuration-for-a-domain-or-subdomain-url-installation">Virtual Host Configuration (for a Domain or Subdomain URL Installation)</h2>
+<p>During your server setup, you likely created a virtual host configuration file (a <code>.conf</code> file). Now that your Kora installation is complete, this <code>.conf</code> file needs to be adjusted to accommodate Kora.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part of the guide also assumes you have not yet set up an SSL certificate for your Kora-specific domain or subdomain (this does not apply to subdirectory URL installation, which is instead <a href="#2-alter-virtual-host-file">explained in a different section of this guide, below</a>). If you have already set up an SSL certificate, your Virtual Host file might instead be something other than the one you initially set up when creating your server, because the process of setting up the certificate often involves automatically generating a new Virtual Host file. You will need to edit that file instead, using the changes that are described in this section.</p>
+</div>
+<ol>
+<li>
+<p>Return your Terminal prompt to the server root:</p>
+<pre><code>cd ~
+</code></pre>
+</li>
+<li>
+<p>Edit your <code>.conf</code> file to point it at the "public" subdirectory of Kora. Do this by using <code>nano</code> (or whichever editor you've been using). This command assumes your <code>.conf</code> file is located in the default location for the droplet:</p>
+<pre><code>sudo nano /etc/apache2/sites-available/{virtual_host_filename.conf}
+</code></pre>
+<p>Be sure to insert the correct filename.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are unsure of the name, you can instead move to the directory with <code>cd /etc/apache2/sites-available</code>, then list the directory's contents with <code>ls -l</code> to refresh your memory. (This directory may vary, depending on which versions of Linux and/or Apach2 you have installed on your server.) This can also be used to find the auto-generated virtual host file, if you have already set up an SSL certificate.</p>
+</div>
+</li>
+<li>
+<p>Insert the following code block into your Virtual Host file, so that it is contained within the VirtualHost code block:</p>
+<pre><code>&lt;Directory /var/www/kora/public&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>Notice that this block is aimed at <code>/var/www/kora/public</code>. If your Kora installation is in a different location, adjust this pathway to reflect your own installation, but still pointed ultimately to "public".</p>
+</li>
+<li>
+<p>Change your Virtual Host's DocumentRoot to be pointed at this same pathway, that ends with "public". So the full Virtual Host file code will be something similar to:</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    &lt;Directory /var/www/kora/public&gt;
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+    ServerName sandbox.dhilab.org
+    ServerAlias sandbox.dhilab.org
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/kora/public
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>Note all the proper indenting for this code. When completed, your file will look similar to the following screenshot:</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_8_annotated.png" title=""></p>
+</li>
+<li>
+<p>Once these changes have been made, exit using "ctrl" + "x", then confirm the save by pressing "y" and then "Enter" to keep the defaulted file name.</p>
+</li>
+<li>
+<p>Reload Apache2 to have the changes take effect:</p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+</li>
+</ol>
+<p>Once Apache2 is restarted, your Kora Installation is correctly configured for access via your domain or subdomain URL. Please jump to the <a href="#ssl-certificate-for-your-domain">SSL certificate setup guide below</a> to complete the last step before your Kora installation is accessible via the web.</p>
+<h2 id="subdirectory-url-configuration">Subdirectory URL Configuration</h2>
+<p>For a Kora installation into a URL subdirectory, there are a few differences in your configuration to create this setup.</p>
+<h3 id="1-create-symbolic-link">1. Create Symbolic Link</h3>
+<p>First you must set up a symbolic link into the domain's (or subdomain's) corresponding directory. For instance, in a default DigitalOcean droplet, you likely set up the "html" folder as the URL directory (including via references to it in a Virtual Host <code>.conf</code> file).</p>
+<ol>
+<li>
+<p>Assuming that "html" is your URL's directory, move your Terminal prompt to it. From the server root (use <code>cd ~</code> to move to the server root), you can enter "html" using:</p>
+<pre><code>cd /var/www/html
+</code></pre>
+</li>
+<li>
+<p>Use the command <code>ln</code> with the <code>-s</code> flag to create the link. <code>ln</code> stands for "link" and the <code>-s</code> flag tells the system that the link being created is "symbolic". The next part of the command is the location of the Kora installation public directory, relative to your current location. And then the final part is the location of the desired subdirectory that will appear at the end of your site's URL (for this example, https://example.com/kora). So in the case of an "html" URL directory, the public directory of the installation files is located one directory up (using <code>..</code>), and then inside of "kora". So the command is:</p>
+<pre><code>ln -s ../kora/public kora
+</code></pre>
+</li>
+</ol>
+<p>1 .After creating the link, you can check that it is set up properly by using <code>ls -l</code> to see the directory's contents. You should see a <code>kora -&gt; ../kora/public</code> entry, which very likely has two blue text colors to indicate that 1) the link is symbolic, and 2) the target exists. In cases where the target does not exist and thus the link was created incorrectly, the text will likely display as red. Delete the incorrect link, check the relevant directory names, and then try making the link again with the corrected directories.</p>
+<h3 id="2-alter-virtual-host-file">2. Alter Virtual Host File</h3>
+<p>Second, you will need to edit the Virtual Host file that is set up for your domain or subdomain. During your server setup, you likely created a virtual host configuration file (a <code>.conf</code> file). It is this <code>.conf</code> file that needs to be adjusted to accommodate Kora installed as a URL subdirectory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part of the guide also assumes you have not yet set up an SSL certificate for your URL domain or subdomain. If you have, your Virtual Host file might instead be something other than the one you initially set up when creating your server, because the process of setting up the certificate often involves automatically generating a new Virtual Host file. You will need to edit that file instead, using the changes that are described in this section.</p>
+</div>
+<ol>
+<li>
+<p>Return your Terminal prompt to the server root:</p>
+<pre><code>cd ~
+</code></pre>
+</li>
+<li>
+<p>Edit your <code>.conf</code> file to configure specific permissions for the "public" subdirectory of Kora. Do this by using <code>nano</code> (or whichever editor you've been using). For a default droplet, the command will be as follows:</p>
+<pre><code>sudo nano /etc/apache2/sites-available/{virtual_host_filename.conf}
+</code></pre>
+<p>Be sure to insert the correct filename.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are unsure of the name, you can instead move to the directory with <code>cd /etc/apache2/sites-available</code>, then list the directory's contents with <code>ls -l</code> to refresh your memory. (This directory may vary, depending on which versions of Linux and/or Apach2 you have installed on your server.) This can also be used to find the auto-generated virtual host file, if you have already set up an SSL certificate</p>
+</div>
+</li>
+<li>
+<p>Insert the following code block into your Virtual Host file, so that it is contained within the VirtualHost code block:</p>
+<pre><code>&lt;Directory /var/www/html&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>Notice that this block is aimed at <code>/var/www/html</code>, which is the default location for a droplet. If your URL's DocumentRoot is in a different location, adjust the code block pathway to reflect your own circumstances.</p>
+</li>
+<li>
+<p>Leave the rest of this file configured for your URL directory.</p>
+</li>
+<li>
+<p>Once these changes have been made, exit using "ctrl" + "x", then confirm the save by pressing "y" and then "Enter" to keep the defaulted file name.</p>
+</li>
+<li>
+<p>Reload Apache2 to have the changes take effect:</p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+</li>
+</ol>
+<h3 id="3-edit-htaccess">3. Edit .htaccess</h3>
+<p>The final required change for a subdirectory URL install is to the ".htaccess" file in your Kora installation's "public" directory.</p>
+<ol>
+<li>
+<p>Return your Terminal prompt to the server root (<code>cd ~</code>), then use an editor to edit ".htaccess" in "public":</p>
+<pre><code>sudo nano /var/www/kora/public/.htaccess
+</code></pre>
+</li>
+<li>
+<p>Find the following section of code in this file:</p>
+<pre><code>RewriteEngine On
+#RewriteBase #add base url ex: www.website.com[/this part is your base url, the url subdirectory where you want your installation to be accessible from]
+#RewriteBase /your_base_url
+</code></pre>
+<p>It is also highlighted in this screenshot (this is from a different installation, but the file will look the same):</p>
+<p><img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_9_annotated.png" title=""></p>
+</li>
+<li>
+<p>From the final line of this section of code, remove <code>#</code> and then change "/your_base_url" to "/kora". This tells the system that your Kora install's url will be https://example.org/kora (if your subdirectory is something different, change this line accordingly).</p>
+</li>
+<li>
+<p>Exit and save this file with its defaulted name (so, use "ctrl" + "x", then "y", then "Enter").</p>
+</li>
+</ol>
+<p>Once these three tasks are completed, your subdirectory URL installation of Kora is correctly configured. Proceed to the next section of this guide to set up the required SSL certificate for your URL.</p>
+<h2 id="ssl-certificate-for-your-domain">SSL Certificate for Your Domain</h2>
+<p>Now that your VirtualHost is properly configured, it is time to apply for an SSL certificate for your domain. This can be done in a number of ways, but the one most commonly used as a cost-free method is through a server application called <a href="https://certbot.eff.org/about">Certbot</a>, which manages the application, acquisition, and association of an SSL certificate from a free certificate supplier called <a href="https://letsencrypt.org/about/">Let's Encrypt</a>. Certbot is a great option for those who need to go this route because it can also be configured to handle automatic certification renewals, since SSL certificates expire. The <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-22-04">DigitalOcean guide for using Certbot</a> is well-written and likely a good starting place even for someone acquiring an SSL certificate for a non-DigitalOcean environment.</p>
+<p>The specifics of using Certbot will depend upon your domain, email address, etc. so it wouldn't be possible to provide a guide here. In addition to the DigitalOcean guide (linked in the previous paragraph), Certbot provides some more-granular instructions for use on <a href="https://certbot.eff.org/instructions">their "Instructions" page</a>, which should be enough to get the SSL certificate needed.</p>
+<h2 id="confirm-kora-installation-via-url">Confirm Kora Installation via URL</h2>
+<p>In a new browser tab, navigate to your Kora application's URL. If everything has been done correctly, you should land on the login page for your Kora installation. If you successfully reached the Kora login page, <strong>Congratulations!</strong> Your install is at least partially working!</p>
+<p>For further Kora setup, please continue with this guide at the "<a href="../cloud_install#further-configure-kora-once-installed">Further Configure Kora Once Installed</a>" section of the Reclaim Cloud Installation guide. Please note, Email is no longer supported in Kora 3, so you may not be able to set up email integration. More information can be found on the <a href="../system_requirements#kora-email-no-longer-supportedrequired">System Requirements page</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../cloud_install/" class="btn btn-neutral float-left" title="Installing Kora on Reclaim Cloud"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../advanced_configuration/" class="btn btn-neutral float-right" title="Advanced Configuration of Kora">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/MSU-DHI-Lab/kora-documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../cloud_install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../advanced_configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+   <script>
+       // Grab the relevant attributes from each <img> and prepare for exclusion if the attribute is empty or absent/undefined
+		$('img').each(function(i, img) {
+			var href = $(img).attr('src') + '" ';
+            if ($(img).attr('data-lightbox') != undefined && $(img).attr('data-lightbox') != "" ) {
+                var dataLightbox = 'data-lightbox="' + $(img).attr('data-lightbox') + '" '
+            } else {
+                var dataLightbox = 'data-lightbox="lightbox" '
+            }
+            if ($(img).attr('style') != undefined && $(img).attr('style') != "" ) {
+                var css = 'style="' + $(img).attr('style') + '" '
+            } else {
+                var css = ""
+            }
+            if ($(img).attr('title') != undefined && $(img).attr('title') != "" ) {
+                var title = 'title="' + $(img).attr('title') + '" '
+            } else {
+                var title = ""
+            };
+            if ($(img).attr('alt') !== undefined && $(img).attr('alt') !== "" ) {
+                var alt = 'alt="' + $(img).attr('alt') + '" ',
+                    lightbox = "lightbox"
+            } else {
+                var alt = "",
+                    lightbox = "lightbox"
+            };
+            if ($(img).attr('width') !== undefined && $(img).attr('width') !== "" ) {
+                var width = 'width="' + $(img).attr('width') + '" '
+            } else {
+                var width = ""
+            };
+            if ($(img).attr('height') !== undefined && $(img).attr('height') !== "" ) {
+                var height = 'height="' + $(img).attr('height') + '" '
+            } else {
+                var height = ""
+            };
+            if ($(img).attr('longdesc') !== undefined && $(img).attr('longdesc') !== "" ) {
+                var longdesc = 'longdesc="' + $(img).attr('longdesc') + '" '
+            } else {
+                var longdesc = ""
+            };
+            if ($(img).attr('id') !== undefined && $(img).attr('id') !== "" ) {
+                var id = 'id="' + $(img).attr('id') + '" '
+            } else {
+                var id = ""
+            };
+            if ($(img).attr('class') !== undefined && $(img).attr('class') !== "" ) {
+                var getClass = 'class="' + $(img).attr('class') + ' fluid"'
+            } else {
+                var getClass = '"class="fluid"'
+            };
+
+			// rewrite each <img> with the <a><img></a> formatted as required for lightbox, but exclude other <img>s like the CC license
+			if (css || lightbox) {
+				$(img).replaceWith(
+                	'<a href="' + href + dataLightbox + title + '><img ' + css + 'src="' + href + title + alt + width + height + longdesc + id + getClass + ' /></a>'
+                );
+			};
+		});
+    </script>
+
+
+</body>
+</html>
