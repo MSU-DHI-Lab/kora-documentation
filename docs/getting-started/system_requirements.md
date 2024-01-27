@@ -4,7 +4,7 @@ title: System Requirements
 
 # System Requirements
 
-Kora requires a server environment with at least 1 GB of storage and 1 GB of RAM, deployed with what is referred to as a LAMP Stack. LAMP stands for:
+Kora requires a server environment with at least 1 GB of free storage and 1 GB of RAM, deployed with what is referred to as a LAMP Stack. LAMP stands for:
 
 * Linux Operating System
 * Apache (Version 2.0)
@@ -17,7 +17,7 @@ Oftentimes, the server environment will rely on minor variations of these. For i
 
 Use whichever installer is available for your Linux-based environment to install — or confirm installation of — the most recent versions of these basic applications in your Linux server environment. Common installers include `apt` (Advanced Package Tool) and `yum` (Yellowdog Updater, Modifier).
 
-(Additionally, Kora requires Composer. This is already included in some environments, such as Reclaim Hosting ones, but may need to be installed; the DigitalOcean installation guide for Kora includes installing Composer in an early step in the process.)
+(Additionally, Kora requires Composer. This is already included in some environments, such as Reclaim Hosting ones, but may need to be installed; the LAMP Stack installation guide for Kora includes installing Composer in an early step in the process.)
 
 ## PHP Packages
 
