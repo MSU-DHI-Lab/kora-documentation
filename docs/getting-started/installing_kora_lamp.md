@@ -213,11 +213,12 @@ The green Success message for a Kora installation tells you to ensure that certa
 
 Once these persmissions have been set, your Kora installation is complete! However, there are a few more server settings that need to be adjusted before your Kora installation will be accessible via your URL.
 
-## Virtual Host Configuration
+## Virtual Host Configuration (for a Domain or Subdomain URL Installation)
 
 During your server setup, you likely created a virtual host configuration file (a `.conf` file). Now that your Kora installation is complete, this `.conf` file needs to be adjusted to accommodate Kora.
 
-This part of the guide also assumes you have not yet set up an SSL certificate for your Kora-specific domain or subdomain (this does not apply to a [subdirectory installation](XXX)). If you have, your VirtualHost file might instead be something other than the one you initially set up when creating your server, because the process of setting up the certificate often involves automatically generating a new Virtual Host file. You will need to edit that file instead with the changes that are described in this section, but that process is outside the scope of this guide.
+!!! note
+    This part of the guide also assumes you have not yet set up an SSL certificate for your Kora-specific domain or subdomain (this does not apply to subdirectory URL installation, [explained in this part of the guide below](#2-alter-virtual-host-file)). If you have, your Virtual Host file might instead be something other than the one you initially set up when creating your server, because the process of setting up the certificate often involves automatically generating a new Virtual Host file. You will need to edit that file instead with the changes that are described in this section, but that process is outside the scope of this guide.
 
 1. Return your Terminal prompt to the server root:
 
@@ -245,8 +246,8 @@ This part of the guide also assumes you have not yet set up an SSL certificate f
                 AllowOverride All
                 Require all granted
             </Directory>
-            ServerName 157.245.122.210
-            ServerAlias 157.245.122.210
+            ServerName sandbox.dhilab.org
+            ServerAlias sandbox.dhilab.org
             ServerAdmin webmaster@localhost
             DocumentRoot /var/www/kora/public
             ErrorLog ${APACHE_LOG_DIR}/error.log
@@ -262,6 +263,88 @@ This part of the guide also assumes you have not yet set up an SSL certificate f
 1. Reload Apache2 to have the changes take effect:
 
         sudo systemctl reload apache2
+
+Once Apache2 is restarted, your Kora Installation is correctly configured for access via your domain or subdomain URL. Please jump to the [SSL certificate setup guide below](#ssl-certificate-for-your-domain) to complete the last step before your Kora installation is accessible via the web.
+
+## Subdirectory URL Configuration
+
+For a Kora installation into a URL subdirectory, there are a few differences in your configuration to create this setup.
+
+### 1. Create Symbolic Link
+
+First you must set up a symbolic link into the domain's (or subdomain's) corresponding directory. For instance, in a default DigitalOcean droplet, you likely set up the "html" folder as the URL directory (including via references to it in a Virtual Host `.conf` file).
+
+1. Assuming that "html" is your URL's directory, move your Terminal prompt to it. From the server root (use `cd ~` to move to the server root), you can enter "html" using:
+
+        cd /var/www/html
+
+1. Use the command `ln` with the `-s` flag to create the link. `ln` stands for "link" and the `-s` flag tells the system that the link being created is "symbolic". The next part of the command is the location of the Kora installation public directory, relative to your current location. And then the final part is the location of the desired subdirectory that will appear at the end of your site's URL (for this example, https://example.com/kora). So in the case of an "html" URL directory, the public directory of the installation files is located one directory up (using `..`), and then inside of "kora". So the command is:
+
+        ln -s ../kora/public kora
+
+1 .After creating the link, you can check that it is set up properly by using `ls -l` to see the directory's contents. You should see a `kora -> ../kora/public` entry, which very likely has two blue text colors to indicate that 1) the link is symbolic, and 2) the target exists. In cases where the target does not exist and thus the link was created incorrectly, the text will likely display as red. Delete the incorrect link, check the relevant directory names, and then try making the link again with the corrected directories.
+
+### 2. Alter Virtual Host File
+
+Second, you will need to edit the Virtual Host file that is set up for your domain or subdomain. During your server setup, you likely created a virtual host configuration file (a `.conf` file). It is this `.conf` file that needs to be adjusted to accommodate Kora installed as a URL subdirectory.
+
+!!! note
+    This part of the guide also assumes you have not yet set up an SSL certificate for your URL domain or subdomain. If you have, your Virtual Host file might instead be something other than the one you initially set up when creating your server, because the process of setting up the certificate often involves automatically generating a new Virtual Host file. You will need to edit that file instead with the changes that are described in this section, but that process is outside the scope of this guide.
+
+1. Return your Terminal prompt to the server root:
+
+        cd ~
+
+1. Edit your `.conf` file to configure specific permissions for the "public" subdirectory of Kora. Do this by using `nano` (or whichever editor you've been using). For a default droplet, the command will be as follows:
+
+        sudo nano /etc/apache2/sites-available/{virtual_host_filename.conf}
+
+    Be sure to insert the correct filename.
+
+    !!! note
+        If you are unsure of the name, you can instead move to the directory with `cd /etc/apache2/sites-available`, then list the directory's contents with `ls -l` to refresh your memory. This can also be used to find the auto-generated virtual host file, if you have already set up an SSL certificate
+
+1. Insert the following code block into your Virtual Host file, so that it is contained within the VirtualHost code block:
+
+        <Directory /var/www/html>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+    Notice that this block is aimed at `/var/www/html`, which is the default location for a droplet. If your URL's DocumentRoot is in a different location, adjust the code block pathway to reflect your own circumstances.
+
+1. Leave the rest of this file configured for your URL directory.
+
+1. Once these changes have been made, exit using "ctrl" + "x", then confirm the save by pressing "y" and then Enter to keep the defaulted file name.
+
+1. Reload Apache2 to have the changes take effect:
+
+        sudo systemctl reload apache2
+
+### 3. Edit .htaccess
+
+The final required change is to the ".htaccess" file in your Kora installation's "public" directory.
+
+1. Return your Terminal prompt to the server root (`cd ~`), then use an editor to edit ".htaccess" in "public":
+
+        sudo nano /var/www/kora/public/.htaccess
+
+1. Find the following section of code in this file:
+
+		RewriteEngine On
+        #RewriteBase #add base url ex: www.website.com[/this part is your base url, the url subdirectory where you want your installation to be accessible from]
+        #RewriteBase /your_base_url
+
+    It is also highlighted in this screenshot (this is from a different installation, but the file will look the same):
+
+    <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_lamp_9_annotated.png" title="">
+
+1. From the final line of this section of code, remove `#` and then change "/your_base_url" to "/kora". This tells the system that your Kora install's url will be https://example.org/kora (if your subdirectory is something different, change this line accordingly).
+
+1. Exit and save this file with its defaulted name (so, hold "ctrl" and press "x", then "y", then Enter).
+
+Once these three tasks are completed, your subdirectory URL installation of Kora is correctly configured. Proceed to the next section of this guide to set up the required SSL certificate for your URL.
 
 ## SSL Certificate for Your Domain
 
