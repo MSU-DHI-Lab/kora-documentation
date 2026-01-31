@@ -21,7 +21,6 @@ plugins:
 
 nav:
     - 'Home': 'index.md'
-    - 'About this Documentation': 'about.md'
     - 'How to Contribute': 'contributing.md'
     - 'Getting Started':
         - 'Understanding Core Concepts': 'getting-started/core_concepts.md'

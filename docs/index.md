@@ -9,3 +9,11 @@ A single installation of Kora can support any number of discreet digital reposit
 In order to support data portability and project workflows, Kora includes powerful import and export tools. Records (object + metadata) can be imported as XML, JSON, and CSV and exported as XML or JSON individually or in a batch. In keeping with the need to ensure authenticity and integrity of uploaded and imported files, Kora automatically generates fixity information on all ingested files, which can be used to verify that files are free from tampering and corruption.
 
 Developed and actively maintained by Michigan State University’s [Matrix: The Center for Digital Humanities and Social Sciences](https://matrix.msu.edu), Kora is released under a [GNU GPL 2.0 open source license](https://github.com/matrix-msu/kora/blob/master/LICENSE) and available for download from GitHub at <https://github.com/matrix-msu/kora>.
+
+## How to use this documentation
+
+- Use the left navigation to move between topics. Sections are grouped the same way you work in Kora: Getting Started → Projects → Forms → Records → User Accounts → Managing an installation.
+- Use the search box (top right) to jump straight to a task or keyword.
+- Screenshots sit beside each step; click them to expand if needed.
+- Links stay inside this site unless noted. External links open in a new tab and are provided only when they add required detail.
+- If you are new to Kora, start with [Understanding Core Concepts](getting-started/core_concepts.md), then follow the Getting Started section in order.
