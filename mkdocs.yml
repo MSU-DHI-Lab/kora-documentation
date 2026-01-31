@@ -13,6 +13,12 @@ theme:
         - django
     sticky_navigation: false
 
+plugins:
+    - search
+    - htmlproofer:
+        validate_external_urls: false   # avoid external calls in local/CI without internet
+        raise_error: true
+
 nav:
     - 'Home': 'index.md'
     - 'About this Documentation': 'about.md'

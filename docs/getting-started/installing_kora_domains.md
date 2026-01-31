@@ -198,7 +198,7 @@ To return from nearly any part of cPanel to the Main interface (shown in the scr
         composer update
 
     !!! note
-        For current (January 2024) Reclaim Hosting servers, the default server-wide PHP version is 8.0, which is not sufficient to properly install and run Kora. Please follow [this guide for a temporary workaround](XXXXXXXX) for this limitation. The guide begins with an explanation of how to check your current default server-wide PHP version.
+        For current (January 2024) Reclaim Hosting servers, the default server-wide PHP version is 8.0, which is not sufficient to properly install and run Kora. Please follow the temporary PHP version workaround from Reclaim Hosting’s documentation for this limitation. The guide begins with an explanation of how to check your current default server-wide PHP version.
 
     Next, run the Kora installation process:
 
@@ -314,7 +314,7 @@ Find the directions for each below.
 
 1. To confirm that the symbolic link process worked, you may go back into File Manager and navigate into your publicly-accessible directory, which you were to take note of in Step 2 of "[Upload and Prepare Kora Application Files via cPanel File Manager](#upload-and-prepare-kora-application-files-via-cpanel-file-manager)." There, you should find the directory "kora" with the black chain-link icon over the folder icon.
 
-1. After completing this step, you will need to additionally configure Kora to enable functionality for a module called `mod_rewrite`. This is explained in the "[Using *mod_rewrite* in Kora](../advanced_configuration/#using-mod_rewrite-in-kora)" section of the "Advanced Configuration of Kora" page.
+1. After completing this step, you will need to additionally configure Kora to enable functionality for a module called `mod_rewrite`. This is explained in the "[Using *mod_rewrite* in Kora](advanced_configuration.md#using-mod_rewrite-in-kora)" section of the "Advanced Configuration of Kora" page.
 
 ### Subdomain URLs
 
@@ -333,7 +333,7 @@ If going this route for your URL, you can now close Terminal and return to cPane
 Once you have implemented one of the two methods above, your Kora installation is now reachable via a web browser! But there is one last task you should complete before doing so.
 
 !!! note
-    If you previously had to implement the PHP version workaround to deal with an insufficient default server-wide PHP version, please return to [step XXXX of that guide](XXXXXXXX) to finish the HTTPS configuration process.
+    If you previously had to implement the PHP version workaround to deal with an insufficient default server-wide PHP version, please return to the earlier workaround guide to finish the HTTPS configuration process.
 
 1. Kora is designed to use HTTPS protocol for its URLs. So it is important to set up a Force HTTPS Redirect for your domain, and for the subdomain as well if you have gone that route for your URL. To do this, go to "Domains" under the "Domains" section in cPanel.
 
@@ -394,12 +394,12 @@ If you successfully reached the Kora login page, **Congratulations!** Your insta
 
 ### GitLab Integration
 
-If desired, your Kora installation can use GitLab's authentication system to manage account creation and user login. For more information about this, including integration instruction, please see the section of "Advanced Configuration" called, "[GitLab Integration](../advanced_configuration/#gitlab-integration)."
+If desired, your Kora installation can use GitLab's authentication system to manage account creation and user login. For more information about this, including integration instruction, please see the section of "Advanced Configuration" called, "[GitLab Integration](advanced_configuration.md#gitlab-integration)."
 
 ### Set Up Server Email and Link It to Kora
 
 !!! warning "Email No Longer Supported"
-    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
+    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../user-accounts/managing_users_in_a_kora_installation.md#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
 
     This guide describes entering server information into a Kora Configuration File page and clicking "Update Configuration File", which would then save the information as values for variables found in the installation's .env file. "Mail Host" populated `MAIL_HOST`, "Mail From Address" populated `MAIL_FROM_ADDRESS`, "Mail From Name" populated `MAIL_FROM_NAME`, "Mail User" populated `MAIL_USER`, and "Mail Password" populated `MAIL_PASSWORD`. If something provided on the Kora Configuration File page contained spaces (e.g. if "Mail From Name" was set on this page to "Kora Admin"), the value in the .env file would be saved as a string surrounded by quotations.
 
@@ -442,11 +442,11 @@ If desired, your Kora installation can use GitLab's authentication system to man
         <img style="display:block;margin:auto;max-width:100%" src="../getting-started-img/installing_kora_domains_48_annotated.png" title="Add Email Information to Kora Configuration">
 
     !!! note
-        If your server email is disabled by account administrators — as is the case for MSU Domains of One's Own accounts — and you cannot get another server email to successfully work with Kora, it is still possible to do the tasks that may appear to require the email server working, such as confirming new users, inviting users, or setting passwords. Find instructions for these tasks in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and- password-resets).
+If your server email is disabled by account administrators — as is the case for MSU Domains of One's Own accounts — and you cannot get another server email to successfully work with Kora, it is still possible to do the tasks that may appear to require the email server working, such as confirming new users, inviting users, or setting passwords. Find instructions for these tasks in the guide for [managing Kora user accounts](../user-accounts/managing_users_in_a_kora_installation.md#manual-user-confirmationsactivations-and-password-resets).
 
 ### Admin User Profile Settings
 
-The final portion of configuration is for the admin account's profile settings. This section is specific to what is a part of the initial configuration for Kora, but this documentation website also has a more complete [guide for user profile settings](../../user-accounts/edit_user_preferences/).
+The final portion of configuration is for the admin account's profile settings. This section is specific to what is a part of the initial configuration for Kora, but this documentation website also has a more complete [guide for user profile settings](../user-accounts/edit_user_preferences.md).
 
 1. To get there to the profile settings page, select the user icon in the upper-right.
 
@@ -464,12 +464,9 @@ The final portion of configuration is for the admin account's profile settings. 
 
 To check whether or not your installation works properly:
 
-1. [Create a Project](../../projects/creating_a_project/).
-
-1. [Create a Form](../../forms/creating_a_form/) in that project.
-
-1. [Create a Field](../../forms/creating_fields/) in that project *with the field type set to one of the File types* (setting it to "Documents" will give the greatest flexibility for uploading any file to test).
-
-1. And finally, [create a Record](../../records/creating_a_record/) where you upload an example file.
+1. [Create a Project](../projects/creating_a_project.md).
+1. [Create a Form](../forms/creating_a_form.md) in that project.
+1. [Create a Field](../forms/creating_fields.md) in that project *with the field type set to one of the File types* (setting it to "Documents" will give the greatest flexibility for uploading any file to test).
+1. And finally, [create a Record](../records/creating_a_record.md) where you upload an example file.
 
 If the creation of that Record with an uploaded file succeeds, such that the uploaded file is viewable or downloadable when clicked upon, then your permissions are correct. If this fails, please go to "[Set 'Write' and 'Execute' Privileges On Certain Directories if Needed via cPanel Terminal](#set-write-and-execute-permissions-on-certain-directories-if-needed-via-cpanel-terminal)" above. Follow the instructions there for using cPanel Terminal to adjust your Kora installation's permissions on the correct directories.

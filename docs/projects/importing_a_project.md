@@ -1,6 +1,6 @@
 #Importing a Project
 
-To import a project, you need to have the .kProj file for the project you want to import.  The .kProj file is created during the [project export](../exporting_a_project) process.  Its important to note that a .kProj file **only** contains the project's structure and information (title, description) and forms (including all of the form structure). The .kProj file does not include the project's records.  To learn how to export and import records, check out the "[Exporting a Record](../../records/exporting_a_record)" and "[Importing a Record](../../records/importing_a_record)" guides.  To learn how to import a **multi form record**, check out the "[Importing a Multiform Record](../../records/importing_multi_form_records)" guide.  
+To import a project, you need to have the .kProj file for the project you want to import.  The .kProj file is created during the [project export](exporting_a_project.md) process.  Its important to note that a .kProj file **only** contains the project's structure and information (title, description) and forms (including all of the form structure). The .kProj file does not include the project's records.  To learn how to export and import records, check out the "[Exporting a Record](../records/exporting_a_record.md)" and "[Importing a Record](../records/importing_a_record.md)" guides.  To learn how to import a **multi form record**, check out the "[Importing a Multiform Record](../records/importing_multi_form_records.md)" guide.  
 
 To import a project, follow these steps:
 
@@ -32,4 +32,4 @@ This will automatically upload the project into your Kora instillation.
 
 
 
-*Note*: If you wish to learn how to export a project, visit the "[Exporting a Project Guide](../../projects/exporting_a_project)."
+*Note*: If you wish to learn how to export a project, visit the "[Exporting a Project Guide](exporting_a_project.md)."

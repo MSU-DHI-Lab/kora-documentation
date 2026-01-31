@@ -54,7 +54,7 @@ You may also duplicate a record after it has been created. Simply [search or bro
 
 <img style="display:block;margin:auto;max-width:100%" src="../records-img/creating_a_record_10_annotated.png" title="Duplication Button">
 
-If you need assistance on how to edit your duplicate record, visit the [Editing a Record](/forms/editing_a_form.md) documentation.
+If you need assistance on how to edit your duplicate record, visit the [Editing a Record](editing_a_record.md) documentation.
 
 ###Creating a New Record Preset
 

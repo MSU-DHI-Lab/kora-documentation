@@ -7,7 +7,7 @@ When you are within an individual project, you can chose to have the forms withi
 
 ## Editing Preferences for how Forms are Viewed in a Project
 
-When you first navigate to the page for your project, your forms will default to being listed in alphabetical order. To change how you view your forms, go to [your preferences page](../../user-accounts/edit_user_preferences) and do the following:
+When you first navigate to the page for your project, your forms will default to being listed in alphabetical order. To change how you view your forms, go to [your preferences page](../user-accounts/edit_user_preferences.md) and do the following:
 
 Scroll down to the section for *Single Project Tab Selection* and select either a custom or alphabetical view of your projects. Don't confuse this with the *Projects Page Tab Selection* section, which changes how all of your projects are organized within the *Projects* page.
 

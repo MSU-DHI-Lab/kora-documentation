@@ -18,7 +18,7 @@ To add additional users to your project, follow these steps:
 
     <img style="display:block;margin:auto;max-width:100%" src="../projects-img/adding_users_to_projects_3_annotated.png" width="100%" title="Admin and Default Group">
 
-	To learn more about the Admin Group and Default Group (and generally how Kora deals with user types and permissions, check out the [Understanding Kora User Types and Permissions](../getting-started/understanding_kora_user_types_and_permissions.md) documentation.
+	To learn more about the Admin Group and Default Group (and generally how Kora deals with user types and permissions), check out the [Understanding Kora User Types and Permissions](../getting-started/understanding_kora_user_types_and_permissions.md) documentation.
 
 4. Click on **Add User(s) to Group**, located in the bottom right corner of either the *Admin Group* box and *Default Group* box (depending on which group you want to add the new user to).
 

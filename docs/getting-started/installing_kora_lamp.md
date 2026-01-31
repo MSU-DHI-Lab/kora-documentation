@@ -4,7 +4,7 @@ title: Installing Kora on a LAMP Stack
 
 # Installing Kora on a LAMP Stack
 
-This guide is for installing Kora in a server environment set up with a LAMP stack. For this guide, the example environment is a [DigitalOcean droplet](https://docs.digitalocean.com/products/droplets/), set up with Linux (Ubuntu v22.04 (LTS)), Apache2 (v2.4.52), MySQL (MariaDB v10.6.16), and PHP (v8.1.8). For Kora's minimum server requirements, please check our [System Requirements](../system_requirements) page.
+This guide is for installing Kora in a server environment set up with a LAMP stack. For this guide, the example environment is a [DigitalOcean droplet](https://docs.digitalocean.com/products/droplets/), set up with Linux (Ubuntu v22.04 (LTS)), Apache2 (v2.4.52), MySQL (MariaDB v10.6.16), and PHP (v8.1.8). For Kora's minimum server requirements, please check our [System Requirements](system_requirements.md) page.
 
 ## Set up Acceptable LAMP Stack
 This guide presumes you have already set up a basic LAMP stack with the minimum system requirements. One way to set up such an environment is to rely on DigitalOcean droplets, which are scalable virtual servers. Though the minimum requirements for Kora require only 1GB of storage available, the server environment should be a bit larger than this to accommodate all the requisite programs and libraries. As such, this guide was written while using a DigitalOcean droplet with Ubuntu OS (in this case, 22.04 (LTS)) installed, the "Regular" disk type option selected, and the tier that includes 1GB RAM, 1 CPU, 25GB of disk storage, and 1000GB Data Transfer. In January 2024, this tier costs $6 per month. It also uses an SSH key for authentication.
@@ -357,4 +357,4 @@ The specifics of using Certbot will depend upon your domain, email address, etc.
 
 In a new browser tab, navigate to your Kora application's URL. If everything has been done correctly, you should land on the login page for your Kora installation. If you successfully reached the Kora login page, **Congratulations!** Your install is at least partially working!
 
-For further Kora setup, please continue with this guide at the "[Further Configure Kora Once Installed](../cloud_install#further-configure-kora-once-installed)" section of the Reclaim Cloud Installation guide. Please note, Email is no longer supported in Kora 3, so you may not be able to set up email integration. More information can be found on the [System Requirements page](../system_requirements#kora-email-no-longer-supportedrequired).
+For further Kora setup, please continue with this guide at the "[Further Configure Kora Once Installed](cloud_install.md#further-configure-kora-once-installed)" section of the Reclaim Cloud Installation guide. Please note, Email is no longer supported in Kora 3, so you may not be able to set up email integration. More information can be found on the [System Requirements page](system_requirements.md#kora-email-no-longer-supportedrequired).

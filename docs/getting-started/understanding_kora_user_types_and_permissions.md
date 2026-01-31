@@ -25,7 +25,7 @@ As its name suggests, a **Project Group** exists on the project level, and contr
 
 By default, when a new project is created in Kora, there are two permission groups: **Admin Group** and **Default Group**. The Admin Group has all three options mentioned above enabled; the Default Group, on the other hand, has all three disabled. Project Admins (or Kora Admins) can enable or disable any of the options for the two default permission groups, or create any number of new groups as needed.
 
-Need to learn how to add/remove users within a project? Visit the "[Adding Users to Projects](../../projects/adding_users_to_projects)" guide.
+Need to learn how to add/remove users within a project? Visit the "[Adding Users to Projects](../projects/adding_users_to_projects.md)" guide.
 
 ### Form Groups
 
@@ -33,4 +33,4 @@ As its name suggests, a **Form Group** exists on the form level. It controls the
 
 When a new form is created, two default permission groups are created: Admin Group and Default Group. The Admin Group has all of the aforementioned options enabled, while the Default Group has all of them disabled. A Form Admin (or a Project Admin or Kora Admin, for that matter) can modify these as they see fit, or create any number of new Form Groups as needed.
 
-Need to learn how to add/remove users in specific forms within a project? Visit the "[Adding Users to Forms](../../forms/adding_users_to_forms)" guide.
+Need to learn how to add/remove users in specific forms within a project? Visit the "[Adding Users to Forms](../forms/adding_users_to_forms.md)" guide.

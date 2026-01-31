@@ -26,7 +26,7 @@
     background-color: #007C83;
 }
 
-.icon.icon-home {
+.wy-side-nav-search .icon.icon-home {
     content: url(../img/logo-white.png);
     width: 80%;
     margin-bottom: 10px;

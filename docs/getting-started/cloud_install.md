@@ -587,12 +587,12 @@ If you successfully reached the Kora login page, **Congratulations!** Your insta
 
 ### GitLab Integration
 
-If desired, your Kora installation can use GitLab's authentication system to manage account creation and user login. For more information about this, including integration instruction, please see the section of "Advanced Configuration" called, "[GitLab Integration](../advanced_configuration/#gitlab-integration)."
+If desired, your Kora installation can use GitLab's authentication system to manage account creation and user login. For more information about this, including integration instruction, please see the section of "Advanced Configuration" called, "[GitLab Integration](advanced_configuration.md#gitlab-integration)."
 
 ### Configure Kora Email
 
 !!! warning "Email No Longer Supported"
-    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../../user-accounts/managing_users_in_a_kora_installation/#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
+    Kora 3 no longer supports email integration. A previous iteration of Kora 3 would generate emails for a number of tasks, such as account creation or password resets, and so email integration was encouraged. All the account management tasks that appeared to require email integration were possible without it, as explained in the guide for [managing Kora user accounts](../user-accounts/managing_users_in_a_kora_installation.md#manual-user-confirmationsactivations-and-password-resets). Though email integration is no longer supported, the setup process is preserved here for completeness of past documentation.
 
     This guide describes entering server information into a Kora Configuration File page and clicking "Update Configuration File", which would then save the information as values for variables found in the installation's .env file. "Mail Host" populated `MAIL_HOST`, "Mail From Address" populated `MAIL_FROM_ADDRESS`, "Mail From Name" populated `MAIL_FROM_NAME`, "Mail User" populated `MAIL_USER`, and "Mail Password" populated `MAIL_PASSWORD`. If something provided on the Kora Configuration File page contained spaces (e.g. if "Mail From Name" was set on this page to "Kora Admin"), the value in the .env file would be saved as a string surrounded by quotations.
 
@@ -609,7 +609,7 @@ If desired, your Kora installation can use GitLab's authentication system to man
 
 ### Admin User Profile Settings
 
-The final portion of configuration is for the admin account's profile settings. This section is specific to what is a part of the initial configuration for Kora, but this documentation website also has a more complete [guide for user profile settings](../../user-accounts/edit_user_preferences/).
+The final portion of configuration is for the admin account's profile settings. This section is specific to what is a part of the initial configuration for Kora, but this documentation website also has a more complete [guide for user profile settings](../user-accounts/edit_user_preferences.md).
 
 1. To get there to the profile settings page, select the user icon in the upper-right.
 
@@ -629,13 +629,10 @@ The final portion of configuration is for the admin account's profile settings. 
 
 To check whether or not your installation works properly:
 
-1. [Create a Project](../../projects/creating_a_project/).
-
-1. [Create a Form](../../forms/creating_a_form/) in that project.
-
-1. [Create a Field](../../forms/creating_fields/) in that project *with the field type set to one of the File types* (setting it to "Documents" will give the greatest flexibility for uploading any file to test).
-
-1. And finally, [create a Record](../../records/creating_a_record/) where you upload an example file.
+1. [Create a Project](../projects/creating_a_project.md).
+1. [Create a Form](../forms/creating_a_form.md) in that project.
+1. [Create a Field](../forms/creating_fields.md) in that project *with the field type set to one of the File types* (setting it to "Documents" will give the greatest flexibility for uploading any file to test).
+1. And finally, [create a Record](../records/creating_a_record.md) where you upload an example file.
 
 If the creation of that Record with an uploaded file succeeds, such that the uploaded file is viewable or downloadable when clicked upon, everything should be configured properly. If this fails, please check that you have properly enabled all the PHP modules noted in Step 3 of "[Configure PHP Modules](#configure-php-modules)," and properly set the permission levels described in either Step 20 of "[Installation via Zipped File as a URL Subdirectory](#installation-via-zipped-file-as-a-url-subdirectory)," or Step 24 of "[Installation via GitHub Repository and Cloud's Development Manager](#installation-via-github-repository-and-clouds-development-manager)."
 

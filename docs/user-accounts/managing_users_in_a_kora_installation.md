@@ -17,7 +17,7 @@ Kora makes it easy for administrators to manage who is part of a Kora installati
 
 ## Inviting New Users to a Kora installation
 
-Any number of new users can be added to the Kora installation. All that is required for new users is a valid email address to [sign up for a new user account](../signing_up_for_a_user_account/). Follow the steps below from the *User Management* page to add a new user to your Kora Installation:
+Any number of new users can be added to the Kora installation. All that is required for new users is a valid email address to [sign up for a new user account](signing_up_for_a_user_account.md). Follow the steps below from the *User Management* page to add a new user to your Kora Installation:
 
 1. Select the **Invite New User(s)** button at the top of the page. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_6_annotated.png" width="100%" style="align:center" title="Step 6"> </p>
 
@@ -27,7 +27,7 @@ Any number of new users can be added to the Kora installation. All that is requi
 
 4. Click **Invite User(s)** at the bottom of the pop-up. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_9_annotated.png" width="100%" style="align:center" title="Step 9"> </p>
 
-New users will receive an email invitation to join Kora. For directions on how to sign up for a new user account, check out the [new user account](../signing_up_for_a_user_account/) documentation.
+New users will receive an email invitation to join Kora. For directions on how to sign up for a new user account, check out the [new user account](signing_up_for_a_user_account.md) documentation.
 
 ## Managing Permissions
 
@@ -38,14 +38,14 @@ You are also able to mark users as active or inactive. Active users will be able
 
 ## Viewing User Profiles
 
-Administrators are able to view the profiles of any user within a Kora installation by selecting **View User Profile**. Administrators are able to [view the same account information that users can view of themselves](../viewing_your_user_account/). This includes their profile information, permissions and record history. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_12_annotated.png" width="100%" style="align:center" title="Step 12"> </p>
+Administrators are able to view the profiles of any user within a Kora installation by selecting **View User Profile**. Administrators are able to [view the same account information that users can view of themselves](viewing_your_user_account.md). This includes their profile information, permissions and record history. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_12_annotated.png" width="100%" style="align:center" title="Step 12"> </p>
 
 ## Editing User Profiles
 
-As an administrator, you have the ability to update any user's profile information by selecting **Edit User Profile** for a user. This allows you to [edit the same profile information as a user editing their own account](../edit_user_account/). This includes their name, username, email, profile image, organization, language, and password. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_13_annotated.png" width="100%" style="align:center" title="Step 13"> </p>
+As an administrator, you have the ability to update any user's profile information by selecting **Edit User Profile** for a user. This allows you to [edit the same profile information as a user editing their own account](edit_user_account.md). This includes their name, username, email, profile image, organization, language, and password. <p align="center"> <img src="../user-accounts-img/managing_users_in_a_kora_installation_13_annotated.png" width="100%" style="align:center" title="Step 13"> </p>
 
 ## Manual User Confirmations/Activations and Password Resets
 
 For installations of Kora without working email servers, it will be necessary to manually activate any new accounts, whether they were created by a user themselves, or via an invitation by an administrator. To activate a user account that has been created but not yet confirmed, simply check the **Active** box for that user. For invited accounts, notify the user of their new username.
 
-If the user account was created via invitation, or if a user requires a password reset, you will additionally need to set a temporary password and then manually notify the user of it. To temporarily set a password, select **Edit User Profile** for the desired account, type in the temporary password, retype it to confirm, and hit **Update User Profile**. When relaying this temporary password to the owner of the account, warn them that their password is not safe and they should change it themselves immediately after logging in. They can do so by following the instructions in the article "[Edit User Account](../edit_user_account#update-password)"
+If the user account was created via invitation, or if a user requires a password reset, you will additionally need to set a temporary password and then manually notify the user of it. To temporarily set a password, select **Edit User Profile** for the desired account, type in the temporary password, retype it to confirm, and hit **Update User Profile**. When relaying this temporary password to the owner of the account, warn them that their password is not safe and they should change it themselves immediately after logging in. They can do so by following the instructions in the article "[Edit User Account](edit_user_account.md#update-password)"

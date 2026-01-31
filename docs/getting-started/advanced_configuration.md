@@ -8,15 +8,15 @@ This document explains some advanced features of Kora, which may only need to be
 
 ## Using *mod_rewrite* in Kora
 
-If your installation will exist at a URL with a subdirectory, it is important to adjust the ".htaccess" file inside of "public" to reflect this. **Note**: This is *only* applicable to a Kora installation accessible by subdirectory and *not* for one existing at a domain-level or subdomain-level URL. For an explanation of these circumstances, please see the ["Create Kora Installation URLs" part of the Reclaim/DoOO Installation guide](../installing_kora_domains/#create-kora-installation-urls).
+If your installation will exist at a URL with a subdirectory, it is important to adjust the ".htaccess" file inside of "public" to reflect this. **Note**: This is *only* applicable to a Kora installation accessible by subdirectory and *not* for one existing at a domain-level or subdomain-level URL. For an explanation of these circumstances, please see the ["Create Kora Installation URLs" part of the Reclaim/DoOO Installation guide](installing_kora_domains.md#create-kora-installation-urls).
 
-1. If you have not yet done so, confirm that `mod_rewrite`. See "[Enabling *mod_rewrite*](../system_requirements/#enabling-mod_rewrite)" section of the "System Requirements" documentation.
+1. If you have not yet done so, confirm that `mod_rewrite`. See "[Enabling *mod_rewrite*](system_requirements.md#enabling-mod_rewrite)" section of the "System Requirements" documentation.
 
 1. Edit the ".htaccess" file inside the "public" directory.
 
-    * If using a cPanel interface, follow the instructions for editing files in "[Upload and Prepare Kora Application Files via cPanel File Manager](../installing_kora_domains/#upload-and-prepare-kora-application-files-via-cpanel-file-manager)," a section in the Installation guide.
+    * If using a cPanel interface, follow the instructions for editing files in "[Upload and Prepare Kora Application Files via cPanel File Manager](installing_kora_domains.md#upload-and-prepare-kora-application-files-via-cpanel-file-manager)," a section in the Installation guide.
 
-    * If using SSH or Terminal, navigate to "kora/public" and use `sudo nano`, this time to edit ".htaccess". An explanation for using `nano` with super user privileges is also contained in the "[Enabling *mod_rewrite*](../system_requirements/#enabling-mod_rewrite)" section of the "System Requirements" documentation.
+    * If using SSH or Terminal, navigate to "kora/public" and use `sudo nano`, this time to edit ".htaccess". An explanation for using `nano` with super user privileges is also contained in the "[Enabling *mod_rewrite*](system_requirements.md#enabling-mod_rewrite)" section of the "System Requirements" documentation.
 
     <span></span>
 

@@ -3,17 +3,17 @@ title: Editing a Project
 ---
 # Editing a Project
 
-If you have the correct permissions to edit a project, then there are multiple ways to get to the page for editing its info. Once you navigate to the *Edit Project* page, you are able to change the name, description and permissions for the project. If you want to edit other parts of the project, you will have to go to the individual [form](../../forms/editing_a_form) or [record](../../records/editing_a_record) that you wish to edit.
+If you have the correct permissions to edit a project, then there are multiple ways to get to the page for editing its info. Once you navigate to the *Edit Project* page, you are able to change the name, description and permissions for the project. If you want to edit other parts of the project, you will have to go to the individual [form](../forms/editing_a_form.md) or [record](../records/editing_a_record.md) that you wish to edit.
 
 ## Navigating the *Edit Project* page
 
 There are three options you can follow to navigate to the *Edit Project* page:
 
-1. If you [made your project available on the dashboard](../accessing_and_managing_projects_from_the_dashboard) as a project block, then you are able to access the *Edit Project* page directly from here. Simply click on the **Edit Project Info** button at the bottom-left of the project block.
+1. If you [made your project available on the dashboard](accessing_and_managing_projects_from_the_dashboard.md) as a project block, then you are able to access the *Edit Project* page directly from here. Simply click on the **Edit Project Info** button at the bottom-left of the project block.
 
     <img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_1_annotated.png" title="Step 1">
 
-2. Another option is to navigate to your [project list page](../customizing_project_list_view). From this page you'll be able to select the **Edit Project Info** button at the bottom-left of each block containing your project.
+2. Another option is to navigate to your [project list page](customizing_project_list_view.md). From this page you'll be able to select the **Edit Project Info** button at the bottom-left of each block containing your project.
 
     <img style="display:block;margin:auto;max-width:100%" src="../projects-img/editing_a_project_2_annotated.png" title="Step 2">
 
@@ -27,7 +27,7 @@ There are three options you can follow to navigate to the *Edit Project* page:
 
 ## Editing a Project
 
-After Navigating to the *Edit Project* page, you have the option to edit certain aspects of your project including your project's name, description and its permissions. You also have the option to [archive](../archiving_a_project) or [delete](../deleting_a_project) your project, though the specifics of those actions will not be discussed in this section. Follow these steps to edit the name, description and permissions of your project:
+After Navigating to the *Edit Project* page, you have the option to edit certain aspects of your project including your project's name, description and its permissions. You also have the option to [archive](archiving_a_project.md) or [delete](deleting_a_project.md) your project, though the specifics of those actions will not be discussed in this section. Follow these steps to edit the name, description and permissions of your project:
 
 1. Navigate to the *Edit Project* page.
 

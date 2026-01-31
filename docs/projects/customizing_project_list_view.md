@@ -3,11 +3,11 @@ title: Customizing the Project List View
 ---
 # Customizing the Project List View
 
-The projects list view refers to your view of projects from the *Projects* page. The *Projects* page displays all of the projects that you have access to in a list. This list of projects can then be organized alphabetically or in a customized view. A custom view allows you to place projects you more frequently use at the top of the page. You may also view [archived projects](../archiving_a_project) from the *Projects* page.
+The projects list view refers to your view of projects from the *Projects* page. The *Projects* page displays all of the projects that you have access to in a list. This list of projects can then be organized alphabetically or in a customized view. A custom view allows you to place projects you more frequently use at the top of the page. You may also view [archived projects](archiving_a_project.md) from the *Projects* page.
 
 ## Editing Preferences for How Projects are Viewed
 
-When you first navigate to your *Projects* page, you will always see your projects organized alphabetically from a-z, unless you change the initial default view in your preferences. To change how you view your projects, go to [your preferences page](../../user-accounts/edit_user_preferences) and perform the following actions:
+When you first navigate to your *Projects* page, you will always see your projects organized alphabetically from a-z, unless you change the initial default view in your preferences. To change how you view your projects, go to [your preferences page](../user-accounts/edit_user_preferences.md) and perform the following actions:
 
 1. Scroll down to the section for *Projects Page Tab Selection*
 
@@ -45,7 +45,7 @@ In your *Projects* page, it is also possible to customize the order in which you
 
 ## Archived Project List View
 
-Another option is to view your [projects that have been archived](../archiving_a_project). Simply click on the **Archived** option in your *Projects* page to view your archived projects.
+Another option is to view your [projects that have been archived](archiving_a_project.md). Simply click on the **Archived** option in your *Projects* page to view your archived projects.
 
 <img style="display:block;margin:auto;max-width:100%" src="../projects-img/customizing_project_list_view_7_annotated.png" title="Step 7">
 

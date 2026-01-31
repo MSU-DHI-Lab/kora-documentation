@@ -43,7 +43,7 @@ You can greatly narrow down the number of records you search through if you know
 
 A form is where records are made. As such, all records for a particular form can be browsed from that form. It is also possible to navigate to a form and search for a particular record in that form.
 
-1. [Navigate to the form home page](../forms/navigating_to_a_form/). From here you may start searching for records by either pressing the **Form Record & Search()** button or one of the menu options. <p align="center"> <img src="../records-img/searching_and_browsing_records_14_annotated.png" width="100%" style="align:center" title="Step 14"> </p>
+1. [Navigate to the form home page](../forms/navigating_to_a_form.md). From here you may start searching for records by either pressing the **Form Record & Search()** button or one of the menu options. <p align="center"> <img src="../records-img/searching_and_browsing_records_14_annotated.png" width="100%" style="align:center" title="Step 14"> </p>
 
 2. This will bring you to the *Form Records and Search* page where you may browse records within the form or perform a search using the *Search Via Keyword(s) or KID* box at the top. Select **Jump to Form +** and scroll through the possible forms. After locating your form, click on the name of your form to jump to that form. <p align="center"> <img src="../records-img/searching_and_browsing_records_15_annotated.png" width="100%" style="align:center" title="Step 15"> </p>
 

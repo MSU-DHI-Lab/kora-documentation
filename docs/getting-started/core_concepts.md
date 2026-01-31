@@ -14,9 +14,9 @@ A Kora installation can have any number of discreet projects (more on Projects b
 
 While a Kora installation can contain any number of projects, you might also feel the need to install more than one instance of Kora on a server, for instance to isolate one specific project in its own API-accessible container.
 
-To learn about what you need to install Kora on a server, check out [System Requirements](../system_requirements). This documentation includes instructions for [installing Kora on Domain of One's Own or a Reclaim Hosting personal account](../installing_kora_domains), or on a [Reclaim Cloud account](../cloud_install). For other hosting services, ones with a cPanel interface will find the Domain of One's Own guide useful; for Terminal or SSH-accessed hosting services, the Reclaim Cloud guide may provide much of the needed information for installing Kora, though many steps will need to be significantly adjusted.
+To learn about what you need to install Kora on a server, check out [System Requirements](system_requirements.md). This documentation includes instructions for [installing Kora on Domain of One's Own or a Reclaim Hosting personal account](installing_kora_domains.md), or on a [Reclaim Cloud account](cloud_install.md). For other hosting services, ones with a cPanel interface will find the Domain of One's Own guide useful; for Terminal or SSH-accessed hosting services, the Reclaim Cloud guide may provide much of the needed information for installing Kora, though many steps will need to be significantly adjusted.
 
-There are some things that you can only do in Kora as an admin at the installation level, such as creating projects and managing Kora tokens and API requests. In addition, you can add users to a Kora installation without assigning them to a particular project. This creates a pool of users that can be easily added to any projects by installation admins, or from within individual projects by project admins. To learn more about Kora Admins (and all other user types), check out "[Understanding Kora User Types and Permissions](../understanding_kora_user_types_and_permissions)."
+There are some things that you can only do in Kora as an admin at the installation level, such as creating projects and managing Kora tokens and API requests. In addition, you can add users to a Kora installation without assigning them to a particular project. This creates a pool of users that can be easily added to any projects by installation admins, or from within individual projects by project admins. To learn more about Kora Admins (and all other user types), check out "[Understanding Kora User Types and Permissions](understanding_kora_user_types_and_permissions.md)."
 
 
 ## Project
@@ -25,7 +25,7 @@ In Kora, a Project *is* a digital repository. It has a particular theme or focus
 
 A Project Admin sits at the top of the user pyramid *within* a project. While they can't create new projects, they pretty much can do anything within the project for which they are an admin. This includes creating forms, editing forms, deleting forms, creating field value presets, importing and exporting forms, inviting users, and managing user permissions.
 
-To get started, check out our guide, "[Creating a Project](../../projects/creating_a_project)."
+To get started, check out our guide, "[Creating a Project](../projects/creating_a_project.md)."
 
 ## Form
 
@@ -33,7 +33,7 @@ Forms are essentially the mechanism by which records are generated. In this rega
 
 A project can have any number of varying forms, each for a different type of record or object. For instance, if your project contained both historic documents and archaeological artifacts, you could create a form for each. When a user wanted to generate a record for a document, they'd use the document form. When they wanted to generate a record for an artifact, they'd use the artifact form. In Kora, users can also connect records created using one form to those created via another by using an Associator (which is a specific Field Type - more on those below).
 
-To learn more about Forms in Kora, start by reading "[Creating a Form](../../forms/creating_a_form)."
+To learn more about Forms in Kora, start by reading "[Creating a Form](../forms/creating_a_form.md)."
 
 
 ## Field Types
@@ -42,9 +42,9 @@ In Kora, Field Types are what makes a form something you can actually fill out t
 
 Kora has a wide variety of field types, each of which are purpose built to allow users to enter certain types of data. For instance the Geolocator field type allows you to enter geospatial information (in the form of Latitude/Longitude or an address), while a Text field type (which is probably the most common type) allows users to enter any plan text into a record.
 
-Kora also includes a variety of very specialized field types. One of the most powerful is the [Associator](../../forms/understanding_field_types#associator), which allows you to create a connection from one record to others.
+Kora also includes a variety of very specialized field types. One of the most powerful is the [Associator](../forms/understanding_field_types.md#associator), which allows you to create a connection from one record to others.
 
-To learn more about Kora's various Field Types, check out "[Understanding Field Types](../../forms/understanding_field_types/)."
+To learn more about Kora's various Field Types, check out "[Understanding Field Types](../forms/understanding_field_types.md)."
 
 
 ## Records

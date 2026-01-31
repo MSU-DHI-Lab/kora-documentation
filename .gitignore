@@ -5,3 +5,12 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# MkDocs build artifacts
+site/
+.cache/
+
+# Python env / bytecode
+.venv/
+env/
+__pycache__/

@@ -19,7 +19,7 @@ Follow the steps below to import a record(s) into a single form:
 
 		<img style="display:block;margin:auto;max-width:100%" src="../records-img/importing_a_record_4_annotated.png" title="Upload Record Import">
 
-5. This will bring you to the *Field Matching* tab on the *Import Records* page. This page allows you to associate the field names between the records you are uploading to the form you are importing the records to. Select fields if applicable on the right column of the page. You will want to associate or match fields based on type. If you need information about field types, visit the [Understanding Field Types](/forms/understanding_field_types.md) guide.
+5. This will bring you to the *Field Matching* tab on the *Import Records* page. This page allows you to associate the field names between the records you are uploading to the form you are importing the records to. Select fields if applicable on the right column of the page. You will want to associate or match fields based on type. If you need information about field types, visit the [Understanding Field Types](../forms/understanding_field_types.md) guide.
 
 		* **Note**: If a field is *required* in the form you are importing records into, you must associate an incoming field to one that is being imported.
 
